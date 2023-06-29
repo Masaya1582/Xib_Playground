@@ -19,8 +19,8 @@
 		4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E72A4D9D6E003F06BF /* LocalizableStrings.swift */; };
 		4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E92A4D9D73003F06BF /* Fonts.swift */; };
 		4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */; };
-		4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */; };
-		4011E8F02A4D9DC6003F06BF /* DefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */; };
+		4011E8EF2A4D9DC6003F06BF /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8ED2A4D9DC6003F06BF /* CustomTableViewCell.swift */; };
+		4011E8F02A4D9DC6003F06BF /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8EE2A4D9DC6003F06BF /* CustomTableViewCell.xib */; };
 		4011E8F22A4D9E05003F06BF /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* DefaultModel.swift */; };
 		4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */; };
 		844A2A7CC692AB7AE5144D68 /* Pods_Xib_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */; };
@@ -41,8 +41,8 @@
 		4011E8E72A4D9D6E003F06BF /* LocalizableStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableStrings.swift; sourceTree = "<group>"; };
 		4011E8E92A4D9D73003F06BF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
-		4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
-		4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTableViewCell.xib; sourceTree = "<group>"; };
+		4011E8ED2A4D9DC6003F06BF /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		4011E8EE2A4D9DC6003F06BF /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		4011E8F12A4D9E05003F06BF /* DefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
 		4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xib_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,8 +163,8 @@
 		4011E8E32A4D9D4D003F06BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */,
-				4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */,
+				4011E8ED2A4D9DC6003F06BF /* CustomTableViewCell.swift */,
+				4011E8EE2A4D9DC6003F06BF /* CustomTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 				4011E8DF2A4D9D31003F06BF /* Localizable.strings in Resources */,
 				4011E8CE2A4D9B70003F06BF /* LaunchScreen.storyboard in Resources */,
 				4011E8DD2A4D9D20003F06BF /* Colors.xcassets in Resources */,
-				4011E8F02A4D9DC6003F06BF /* DefaultTableViewCell.xib in Resources */,
+				4011E8F02A4D9DC6003F06BF /* CustomTableViewCell.xib in Resources */,
 				4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */,
 				4011E8D82A4D9B81003F06BF /* HomeViewController.xib in Resources */,
 				4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */,
@@ -331,7 +331,7 @@
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
 				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
-				4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */,
+				4011E8EF2A4D9DC6003F06BF /* CustomTableViewCell.swift in Sources */,
 				4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */,
 				4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */,
 			);
