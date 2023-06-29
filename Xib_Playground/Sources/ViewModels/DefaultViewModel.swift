@@ -17,8 +17,8 @@ protocol DefaultViewModelOutputs: AnyObject {
 }
 
 protocol DefaultViewModelType: AnyObject {
-    var inputs: DefaultViewModelsInputs { get }
-    var outputs: DefaultViewModelsOutputs { get }
+    var inputs: DefaultViewModelInputs { get }
+    var outputs: DefaultViewModelOutputs { get }
 }
 
 class DefaultViewModel: DefaultViewModelType, DefaultViewModelInputs, DefaultViewModelOutputs {
