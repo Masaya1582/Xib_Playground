@@ -13,6 +13,16 @@
 		4011E8CE2A4D9B70003F06BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8CC2A4D9B70003F06BF /* LaunchScreen.storyboard */; };
 		4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8D52A4D9B81003F06BF /* HomeViewController.swift */; };
 		4011E8D82A4D9B81003F06BF /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8D62A4D9B81003F06BF /* HomeViewController.xib */; };
+		4011E8DD2A4D9D20003F06BF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8DC2A4D9D20003F06BF /* Colors.xcassets */; };
+		4011E8DF2A4D9D31003F06BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8DE2A4D9D31003F06BF /* Localizable.strings */; };
+		4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E52A4D9D67003F06BF /* Assets.swift */; };
+		4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E72A4D9D6E003F06BF /* LocalizableStrings.swift */; };
+		4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E92A4D9D73003F06BF /* Fonts.swift */; };
+		4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */; };
+		4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */; };
+		4011E8F02A4D9DC6003F06BF /* DefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */; };
+		4011E8F22A4D9E05003F06BF /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* DefaultModel.swift */; };
+		4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		4011E8CF2A4D9B70003F06BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4011E8D52A4D9B81003F06BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4011E8D62A4D9B81003F06BF /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		4011E8DC2A4D9D20003F06BF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4011E8DE2A4D9D31003F06BF /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4011E8E52A4D9D67003F06BF /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		4011E8E72A4D9D6E003F06BF /* LocalizableStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableStrings.swift; sourceTree = "<group>"; };
+		4011E8E92A4D9D73003F06BF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
+		4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
+		4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTableViewCell.xib; sourceTree = "<group>"; };
+		4011E8F12A4D9E05003F06BF /* DefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
+		4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +76,89 @@
 		4011E8C02A4D9B6F003F06BF /* Xib_Playground */ = {
 			isa = PBXGroup;
 			children = (
+				4011E8DB2A4D9CCD003F06BF /* Resources */,
+				4011E8DA2A4D9CC9003F06BF /* Sources */,
+				4011E8D92A4D9CC2003F06BF /* Generated */,
 				4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */,
 				4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */,
-				4011E8D52A4D9B81003F06BF /* HomeViewController.swift */,
-				4011E8D62A4D9B81003F06BF /* HomeViewController.xib */,
-				4011E8CA2A4D9B70003F06BF /* Assets.xcassets */,
-				4011E8CC2A4D9B70003F06BF /* LaunchScreen.storyboard */,
-				4011E8CF2A4D9B70003F06BF /* Info.plist */,
 			);
 			path = Xib_Playground;
+			sourceTree = "<group>";
+		};
+		4011E8D92A4D9CC2003F06BF /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				4011E8E52A4D9D67003F06BF /* Assets.swift */,
+				4011E8E72A4D9D6E003F06BF /* LocalizableStrings.swift */,
+				4011E8E92A4D9D73003F06BF /* Fonts.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		4011E8DA2A4D9CC9003F06BF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4011E8E42A4D9D51003F06BF /* Models */,
+				4011E8E32A4D9D4D003F06BF /* Views */,
+				4011E8E22A4D9D49003F06BF /* ViewModels */,
+				4011E8E12A4D9D43003F06BF /* ViewControllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4011E8DB2A4D9CCD003F06BF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4011E8CA2A4D9B70003F06BF /* Assets.xcassets */,
+				4011E8DC2A4D9D20003F06BF /* Colors.xcassets */,
+				4011E8DE2A4D9D31003F06BF /* Localizable.strings */,
+				4011E8CC2A4D9B70003F06BF /* LaunchScreen.storyboard */,
+				4011E8CF2A4D9B70003F06BF /* Info.plist */,
+				4011E8E02A4D9D38003F06BF /* Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4011E8E02A4D9D38003F06BF /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		4011E8E12A4D9D43003F06BF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4011E8D52A4D9B81003F06BF /* HomeViewController.swift */,
+				4011E8D62A4D9B81003F06BF /* HomeViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4011E8E22A4D9D49003F06BF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4011E8E32A4D9D4D003F06BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */,
+				4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4011E8E42A4D9D51003F06BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4011E8F12A4D9E05003F06BF /* DefaultModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +219,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4011E8DF2A4D9D31003F06BF /* Localizable.strings in Resources */,
 				4011E8CE2A4D9B70003F06BF /* LaunchScreen.storyboard in Resources */,
+				4011E8DD2A4D9D20003F06BF /* Colors.xcassets in Resources */,
+				4011E8F02A4D9DC6003F06BF /* DefaultTableViewCell.xib in Resources */,
 				4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */,
 				4011E8D82A4D9B81003F06BF /* HomeViewController.xib in Resources */,
+				4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +237,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */,
+				4011E8F22A4D9E05003F06BF /* DefaultModel.swift in Sources */,
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
+				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
+				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
+				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
+				4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */,
+				4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */,
 				4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -262,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -281,11 +385,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L6Q3MJXV23;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Xib_Playground/Info.plist;
+				INFOPLIST_FILE = Xib_Playground/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,9 +397,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masa4y44-.masaya.nakakuki.Xib-Playground";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,11 +415,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L6Q3MJXV23;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Xib_Playground/Info.plist;
+				INFOPLIST_FILE = Xib_Playground/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,9 +427,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masa4y44-.masaya.nakakuki.Xib-Playground";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
