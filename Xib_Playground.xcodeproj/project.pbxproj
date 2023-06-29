@@ -68,7 +68,6 @@
 				EB0B3FD753A1B13C5E383329 /* Pods-Xib_Playground.debug.xcconfig */,
 				8FD51EC4ED984FB4DC036D16 /* Pods-Xib_Playground.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -198,6 +197,7 @@
 				4011E8BB2A4D9B6F003F06BF /* Frameworks */,
 				4011E8BC2A4D9B6F003F06BF /* Resources */,
 				4CA0D6758D655D1A05F9E9B0 /* [CP] Embed Pods Frameworks */,
+				4011E8F52A4DA04B003F06BF /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -259,6 +259,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4011E8F52A4DA04B003F06BF /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format # 自動修正の有効化\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		4CA0D6758D655D1A05F9E9B0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
