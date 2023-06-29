@@ -11,12 +11,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        // 追記 -----ここから (NavigationControllerを使用する場合)
+//        window = UIWindow(windowScene: scene as! UIWindowScene)
+//        window?.makeKeyAndVisible()
+//        let <#名前#>ViewController = <#ファイル名#>()
+//        let rootViewController = UINavigationController(rootViewController: <#名前#>ViewController)
+//        window?.rootViewController = rootViewController
+        // 追記 -----ここまで
+
+        // 追記 -----ここから (NavigationControllerを使用しない場合)
+        window = UIWindow(windowScene: scene as! UIWindowScene)
+        window?.makeKeyAndVisible()
+        let homeViewController = HomeViewController()
+        window?.rootViewController = homeViewController
+        // 追記 -----ここまで
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
