@@ -5,11 +5,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="button" destination="J9W-EY-6Jg" id="jLt-6D-Wvj"/>
+                <outlet property="label" destination="DjU-kb-O2O" id="jSC-Qu-wtD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +20,43 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjU-kb-O2O">
+                    <rect key="frame" x="48" y="139" width="297" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="zjo-AB-3aV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9W-EY-6Jg">
+                    <rect key="frame" x="36.666666666666657" y="386" width="320" height="80"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="ciT-HW-GAa"/>
+                        <constraint firstAttribute="width" constant="320" id="neo-Qb-mb8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Change Texts"/>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="J9W-EY-6Jg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="By2-gn-xav"/>
+                <constraint firstItem="DjU-kb-O2O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="EaT-pf-Eh0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DjU-kb-O2O" secondAttribute="trailing" constant="48" id="K7o-Ob-efR"/>
+                <constraint firstItem="DjU-kb-O2O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="M8G-MP-95J"/>
+                <constraint firstItem="J9W-EY-6Jg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kEc-26-Uqi"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
