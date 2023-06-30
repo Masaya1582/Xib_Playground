@@ -1,4 +1,5 @@
 PODS:
+  - BulletinBoard (5.0.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -8,23 +9,26 @@ PODS:
   - SwiftGen (6.6.2)
 
 DEPENDENCIES:
+  - BulletinBoard
   - RxCocoa
   - RxSwift
   - SwiftGen (~> 6.0)
 
 SPEC REPOS:
   trunk:
+    - BulletinBoard
     - RxCocoa
     - RxRelay
     - RxSwift
     - SwiftGen
 
 SPEC CHECKSUMS:
+  BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
 
-PODFILE CHECKSUM: 909629b2de5f34edb09d6803c0d20ccc91617e2d
+PODFILE CHECKSUM: 10495a3515dc1d1518c68d3d0ec2adac075d4aee
 
 COCOAPODS: 1.11.3
