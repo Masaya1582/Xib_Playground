@@ -18,7 +18,7 @@
 		4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E52A4D9D67003F06BF /* Assets.swift */; };
 		4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E72A4D9D6E003F06BF /* LocalizableStrings.swift */; };
 		4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E92A4D9D73003F06BF /* Fonts.swift */; };
-		4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */; };
+		4011E8EC2A4D9D8D003F06BF /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8EB2A4D9D8D003F06BF /* CounterViewModel.swift */; };
 		4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */; };
 		4011E8F02A4D9DC6003F06BF /* DefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */; };
 		4011E8F22A4D9E05003F06BF /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* DefaultModel.swift */; };
@@ -40,7 +40,7 @@
 		4011E8E52A4D9D67003F06BF /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		4011E8E72A4D9D6E003F06BF /* LocalizableStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableStrings.swift; sourceTree = "<group>"; };
 		4011E8E92A4D9D73003F06BF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
+		4011E8EB2A4D9D8D003F06BF /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
 		4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTableViewCell.xib; sourceTree = "<group>"; };
 		4011E8F12A4D9E05003F06BF /* DefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 		4011E8E22A4D9D49003F06BF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */,
+				4011E8EB2A4D9D8D003F06BF /* CounterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -332,7 +332,7 @@
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
 				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
 				4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */,
-				4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */,
+				4011E8EC2A4D9D8D003F06BF /* CounterViewModel.swift in Sources */,
 				4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
