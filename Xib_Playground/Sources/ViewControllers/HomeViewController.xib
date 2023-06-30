@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="counterLabel" destination="0DT-Gi-Hr2" id="x5w-ob-RbF"/>
+                <outlet property="decrementLabel" destination="Az5-Rg-w0p" id="Wfw-Q1-ywb"/>
+                <outlet property="incrementLabel" destination="IpF-VA-rfc" id="qa0-9M-Riy"/>
+                <outlet property="resetLabel" destination="hmW-yk-GJc" id="yph-Zx-RQ9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +21,63 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="vbo-eG-0Tw">
+                    <rect key="frame" x="46.666666666666657" y="227.33333333333334" width="300" height="397.33333333333326"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DT-Gi-Hr2">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="57.333333333333336"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="doM-4c-boO">
+                            <rect key="frame" x="0.0" y="113.33333333333334" width="300" height="284"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpF-VA-rfc">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
+                                    <color key="backgroundColor" red="0.2274509804" green="0.52549019610000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="300" id="jmv-yc-M99"/>
+                                        <constraint firstAttribute="height" constant="80" id="o4U-vg-g9s"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Increase"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Az5-Rg-w0p">
+                                    <rect key="frame" x="0.0" y="102" width="300" height="80"/>
+                                    <color key="backgroundColor" red="1" green="0.74509803919999995" blue="0.043137254899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="300" id="4a6-71-cL3"/>
+                                        <constraint firstAttribute="height" constant="80" id="zF3-sS-l1m"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Decrease"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmW-yk-GJc">
+                                    <rect key="frame" x="0.0" y="203.99999999999994" width="300" height="80"/>
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="300" id="1cx-WF-MwH"/>
+                                        <constraint firstAttribute="height" constant="80" id="UOA-C9-k1V"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Reset"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vbo-eG-0Tw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="6Ly-Te-lzx"/>
+                <constraint firstItem="vbo-eG-0Tw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kfL-xH-OsN"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
