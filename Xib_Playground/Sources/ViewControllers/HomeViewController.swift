@@ -11,6 +11,8 @@ import RxCocoa
 
 class HomeViewController: UIViewController {
 
+    private let disposeBag = DisposeBag()
+
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
