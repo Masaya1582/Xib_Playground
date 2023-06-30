@@ -5,11 +5,16 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicatorView" destination="dtj-iI-uYC" id="tRK-ha-7zF"/>
+                <outlet property="searchButton" destination="DUB-ZM-Vr9" id="5ib-08-mYh"/>
+                <outlet property="tableView" destination="jPp-l0-86c" id="YpU-ig-dLZ"/>
+                <outlet property="textField" destination="wOC-ud-hvc" id="5Er-TI-0tc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +22,50 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="BJW-j9-4uu">
+                    <rect key="frame" x="24" y="139" width="345" height="34"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Pokemon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wOC-ud-hvc">
+                            <rect key="frame" x="0.0" y="0.0" width="264.66666666666669" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUB-ZM-Vr9">
+                            <rect key="frame" x="324.66666666666669" y="0.0" width="20.333333333333314" height="34"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="magnifyingglass" catalog="system"/>
+                        </button>
+                    </subviews>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jPp-l0-86c">
+                    <rect key="frame" x="0.0" y="193" width="393" height="659"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dtj-iI-uYC">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BJW-j9-4uu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="4T4-wf-63a"/>
+                <constraint firstItem="dtj-iI-uYC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7LQ-tf-dRu"/>
+                <constraint firstItem="BJW-j9-4uu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="B02-SL-dVt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BJW-j9-4uu" secondAttribute="trailing" constant="24" id="DVt-9O-meb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jPp-l0-86c" secondAttribute="trailing" id="J1i-Zy-u65"/>
+                <constraint firstItem="jPp-l0-86c" firstAttribute="top" secondItem="BJW-j9-4uu" secondAttribute="bottom" constant="20" id="V9G-Jt-DbI"/>
+                <constraint firstAttribute="bottom" secondItem="jPp-l0-86c" secondAttribute="bottom" id="Wzg-cI-IMb"/>
+                <constraint firstItem="jPp-l0-86c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gm8-CW-r1n"/>
+                <constraint firstItem="dtj-iI-uYC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mVL-Ga-o8w"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
