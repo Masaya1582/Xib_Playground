@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var showSwiftUIViewButton: UIButton!
+
     private let disposeBag = DisposeBag()
     // private let viewMoel = <#ViewModel名#>
 
@@ -28,6 +30,18 @@ class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to dependency: Dependency) {
-
+        showSwiftUIViewButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                let view = PopupSwiftUIView(
+                    dismissAction: { [weak self] in
+                        self?.dismiss(animated: true)
+                    }
+                )
+                let hostingController = HostingController(rootView: view)
+                hostingController.modalPresentationStyle = .overFullScreen
+                hostingController.modalTransitionStyle = .crossDissolve
+                self?.present(hostingController, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
