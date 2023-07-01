@@ -23,6 +23,8 @@
 		4011E8F02A4D9DC6003F06BF /* DefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */; };
 		4011E8F22A4D9E05003F06BF /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* DefaultModel.swift */; };
 		4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */; };
+		40779B722A50275100505ABD /* PopupSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40779B712A50275100505ABD /* PopupSwiftUIView.swift */; };
+		40779B742A50282300505ABD /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40779B732A50282300505ABD /* HostingController.swift */; };
 		844A2A7CC692AB7AE5144D68 /* Pods_Xib_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTableViewCell.xib; sourceTree = "<group>"; };
 		4011E8F12A4D9E05003F06BF /* DefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
 		4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		40779B712A50275100505ABD /* PopupSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSwiftUIView.swift; sourceTree = "<group>"; };
+		40779B732A50282300505ABD /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xib_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD51EC4ED984FB4DC036D16 /* Pods-Xib_Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xib_Playground.release.xcconfig"; path = "Target Support Files/Pods-Xib_Playground/Pods-Xib_Playground.release.xcconfig"; sourceTree = "<group>"; };
 		EB0B3FD753A1B13C5E383329 /* Pods-Xib_Playground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xib_Playground.debug.xcconfig"; path = "Target Support Files/Pods-Xib_Playground/Pods-Xib_Playground.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 			children = (
 				4011E8D52A4D9B81003F06BF /* HomeViewController.swift */,
 				4011E8D62A4D9B81003F06BF /* HomeViewController.xib */,
+				40779B732A50282300505ABD /* HostingController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			children = (
 				4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */,
 				4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */,
+				40779B712A50275100505ABD /* PopupSwiftUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,7 +338,9 @@
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
 				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
 				4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */,
+				40779B722A50275100505ABD /* PopupSwiftUIView.swift in Sources */,
 				4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */,
+				40779B742A50282300505ABD /* HostingController.swift in Sources */,
 				4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
