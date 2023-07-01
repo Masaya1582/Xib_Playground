@@ -23,16 +23,15 @@ protocol DefaultViewModelType: AnyObject {
 
 class DefaultViewModel: DefaultViewModelType, DefaultViewModelInputs, DefaultViewModelOutputs {
 
+    // MARK: - Input Sources
+    // MARK: - Output Sources
+
     // MARK: - Properties
     var inputs: DefaultViewModelInputs { return self }
     var outputs: DefaultViewModelOutputs { return self }
 
-    // MARK: - Input Sources
-    // MARK: - Output Sources
-
     private let disposeBag = DisposeBag()
 
-    // MARK: - Initialization
     init() {
         
     }
