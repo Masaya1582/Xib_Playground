@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="label" destination="bhL-Zu-RZZ" id="ua0-Fe-fDM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +18,24 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhL-Zu-RZZ" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                    <rect key="frame" x="36.666666666666657" y="402" width="320" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="oRf-Y1-Ubw"/>
+                        <constraint firstAttribute="width" constant="320" id="pLT-dd-dJH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="bhL-Zu-RZZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ObG-fu-spp"/>
+                <constraint firstItem="bhL-Zu-RZZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lca-lx-etP"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
