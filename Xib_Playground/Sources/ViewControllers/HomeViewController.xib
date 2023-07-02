@@ -5,11 +5,16 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="calculatePriceButton" destination="4Tj-j4-XAs" id="A4G-fC-uTP"/>
+                <outlet property="priceTextField" destination="Mvg-X7-BVt" id="qfK-MZ-vjA"/>
+                <outlet property="taxExcludedLabel" destination="TU5-C9-qVG" id="iMK-Zc-eXd"/>
+                <outlet property="taxIncludedLabel" destination="M2A-ik-GkT" id="Ccv-0J-wyV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +22,71 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="b0q-FF-Fho">
+                    <rect key="frame" x="42" y="139" width="309" height="112"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2A-ik-GkT">
+                            <rect key="frame" x="0.0" y="0.0" width="309" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="aYS-vi-0Sf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU5-C9-qVG">
+                            <rect key="frame" x="0.0" y="72" width="309" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="ffg-VG-A4I"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="金額入力" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mvg-X7-BVt">
+                    <rect key="frame" x="42" y="351" width="309" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="0VR-lP-akf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tj-j4-XAs">
+                    <rect key="frame" x="42" y="507" width="309" height="42"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="24d-tV-6Y3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="計算"/>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="systemYellowColor"/>
+            <constraints>
+                <constraint firstItem="4Tj-j4-XAs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="8Wp-bS-bvy"/>
+                <constraint firstItem="b0q-FF-Fho" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="CH3-L8-vV4"/>
+                <constraint firstItem="Mvg-X7-BVt" firstAttribute="top" secondItem="b0q-FF-Fho" secondAttribute="bottom" constant="100" id="Ckn-1g-RX4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mvg-X7-BVt" secondAttribute="trailing" constant="42" id="VGz-wc-8zx"/>
+                <constraint firstItem="b0q-FF-Fho" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="WjV-Bb-X9C"/>
+                <constraint firstItem="4Tj-j4-XAs" firstAttribute="top" secondItem="Mvg-X7-BVt" secondAttribute="bottom" constant="120" id="bbK-sr-FFU"/>
+                <constraint firstItem="Mvg-X7-BVt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="gSZ-2f-78x"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b0q-FF-Fho" secondAttribute="trailing" constant="42" id="qo8-bd-IpD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Tj-j4-XAs" secondAttribute="trailing" constant="42" id="xmK-wg-P1O"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

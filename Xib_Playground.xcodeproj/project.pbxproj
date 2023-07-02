@@ -21,7 +21,7 @@
 		4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */; };
 		4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */; };
 		4011E8F02A4D9DC6003F06BF /* DefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */; };
-		4011E8F22A4D9E05003F06BF /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* DefaultModel.swift */; };
+		4011E8F22A4D9E05003F06BF /* ItemPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* ItemPrice.swift */; };
 		4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */; };
 		844A2A7CC692AB7AE5144D68 /* Pods_Xib_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */; };
 /* End PBXBuildFile section */
@@ -43,7 +43,7 @@
 		4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
 		4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
 		4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTableViewCell.xib; sourceTree = "<group>"; };
-		4011E8F12A4D9E05003F06BF /* DefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
+		4011E8F12A4D9E05003F06BF /* ItemPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPrice.swift; sourceTree = "<group>"; };
 		4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xib_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD51EC4ED984FB4DC036D16 /* Pods-Xib_Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xib_Playground.release.xcconfig"; path = "Target Support Files/Pods-Xib_Playground/Pods-Xib_Playground.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 		4011E8E42A4D9D51003F06BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4011E8F12A4D9E05003F06BF /* DefaultModel.swift */,
+				4011E8F12A4D9E05003F06BF /* ItemPrice.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */,
-				4011E8F22A4D9E05003F06BF /* DefaultModel.swift in Sources */,
+				4011E8F22A4D9E05003F06BF /* ItemPrice.swift in Sources */,
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
