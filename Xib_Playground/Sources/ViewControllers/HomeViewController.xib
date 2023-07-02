@@ -5,11 +5,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="bzs-VU-kHq" id="3y7-vo-Nhl"/>
+                <outlet property="trimImageButton" destination="xGv-64-BKw" id="KH7-ZU-It8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +20,40 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bzs-VU-kHq">
+                    <rect key="frame" x="36.666666666666657" y="159" width="320" height="320"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="hor-7o-oxq"/>
+                        <constraint firstAttribute="width" secondItem="bzs-VU-kHq" secondAttribute="height" multiplier="1:1" id="llY-15-cYO"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGv-64-BKw">
+                    <rect key="frame" x="48" y="579" width="297" height="36"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="aCS-JC-Ndr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Trim"/>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="xGv-64-BKw" firstAttribute="top" secondItem="bzs-VU-kHq" secondAttribute="bottom" constant="100" id="34M-sa-7kO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xGv-64-BKw" secondAttribute="trailing" constant="48" id="BqI-H3-0Qh"/>
+                <constraint firstItem="bzs-VU-kHq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Iza-ox-NGs"/>
+                <constraint firstItem="xGv-64-BKw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="mIb-Mv-mJX"/>
+                <constraint firstItem="bzs-VU-kHq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="mUs-eQ-2nh"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
