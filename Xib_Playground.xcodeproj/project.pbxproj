@@ -476,6 +476,8 @@
 				DEVELOPMENT_TEAM = L6Q3MJXV23;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Xib_Playground/Resources/Info.plist;
+				INFOPLIST_KEY_NSLocationUsageDescription = "位置情報を利用します";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "位置情報を利用します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -507,6 +509,8 @@
 				DEVELOPMENT_TEAM = L6Q3MJXV23;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Xib_Playground/Resources/Info.plist;
+				INFOPLIST_KEY_NSLocationUsageDescription = "位置情報を利用します";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "位置情報を利用します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
