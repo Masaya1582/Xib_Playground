@@ -6,11 +6,13 @@ PODS:
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
   - SwiftGen (6.6.2)
+  - SwiftSpinner (2.2.0)
 
 DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SwiftGen (~> 6.0)
+  - SwiftSpinner
 
 SPEC REPOS:
   trunk:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SwiftGen
+    - SwiftSpinner
 
 SPEC CHECKSUMS:
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
+  SwiftSpinner: f9b59477fe107427f2b5b835497d6636fa167ede
 
-PODFILE CHECKSUM: 909629b2de5f34edb09d6803c0d20ccc91617e2d
+PODFILE CHECKSUM: c029596eddb4d8b8f694da0469ab14198ec3ad06
 
 COCOAPODS: 1.11.3
