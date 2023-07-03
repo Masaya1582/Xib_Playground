@@ -5,21 +5,79 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="imageScreenshotButton" destination="GDk-Op-Ym8" id="fcp-aL-4Fb"/>
+                <outlet property="imageView" destination="KyV-sW-16t" id="0hc-No-KDt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wholeScreenshotButton" destination="yvP-LC-I6R" id="pRJ-bH-w79"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="77" translatesAutoresizingMaskIntoConstraints="NO" id="e0F-iQ-l5y">
+                    <rect key="frame" x="48" y="479" width="297" height="173"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvP-LC-I6R">
+                            <rect key="frame" x="0.0" y="0.0" width="297" height="48"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="z6a-AN-Qda"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="画面全体のスクショ"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDk-Op-Ym8">
+                            <rect key="frame" x="0.0" y="125" width="297" height="48"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="755-kn-pls"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="画像のみのスクショ"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="yvP-LC-I6R" secondAttribute="trailing" id="1Qe-wj-PrH"/>
+                        <constraint firstAttribute="trailing" secondItem="GDk-Op-Ym8" secondAttribute="trailing" id="Rlz-Zt-eRt"/>
+                    </constraints>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_study" translatesAutoresizingMaskIntoConstraints="NO" id="KyV-sW-16t">
+                    <rect key="frame" x="76.666666666666686" y="119" width="240" height="240"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KyV-sW-16t" secondAttribute="height" multiplier="1:1" id="ZH5-BR-OGV"/>
+                        <constraint firstAttribute="width" constant="240" id="uJo-n9-xvn"/>
+                    </constraints>
+                </imageView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <constraints>
+                <constraint firstItem="e0F-iQ-l5y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="1zJ-yT-6iw"/>
+                <constraint firstItem="KyV-sW-16t" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2wb-Ye-MLh"/>
+                <constraint firstItem="KyV-sW-16t" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="8m1-3K-Tqj"/>
+                <constraint firstItem="e0F-iQ-l5y" firstAttribute="top" secondItem="KyV-sW-16t" secondAttribute="bottom" constant="120" id="ecz-fz-UGG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e0F-iQ-l5y" secondAttribute="trailing" constant="48" id="lTn-aW-BXq"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_study" width="512" height="512"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
