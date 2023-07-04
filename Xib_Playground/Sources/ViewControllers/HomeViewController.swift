@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftUI
 
 class HomeViewController: UIViewController {
     // MARK: - Dependency
@@ -29,5 +30,11 @@ class HomeViewController: UIViewController {
 private extension HomeViewController {
     func bind(to dependency: Dependency) {
 
+    }
+}
+
+struct ViewControllerPreview: PreviewProvider {
+    static var previews: some View {
+        SwiftUIViewController()
     }
 }
