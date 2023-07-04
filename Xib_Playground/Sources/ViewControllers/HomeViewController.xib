@@ -5,11 +5,16 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="answerTextView" destination="tsn-gb-77l" id="5ug-L6-z01"/>
+                <outlet property="askChatGPTButton" destination="dOT-9S-eOR" id="zyj-E0-0EH"/>
+                <outlet property="loadingView" destination="mTL-Lf-yh6" id="UyX-kN-fED"/>
+                <outlet property="questionTextField" destination="sha-ML-WCF" id="Gth-yp-Uch"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +22,62 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CnY-5i-EUG">
+                    <rect key="frame" x="24" y="139" width="345" height="34"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ask ChatGPT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sha-ML-WCF">
+                            <rect key="frame" x="0.0" y="0.0" width="278" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOT-9S-eOR">
+                            <rect key="frame" x="298" y="0.0" width="47" height="34"/>
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="SEND"/>
+                        </button>
+                    </subviews>
+                </stackView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tsn-gb-77l">
+                    <rect key="frame" x="24" y="193" width="345" height="625"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="mTL-Lf-yh6">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+            <constraints>
+                <constraint firstItem="tsn-gb-77l" firstAttribute="top" secondItem="CnY-5i-EUG" secondAttribute="bottom" constant="20" id="1bM-lb-nwd"/>
+                <constraint firstItem="CnY-5i-EUG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="3YH-N2-Bvo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tsn-gb-77l" secondAttribute="trailing" constant="24" id="4kq-fN-GO2"/>
+                <constraint firstItem="mTL-Lf-yh6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Fj8-pq-cz0"/>
+                <constraint firstItem="mTL-Lf-yh6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P77-iO-nja"/>
+                <constraint firstItem="CnY-5i-EUG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="UBb-gF-jRq"/>
+                <constraint firstItem="tsn-gb-77l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="dJ7-NH-2JJ"/>
+                <constraint firstItem="tsn-gb-77l" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="mLx-sZ-CaG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CnY-5i-EUG" secondAttribute="trailing" constant="24" id="zoR-xR-EJK"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
