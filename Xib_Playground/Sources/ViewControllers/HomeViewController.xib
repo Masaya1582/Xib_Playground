@@ -5,11 +5,16 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="currentDateButton" destination="i6e-cf-m3Y" id="xs7-y9-o2n"/>
+                <outlet property="currentDateLabel" destination="Vcj-KF-LZV" id="SKD-Vu-qgE"/>
+                <outlet property="currentTimeButton" destination="WMC-3k-5gX" id="uMg-vc-ucc"/>
+                <outlet property="currentTimeLabel" destination="p1c-Qm-cQz" id="lyC-Vu-sMa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +22,78 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="8Fr-Bt-grB">
+                    <rect key="frame" x="24" y="179" width="345" height="117"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcj-KF-LZV">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="4VT-DX-mBw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1c-Qm-cQz">
+                            <rect key="frame" x="0.0" y="85" width="345" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="F5A-NP-Y3g"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="p1c-Qm-cQz" firstAttribute="leading" secondItem="8Fr-Bt-grB" secondAttribute="leading" id="8va-9W-qgL"/>
+                        <constraint firstAttribute="trailing" secondItem="Vcj-KF-LZV" secondAttribute="trailing" id="dp3-jE-Ia3"/>
+                        <constraint firstAttribute="trailing" secondItem="p1c-Qm-cQz" secondAttribute="trailing" id="g0i-hG-m7H"/>
+                        <constraint firstItem="Vcj-KF-LZV" firstAttribute="leading" secondItem="8Fr-Bt-grB" secondAttribute="leading" id="neA-Pt-SuS"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="yWt-Xz-93Y">
+                    <rect key="frame" x="24" y="476" width="345" height="144"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6e-cf-m3Y">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="48"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="A1n-2z-yPi"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Get Current Date"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMC-3k-5gX">
+                            <rect key="frame" x="0.0" y="96" width="345" height="48"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="ktD-g4-e0C"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Get Current Time"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8Fr-Bt-grB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="2d2-Xg-3wb"/>
+                <constraint firstItem="yWt-Xz-93Y" firstAttribute="top" secondItem="8Fr-Bt-grB" secondAttribute="bottom" constant="180" id="El4-UP-7xZ"/>
+                <constraint firstItem="yWt-Xz-93Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Toi-PM-J6t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8Fr-Bt-grB" secondAttribute="trailing" constant="24" id="Ze0-Do-BgR"/>
+                <constraint firstItem="8Fr-Bt-grB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="eo3-NB-yzR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yWt-Xz-93Y" secondAttribute="trailing" constant="24" id="vFr-Mh-zJe"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
