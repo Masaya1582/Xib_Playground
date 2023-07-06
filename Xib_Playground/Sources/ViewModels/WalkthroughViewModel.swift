@@ -27,6 +27,7 @@ class WalkthroughViewModel: WalkthroughViewModelType, WalkthroughViewModelInputs
     var inputs: WalkthroughViewModelInputs { return self }
     var outputs: WalkthroughViewModelOutputs { return self }
 
+    // MARK: - Output Sources
     let image: UIImage
     let description: String
 

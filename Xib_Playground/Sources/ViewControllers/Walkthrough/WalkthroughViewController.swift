@@ -46,7 +46,7 @@ class WalkthroughViewController: PagerTabStripViewController, PagerTabStripDataS
         super.viewDidLoad()
         containerView.bounces = false
         containerView.alwaysBounceHorizontal = false
-        bind()
+        bind(to: ())
     }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
@@ -65,21 +65,17 @@ class WalkthroughViewController: PagerTabStripViewController, PagerTabStripDataS
 }
 
 private extension WalkthroughViewController {
-    func bind() {
+    func bind(to viewModel: Dependency) {
         bottomButton.rx.tap.asSignal()
             .emit(onNext: { [weak self] in
                 guard let self else { return }
-                self.defaultOrProductImageSwipeTapped()
+                if self.currentIndex == self.slideViewControllers.endIndex - 1 {
+                    print("This is end of Walkthrough!")
+                } else {
+                    self.moveToViewController(at: self.currentIndex + 1)
+                }
             })
             .disposed(by: disposeBag)
-    }
-
-    func defaultOrProductImageSwipeTapped() {
-        if currentIndex == slideViewControllers.endIndex - 1 {
-            print("This is end of Walkthrough!")
-        } else {
-            moveToViewController(at: currentIndex + 1)
-        }
     }
 }
 

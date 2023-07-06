@@ -20,7 +20,6 @@ extension NSObject {
 
 // MARK: - Bundle
 extension NSObject {
-
     static var bundle: Bundle {
         return .init(for: self.self)
     }
