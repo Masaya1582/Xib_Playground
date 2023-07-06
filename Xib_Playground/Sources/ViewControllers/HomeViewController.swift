@@ -9,25 +9,39 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
     private let disposeBag = DisposeBag()
-    // private let viewMoel = <#ViewModel名#>
+    private let viewModel: Dependency
+
+    // MARK: - Initialize
+    init(dependency: Dependency) {
+        self.viewModel = dependency
+        super.init(nibName: Self.className, bundle: Self.bundle)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: ())
+        bind(to: viewModel)
     }
 
 }
 
 // MARK: - Bindings
 private extension HomeViewController {
-    func bind(to dependency: Dependency) {
+    func bind(to viewModel: Dependency) {
 
     }
 }
+
+// MARK: - ViewControllerInjectable
+extension HomeViewController: ViewControllerInjectable {}
