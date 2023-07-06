@@ -57,13 +57,19 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKD-2w-bu6">
-                    <rect key="frame" x="48" y="749" width="297" height="32"/>
+                    <rect key="frame" x="32" y="749" width="329" height="48"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="32" id="0wI-8l-Ntk"/>
+                        <constraint firstAttribute="height" constant="48" id="0wI-8l-Ntk"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Next"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -73,10 +79,10 @@
                 <constraint firstItem="tY9-3t-2Wl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A3M-de-dRG"/>
                 <constraint firstItem="FwK-t0-sRZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="580" id="Edg-7u-Px7"/>
                 <constraint firstItem="FwK-t0-sRZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P8Y-AN-EJj"/>
-                <constraint firstItem="fKD-2w-bu6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="SwR-2I-n9P"/>
+                <constraint firstItem="fKD-2w-bu6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="SwR-2I-n9P"/>
                 <constraint firstItem="fKD-2w-bu6" firstAttribute="top" secondItem="FwK-t0-sRZ" secondAttribute="bottom" constant="100" id="VuM-k3-hGY"/>
                 <constraint firstItem="tY9-3t-2Wl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="erI-ap-no6"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fKD-2w-bu6" secondAttribute="trailing" constant="48" id="rN5-zk-Dkk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fKD-2w-bu6" secondAttribute="trailing" constant="32" id="rN5-zk-Dkk"/>
                 <constraint firstAttribute="bottom" secondItem="tY9-3t-2Wl" secondAttribute="bottom" id="vYd-O2-ygL"/>
             </constraints>
             <point key="canvasLocation" x="136.64122137404578" y="20.422535211267608"/>

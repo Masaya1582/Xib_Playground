@@ -33,8 +33,9 @@ internal enum Asset {
     internal static let imgStudy = ImageAsset(name: "img_study")
   }
   internal enum Colors {
-    internal static let bakcgroundColor = ColorAsset(name: "bakcground_color")
-    internal static let mainColor = ColorAsset(name: "main_color")
+    internal static let defaultWhiteColor = ColorAsset(name: "default_white_color")
+    internal static let walkthorughNextColor = ColorAsset(name: "walkthorugh_next_color")
+    internal static let walkthroughStartColor = ColorAsset(name: "walkthrough_start_color")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

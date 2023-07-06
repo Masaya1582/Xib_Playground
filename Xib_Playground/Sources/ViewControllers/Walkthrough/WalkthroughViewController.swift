@@ -90,12 +90,12 @@ private extension WalkthroughViewController {
         let titleColor: UIColor
         if progressPercentage >= 1.0 && toIndex == lastPageIndex {
             title = "会員登録して始める"
-            backgroundColor = Asset.Colors.mainColor.color
-            titleColor = .black
+            backgroundColor = Asset.Colors.walkthroughStartColor.color
+            titleColor = Asset.Colors.defaultWhiteColor.color
         } else {
             title = "次へ"
-            backgroundColor = Asset.Colors.bakcgroundColor.color
-            titleColor = .black
+            backgroundColor = Asset.Colors.walkthorughNextColor.color
+            titleColor = Asset.Colors.defaultWhiteColor.color
         }
         bottomButton.setTitle(title, for: .normal)
         bottomButton.backgroundColor = backgroundColor
