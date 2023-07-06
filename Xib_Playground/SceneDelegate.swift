@@ -24,8 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 追記 -----ここから (NavigationControllerを使用しない場合)
         window = UIWindow(windowScene: scene as! UIWindowScene)
         window?.makeKeyAndVisible()
-        let homeViewController = HomeViewController()
-        window?.rootViewController = homeViewController
+        let mainViewController = MainViewController()
+        window?.rootViewController = mainViewController
         // 追記 -----ここまで
     }
 

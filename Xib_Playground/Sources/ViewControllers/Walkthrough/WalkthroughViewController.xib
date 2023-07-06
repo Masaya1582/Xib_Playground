@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalkthroughViewController" customModule="Xib_Playground" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="mnD-wf-dse" id="lv7-hp-K8g"/>
+                <outlet property="pageControl" destination="5Kz-px-N6p" id="ML5-eN-ZjX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnD-wf-dse" userLabel="Container View">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="V2x-Fv-vDs"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="3n9-9U-a6r"/>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kz-px-N6p" customClass="CHIPageControlAleppo" customModule="CHIPageControl">
+                    <rect key="frame" x="180.66666666666666" y="770" width="32" height="8"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="1ao-3v-bgT"/>
+                        <constraint firstAttribute="height" constant="8" id="3rV-fx-1xB"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="numberOfPages">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="currentPageTintColor">
+                            <color key="value" name="main_color"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="inactiveTransparency">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5Kz-px-N6p" secondAttribute="bottom" constant="40" id="8ct-MS-4b4"/>
+                <constraint firstItem="mnD-wf-dse" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B92-ot-Mby"/>
+                <constraint firstItem="mnD-wf-dse" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JpC-Q3-EoV"/>
+                <constraint firstAttribute="bottom" secondItem="mnD-wf-dse" secondAttribute="bottom" id="Qp7-rq-Sn9"/>
+                <constraint firstItem="5Kz-px-N6p" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="c5c-zH-d3c"/>
+                <constraint firstAttribute="trailing" secondItem="mnD-wf-dse" secondAttribute="trailing" id="eyA-Zd-KL7"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="5Kz-px-N6p">
+            <size key="intrinsicContentSize" width="68" height="8"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="main_color">
+            <color red="0.92900002002716064" green="0.84299999475479126" blue="0.32899999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

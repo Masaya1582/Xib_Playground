@@ -9,5 +9,14 @@ target 'Xib_Playground' do
     pod 'SwiftGen', '~> 6.0'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'XLPagerTabStrip', '~> 9.0'
+    pod 'CHIPageControl/Chimayo'
+    pod 'CHIPageControl/Fresno'
+    pod 'CHIPageControl/Jalapeno'
+    pod 'CHIPageControl/Jaloro'
+    pod 'CHIPageControl/Paprika'
+    pod 'CHIPageControl/Puya'
+    pod 'CHIPageControl/Aji'
+    pod 'CHIPageControl/Aleppo'
 
 end
