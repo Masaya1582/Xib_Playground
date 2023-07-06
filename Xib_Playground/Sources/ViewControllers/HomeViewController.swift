@@ -14,6 +14,9 @@ class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var modalButton: UIButton!
+    @IBOutlet private weak var navigationButton: UIButton!
+
     private let disposeBag = DisposeBag()
     // private let viewMoel = <#ViewModel名#>
 
@@ -28,6 +31,18 @@ class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to dependency: Dependency) {
+        modalButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                let nextViewController = NextViewController(nibName: "NextViewController", bundle: nil)
+                self?.present(nextViewController, animated: true)
+            })
+            .disposed(by: disposeBag)
 
+        navigationButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                let nextViewController = NextViewController()
+                self?.navigationController?.pushViewController(nextViewController, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
