@@ -21,16 +21,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8sa-8z-cdL">
-                    <rect key="frame" x="76.666666666666686" y="159" width="240" height="240"/>
+                    <rect key="frame" x="96.666666666666686" y="139" width="200" height="200"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="8sa-8z-cdL" secondAttribute="height" multiplier="1:1" id="Lkf-PK-VjX"/>
-                        <constraint firstAttribute="width" constant="240" id="T2s-Y8-Eqz"/>
+                        <constraint firstAttribute="width" secondItem="8sa-8z-cdL" secondAttribute="height" multiplier="1:1" id="Eg4-wv-7C6"/>
+                        <constraint firstAttribute="width" constant="200" id="snI-mr-TJL"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHP-Ft-puW">
-                    <rect key="frame" x="12" y="499" width="369" height="48"/>
+                    <rect key="frame" x="24" y="419" width="345" height="48"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="BJ7-6J-o05"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="7yG-fY-hZk"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,11 +40,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="8sa-8z-cdL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6ci-h1-Flv"/>
-                <constraint firstItem="PHP-Ft-puW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="HUC-73-ZEn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PHP-Ft-puW" secondAttribute="trailing" constant="12" id="Jov-wU-Hg4"/>
-                <constraint firstItem="8sa-8z-cdL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="USd-hH-iY0"/>
-                <constraint firstItem="PHP-Ft-puW" firstAttribute="top" secondItem="8sa-8z-cdL" secondAttribute="bottom" constant="100" id="rxU-V7-bV7"/>
+                <constraint firstItem="8sa-8z-cdL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DVu-Cx-fHa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PHP-Ft-puW" secondAttribute="trailing" constant="24" id="SmP-gO-vOf"/>
+                <constraint firstItem="PHP-Ft-puW" firstAttribute="top" secondItem="8sa-8z-cdL" secondAttribute="bottom" constant="80" id="VCe-06-gKe"/>
+                <constraint firstItem="8sa-8z-cdL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="cRW-Ml-hEz"/>
+                <constraint firstItem="PHP-Ft-puW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="sEp-KO-GWK"/>
             </constraints>
             <point key="canvasLocation" x="138" y="21"/>
         </view>
