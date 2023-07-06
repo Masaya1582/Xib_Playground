@@ -1,4 +1,12 @@
 PODS:
+  - CHIPageControl/Aji (0.2)
+  - CHIPageControl/Aleppo (0.2)
+  - CHIPageControl/Chimayo (0.2)
+  - CHIPageControl/Fresno (0.2)
+  - CHIPageControl/Jalapeno (0.2)
+  - CHIPageControl/Jaloro (0.2)
+  - CHIPageControl/Paprika (0.2)
+  - CHIPageControl/Puya (0.2)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -6,25 +14,39 @@ PODS:
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
   - SwiftGen (6.6.2)
+  - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
+  - CHIPageControl/Aji
+  - CHIPageControl/Aleppo
+  - CHIPageControl/Chimayo
+  - CHIPageControl/Fresno
+  - CHIPageControl/Jalapeno
+  - CHIPageControl/Jaloro
+  - CHIPageControl/Paprika
+  - CHIPageControl/Puya
   - RxCocoa
   - RxSwift
   - SwiftGen (~> 6.0)
+  - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
+    - CHIPageControl
     - RxCocoa
     - RxRelay
     - RxSwift
     - SwiftGen
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
+  CHIPageControl: a787bf7205c9b7e7fbfc412be36c5e8636b68f86
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
+  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 909629b2de5f34edb09d6803c0d20ccc91617e2d
+PODFILE CHECKSUM: b470cffd34a775a9e51434d808bccf65f16e6c11
 
 COCOAPODS: 1.11.3
