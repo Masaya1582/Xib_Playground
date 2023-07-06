@@ -4,15 +4,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalkthroughViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
-                <outlet property="containerView" destination="mnD-wf-dse" id="lv7-hp-K8g"/>
-                <outlet property="pageControl" destination="5Kz-px-N6p" id="ML5-eN-ZjX"/>
+                <outlet property="bottomButton" destination="fKD-2w-bu6" id="0Cg-aU-Y7e"/>
+                <outlet property="containerView" destination="tY9-3t-2Wl" id="SyD-1I-rvq"/>
+                <outlet property="pageControl" destination="FwK-t0-sRZ" id="lnr-Ft-VKf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,18 +22,18 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnD-wf-dse" userLabel="Container View">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tY9-3t-2Wl" userLabel="Container View">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                    <viewLayoutGuide key="contentLayoutGuide" id="V2x-Fv-vDs"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="3n9-9U-a6r"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Zf8-k9-9os"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="4YG-eC-CQw"/>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kz-px-N6p" customClass="CHIPageControlAleppo" customModule="CHIPageControl">
-                    <rect key="frame" x="180.66666666666666" y="770" width="32" height="8"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FwK-t0-sRZ" customClass="CHIPageControlAleppo" customModule="CHIPageControl">
+                    <rect key="frame" x="172.66666666666666" y="639" width="48" height="10"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="32" id="1ao-3v-bgT"/>
-                        <constraint firstAttribute="height" constant="8" id="3rV-fx-1xB"/>
+                        <constraint firstAttribute="height" constant="10" id="Wil-XP-eop"/>
+                        <constraint firstAttribute="width" constant="48" id="hA3-Ek-qWp"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="numberOfPages">
@@ -48,35 +49,42 @@
                             <real key="value" value="4"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="currentPageTintColor">
-                            <color key="value" name="main_color"/>
+                            <color key="value" systemColor="systemOrangeColor"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="inactiveTransparency">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKD-2w-bu6">
+                    <rect key="frame" x="48" y="749" width="297" height="32"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="0wI-8l-Ntk"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Next"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5Kz-px-N6p" secondAttribute="bottom" constant="40" id="8ct-MS-4b4"/>
-                <constraint firstItem="mnD-wf-dse" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B92-ot-Mby"/>
-                <constraint firstItem="mnD-wf-dse" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JpC-Q3-EoV"/>
-                <constraint firstAttribute="bottom" secondItem="mnD-wf-dse" secondAttribute="bottom" id="Qp7-rq-Sn9"/>
-                <constraint firstItem="5Kz-px-N6p" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="c5c-zH-d3c"/>
-                <constraint firstAttribute="trailing" secondItem="mnD-wf-dse" secondAttribute="trailing" id="eyA-Zd-KL7"/>
+                <constraint firstItem="tY9-3t-2Wl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="92A-iX-flE"/>
+                <constraint firstItem="tY9-3t-2Wl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A3M-de-dRG"/>
+                <constraint firstItem="FwK-t0-sRZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="580" id="Edg-7u-Px7"/>
+                <constraint firstItem="FwK-t0-sRZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P8Y-AN-EJj"/>
+                <constraint firstItem="fKD-2w-bu6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="SwR-2I-n9P"/>
+                <constraint firstItem="fKD-2w-bu6" firstAttribute="top" secondItem="FwK-t0-sRZ" secondAttribute="bottom" constant="100" id="VuM-k3-hGY"/>
+                <constraint firstItem="tY9-3t-2Wl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="erI-ap-no6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fKD-2w-bu6" secondAttribute="trailing" constant="48" id="rN5-zk-Dkk"/>
+                <constraint firstAttribute="bottom" secondItem="tY9-3t-2Wl" secondAttribute="bottom" id="vYd-O2-ygL"/>
             </constraints>
             <point key="canvasLocation" x="136.64122137404578" y="20.422535211267608"/>
         </view>
     </objects>
-    <designables>
-        <designable name="5Kz-px-N6p">
-            <size key="intrinsicContentSize" width="68" height="8"/>
-        </designable>
-    </designables>
     <resources>
-        <namedColor name="main_color">
-            <color red="0.92900002002716064" green="0.84299999475479126" blue="0.32899999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

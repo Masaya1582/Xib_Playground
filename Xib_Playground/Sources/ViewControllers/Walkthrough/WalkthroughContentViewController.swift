@@ -14,6 +14,7 @@ class WalkthroughContentViewController: UIViewController {
 
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var bottomButton: UIButton!
 
     private let viewModel: Dependency
 
