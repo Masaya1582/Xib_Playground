@@ -25,6 +25,7 @@
 		4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */; };
 		40D3B0132A56B2CB00E9A002 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3B0122A56B2CB00E9A002 /* NSObjectExtension.swift */; };
 		40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3B0152A56B3E400E9A002 /* ViewControllerInjectable.swift */; };
+		40F486232A5820D500DD02B1 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F486222A5820D500DD02B1 /* TextFieldViewModel.swift */; };
 		844A2A7CC692AB7AE5144D68 /* Pods_Xib_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		40D3B0122A56B2CB00E9A002 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		40D3B0152A56B3E400E9A002 /* ViewControllerInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerInjectable.swift; sourceTree = "<group>"; };
+		40F486222A5820D500DD02B1 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
 		6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xib_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD51EC4ED984FB4DC036D16 /* Pods-Xib_Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xib_Playground.release.xcconfig"; path = "Target Support Files/Pods-Xib_Playground/Pods-Xib_Playground.release.xcconfig"; sourceTree = "<group>"; };
 		EB0B3FD753A1B13C5E383329 /* Pods-Xib_Playground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xib_Playground.debug.xcconfig"; path = "Target Support Files/Pods-Xib_Playground/Pods-Xib_Playground.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */,
+				40F486222A5820D500DD02B1 /* TextFieldViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
 				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
 				4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */,
+				40F486232A5820D500DD02B1 /* TextFieldViewModel.swift in Sources */,
 				40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */,
 				4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */,
 				4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */,

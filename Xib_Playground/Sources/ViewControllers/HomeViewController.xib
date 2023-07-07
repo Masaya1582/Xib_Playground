@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="nameLabel" destination="kiJ-Vl-wOq" id="P8I-j1-pH0"/>
+                <outlet property="nameTextField" destination="l7e-wf-lgA" id="M0r-em-BMW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,38 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="t73-ku-DOY">
+                    <rect key="frame" x="36.666666666666657" y="328" width="320" height="196"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiJ-Vl-wOq">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="320" id="FYX-HU-cA4"/>
+                                <constraint firstAttribute="height" constant="48" id="QFx-bY-5FF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l7e-wf-lgA">
+                            <rect key="frame" x="0.0" y="148" width="320" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="9rl-vH-z1Z"/>
+                                <constraint firstAttribute="width" constant="320" id="wTB-ju-hEc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="t73-ku-DOY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="STa-pS-314"/>
+                <constraint firstItem="t73-ku-DOY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gSH-tR-Hy5"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
