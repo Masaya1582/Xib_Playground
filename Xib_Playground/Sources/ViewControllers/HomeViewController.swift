@@ -39,7 +39,11 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-
+//        <#Button#>.rx.tap.asSignal()
+//            .emit(onNext: { [weak self] in
+//                <#Actions#>
+//            })
+//            .disposed(by: disposeBag)
     }
 }
 
