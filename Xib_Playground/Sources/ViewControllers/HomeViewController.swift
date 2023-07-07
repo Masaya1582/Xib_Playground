@@ -11,11 +11,14 @@ import RxCocoa
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = DefaultViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var button: UIButton!
+
     private let disposeBag = DisposeBag()
-    private let viewModel: Dependency
+    private let viewModel: DefaultViewModelType
 
     // MARK: - Initialize
     init(dependency: Dependency) {
@@ -38,12 +41,14 @@ final class HomeViewController: UIViewController {
 
 // MARK: - Bindings
 private extension HomeViewController {
-    func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+    func bind(to viewModel: DefaultViewModelType) {
+        button.rx.tap
+            .bind(to: viewModel.inputs.updateButtonTapped)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.numberText
+            .bind(to: label.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
