@@ -8,12 +8,14 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import AVFoundation
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
+    private var player = AVPlayer()
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,7 +33,24 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        playVideo()
+        self.player.play()
         bind(to: viewModel)
+    }
+
+    private func playVideo() {
+        guard let path = Bundle.main.path(forResource: "sample", ofType: "MOV") else { return }
+        player = AVPlayer(url: URL(fileURLWithPath: path))
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+        playerLayer.videoGravity = .resizeAspectFill
+        playerLayer.repeatCount = 0
+        playerLayer.zPosition = -1
+        view.layer.insertSublayer(playerLayer, at: 0)
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { (_) in
+            self.player.seek(to: .zero)
+            self.player.play()
+        }
     }
 
 }
