@@ -5,11 +5,15 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="fetchImageButton" destination="8kW-tR-AsD" id="caB-21-Xtf"/>
+                <outlet property="imageView" destination="QTU-eZ-nZs" id="RdH-TX-756"/>
+                <outlet property="label" destination="njG-px-9UX" id="0rq-h9-Ndm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +21,52 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ｵﾝﾄﾞｩﾙﾙﾗｷﾞｯﾀﾝﾃﾞｨｽｶｰ!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njG-px-9UX">
+                    <rect key="frame" x="24" y="95" width="345" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="ave-6p-t3p"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QTU-eZ-nZs">
+                    <rect key="frame" x="46.666666666666657" y="227" width="300" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="QTU-eZ-nZs" secondAttribute="height" multiplier="1:1" id="hPy-XC-xg0"/>
+                        <constraint firstAttribute="width" constant="300" id="k0J-hV-hOU"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kW-tR-AsD">
+                    <rect key="frame" x="48" y="627" width="297" height="48"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="bac-XC-beG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Fetch an Image"/>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8kW-tR-AsD" secondAttribute="trailing" constant="48" id="3bW-W1-nUc"/>
+                <constraint firstItem="QTU-eZ-nZs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OMt-tH-Bec"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="njG-px-9UX" secondAttribute="trailing" constant="24" id="PYr-rD-rMk"/>
+                <constraint firstItem="njG-px-9UX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="RwD-Yu-9f9"/>
+                <constraint firstItem="njG-px-9UX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="36" id="SNe-f1-fyk"/>
+                <constraint firstItem="8kW-tR-AsD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="WpT-8I-NLd"/>
+                <constraint firstItem="8kW-tR-AsD" firstAttribute="top" secondItem="QTU-eZ-nZs" secondAttribute="bottom" constant="100" id="kl1-UJ-OAM"/>
+                <constraint firstItem="QTU-eZ-nZs" firstAttribute="top" secondItem="njG-px-9UX" secondAttribute="bottom" constant="100" id="nBN-qf-kFK"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
