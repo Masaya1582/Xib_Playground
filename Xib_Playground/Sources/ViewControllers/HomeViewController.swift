@@ -8,12 +8,15 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Lottie
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var lottieView: LottieAnimationView!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,7 +34,20 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        showLottieAnimation()
         bind(to: viewModel)
+    }
+
+    // 表示するアニメーションの設定
+    private func showLottieAnimation() {
+        let animationView = LottieAnimationView(name: Asset.Assets.animationPc.name)
+        animationView.frame = CGRect(x: 0, y: 0, width: lottieView.frame.size.width, height: lottieView.frame.size.height)
+        animationView.center = self.view.center
+        animationView.loopMode = .loop
+        animationView.contentMode = .scaleAspectFill
+        animationView.animationSpeed = 1
+        view.addSubview(animationView)
+        animationView.play()
     }
 
 }
