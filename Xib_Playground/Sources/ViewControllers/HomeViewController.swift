@@ -8,12 +8,18 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PKHUD
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var successButton: UIButton!
+    @IBOutlet private weak var errorButton: UIButton!
+    @IBOutlet private weak var loadingButton: UIButton!
+    @IBOutlet private weak var textButton: UIButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +45,29 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        successButton.rx.tap.asSignal()
+            .emit(onNext: {
+                HUD.flash(.success, delay: 1.0)
+            })
+            .disposed(by: disposeBag)
+
+        errorButton.rx.tap.asSignal()
+            .emit(onNext: {
+                HUD.flash(.error, delay: 1.0)
+            })
+            .disposed(by: disposeBag)
+
+        loadingButton.rx.tap.asSignal()
+            .emit(onNext: {
+                HUD.flash(.progress, delay: 1.0)
+            })
+            .disposed(by: disposeBag)
+
+        textButton.rx.tap.asSignal()
+            .emit(onNext: {
+                HUD.flash(.label("テキストメッセージを表示するよ"), delay: 1.0)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
