@@ -14,6 +14,8 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var showWebViewButton: UIButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,7 +41,12 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-
+        showWebViewButton.rx.tap.asSignal()
+            .emit(onNext: { 
+                guard let url = NSURL(string: "https://nauru.or.jp/") else { return }
+                UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
