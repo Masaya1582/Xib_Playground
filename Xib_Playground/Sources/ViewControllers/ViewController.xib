@@ -5,11 +5,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="BDP-W8-HiQ" id="XZD-bq-HvV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +19,71 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_apple" translatesAutoresizingMaskIntoConstraints="NO" id="BDP-W8-HiQ">
+                    <rect key="frame" x="76.666666666666686" y="159" width="240" height="240"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="BDP-W8-HiQ" secondAttribute="height" multiplier="1:1" id="1BW-Ud-qzf"/>
+                        <constraint firstAttribute="width" constant="240" id="gli-me-JHH"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="SEg-rB-az8">
+                    <rect key="frame" x="42" y="479" width="309" height="144"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnu-F2-7Kd">
+                            <rect key="frame" x="0.0" y="0.0" width="309" height="42"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="Txd-qA-bac"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="画面全体スクショ"/>
+                            <connections>
+                                <action selector="allScreenAction:" destination="-1" eventType="touchUpInside" id="Zut-gC-J0u"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AU8-OR-3T8">
+                            <rect key="frame" x="0.0" y="102" width="309" height="42"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="VF3-ig-nF3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="画像のみスクショ"/>
+                            <connections>
+                                <action selector="imageOnlyAction:" destination="-1" eventType="touchUpInside" id="MNZ-Vy-vK8"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Lnu-F2-7Kd" secondAttribute="trailing" id="9rq-1s-7RM"/>
+                        <constraint firstItem="Lnu-F2-7Kd" firstAttribute="leading" secondItem="SEg-rB-az8" secondAttribute="leading" id="Ehw-ba-XY2"/>
+                        <constraint firstAttribute="trailing" secondItem="AU8-OR-3T8" secondAttribute="trailing" id="YcJ-ye-mX3"/>
+                        <constraint firstItem="AU8-OR-3T8" firstAttribute="leading" secondItem="SEg-rB-az8" secondAttribute="leading" id="hVy-WE-zFW"/>
+                    </constraints>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="SEg-rB-az8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="1eW-zL-KYa"/>
+                <constraint firstItem="BDP-W8-HiQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="E2H-DF-D7Q"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SEg-rB-az8" secondAttribute="trailing" constant="42" id="dbT-ut-LGa"/>
+                <constraint firstItem="BDP-W8-HiQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="jY2-U2-oJx"/>
+                <constraint firstItem="SEg-rB-az8" firstAttribute="top" secondItem="BDP-W8-HiQ" secondAttribute="bottom" constant="80" id="wsn-8c-vAz"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_apple" width="512" height="512"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
