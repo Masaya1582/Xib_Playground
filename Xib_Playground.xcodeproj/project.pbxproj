@@ -11,8 +11,8 @@
 		4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */; };
 		4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8CA2A4D9B70003F06BF /* Assets.xcassets */; };
 		4011E8CE2A4D9B70003F06BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8CC2A4D9B70003F06BF /* LaunchScreen.storyboard */; };
-		4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8D52A4D9B81003F06BF /* HomeViewController.swift */; };
-		4011E8D82A4D9B81003F06BF /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8D62A4D9B81003F06BF /* HomeViewController.xib */; };
+		4011E8D72A4D9B81003F06BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8D52A4D9B81003F06BF /* ViewController.swift */; };
+		4011E8D82A4D9B81003F06BF /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8D62A4D9B81003F06BF /* ViewController.xib */; };
 		4011E8DD2A4D9D20003F06BF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8DC2A4D9D20003F06BF /* Colors.xcassets */; };
 		4011E8DF2A4D9D31003F06BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8DE2A4D9D31003F06BF /* Localizable.strings */; };
 		4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E52A4D9D67003F06BF /* Assets.swift */; };
@@ -35,8 +35,8 @@
 		4011E8CA2A4D9B70003F06BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4011E8CD2A4D9B70003F06BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4011E8CF2A4D9B70003F06BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4011E8D52A4D9B81003F06BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		4011E8D62A4D9B81003F06BF /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		4011E8D52A4D9B81003F06BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4011E8D62A4D9B81003F06BF /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		4011E8DC2A4D9D20003F06BF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4011E8DE2A4D9D31003F06BF /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4011E8E52A4D9D67003F06BF /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 		4011E8E12A4D9D43003F06BF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4011E8D52A4D9B81003F06BF /* HomeViewController.swift */,
-				4011E8D62A4D9B81003F06BF /* HomeViewController.xib */,
+				4011E8D52A4D9B81003F06BF /* ViewController.swift */,
+				4011E8D62A4D9B81003F06BF /* ViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 				4011E8DD2A4D9D20003F06BF /* Colors.xcassets in Resources */,
 				4011E8F02A4D9DC6003F06BF /* DefaultTableViewCell.xib in Resources */,
 				4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */,
-				4011E8D82A4D9B81003F06BF /* HomeViewController.xib in Resources */,
+				4011E8D82A4D9B81003F06BF /* ViewController.xib in Resources */,
 				4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +357,7 @@
 				4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */,
 				40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */,
 				4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */,
-				4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */,
+				4011E8D72A4D9B81003F06BF /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +500,7 @@
 				DEVELOPMENT_TEAM = YLUL9XKLDZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Xib_Playground/Resources/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "位置情報を利用します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -532,6 +533,7 @@
 				DEVELOPMENT_TEAM = YLUL9XKLDZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Xib_Playground/Resources/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "位置情報を利用します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
