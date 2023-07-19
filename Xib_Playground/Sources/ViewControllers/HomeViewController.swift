@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var decrementLabel: UIButton!
     @IBOutlet private weak var resetLabel: UIButton!
 
-    private let viewModel = CounterViewModel()
+    private let viewModel: CounterViewModelType = CounterViewModel()
     private let disposeBag = DisposeBag()
 
     // MARK: - View Life Cycle
@@ -29,25 +29,21 @@ class HomeViewController: UIViewController {
 
 private extension HomeViewController {
     func bind() {
-        // Bind counter value to label
-        viewModel.outputs.counter
-            .map { String($0) }
-            .bind(to: counterLabel.rx.text)
-            .disposed(by: disposeBag)
-
-        // Bind increase action to increase button
         incrementLabel.rx.tap
             .bind(to: viewModel.inputs.increment)
             .disposed(by: disposeBag)
 
-        // Bind decrease action to decrease button
         decrementLabel.rx.tap
             .bind(to: viewModel.inputs.decrement)
             .disposed(by: disposeBag)
 
-        // Bind reset action to reset button
         resetLabel.rx.tap
             .bind(to: viewModel.inputs.reset)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.counter
+            .map { String($0) }
+            .drive(counterLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }

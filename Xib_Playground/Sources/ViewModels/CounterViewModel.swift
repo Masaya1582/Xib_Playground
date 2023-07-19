@@ -15,7 +15,7 @@ protocol CounterViewModelInputs {
 }
 
 protocol CounterViewModelOutputs {
-    var counter: BehaviorRelay<Int> { get }
+    var counter: Driver<Int> { get }
 }
 
 protocol CounterViewModelType {
@@ -34,33 +34,30 @@ class CounterViewModel: CounterViewModelType, CounterViewModelInputs, CounterVie
     let reset = PublishRelay<Void>()
 
     // Outputs
-    let counter = BehaviorRelay<Int>(value: 0)
+    let counter: Driver<Int>
 
     private let disposeBag = DisposeBag()
 
     init() {
-        // Bind input actions to counter value
+        let counterRelay = BehaviorRelay<Int>(value: 0)
+
         increment
-            .subscribe(onNext: { [weak self] in
-                guard let self = self else { return }
-                let currentValue = self.counter.value
-                self.counter.accept(currentValue + 1)
-            })
+            .withLatestFrom(counterRelay)
+            .map { $0 + 1 }
+            .bind(to: counterRelay)
             .disposed(by: disposeBag)
 
         decrement
-            .subscribe(onNext: { [weak self] in
-                guard let self = self else { return }
-                let currentValue = self.counter.value
-                self.counter.accept(currentValue - 1)
-            })
+            .withLatestFrom(counterRelay)
+            .map { $0 - 1 }
+            .bind(to: counterRelay)
             .disposed(by: disposeBag)
 
         reset
-            .subscribe(onNext: { [weak self] in
-                guard let self = self else { return }
-                self.counter.accept(0)
-            })
+            .map { 0 }
+            .bind(to: counterRelay)
             .disposed(by: disposeBag)
+
+        counter = counterRelay.asDriver()
     }
 }
