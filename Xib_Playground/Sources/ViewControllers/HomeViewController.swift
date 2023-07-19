@@ -18,7 +18,7 @@ final class HomeViewController: UIViewController {
     private let viewModel: Dependency
 
     // MARK: - Initialize
-    init(dependency: Dependency) {
+    init(dependency: Dependency = ()) {
         self.viewModel = dependency
         super.init(nibName: Self.className, bundle: Self.bundle)
     }
