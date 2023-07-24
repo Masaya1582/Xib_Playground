@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="nameLabel" destination="I3t-w7-J27" id="XAD-Nd-Eh7"/>
+                <outlet property="textField" destination="CJA-lG-7NI" id="Zmj-dT-XFy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,35 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CJA-lG-7NI">
+                    <rect key="frame" x="42" y="281" width="309" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="iRX-cA-woK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3t-w7-J27">
+                    <rect key="frame" x="42" y="119" width="309" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="7iX-uw-GHv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I3t-w7-J27" secondAttribute="trailing" constant="42" id="DvP-AH-Sex"/>
+                <constraint firstItem="I3t-w7-J27" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="F7C-kz-haa"/>
+                <constraint firstItem="I3t-w7-J27" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="O7h-1f-YQY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CJA-lG-7NI" secondAttribute="trailing" constant="42" id="bMi-io-K4d"/>
+                <constraint firstItem="CJA-lG-7NI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="eOF-mT-uDw"/>
+                <constraint firstItem="CJA-lG-7NI" firstAttribute="top" secondItem="I3t-w7-J27" secondAttribute="bottom" constant="120" id="lTM-Ds-5MQ"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>

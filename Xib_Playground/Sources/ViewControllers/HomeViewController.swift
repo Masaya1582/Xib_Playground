@@ -14,6 +14,10 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var textField: UITextField!
+
+    private let publishRelay = PublishRelay<String>()
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +43,14 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        textField.rx.text
+            .orEmpty
+            .bind(to: publishRelay)
+            .disposed(by: disposeBag)
+
+        publishRelay
+            .bind(to: nameLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
