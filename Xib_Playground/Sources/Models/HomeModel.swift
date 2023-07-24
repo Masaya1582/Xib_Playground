@@ -1,5 +1,5 @@
 //
-//  DefaultModel.swift
+//  HomeModel.swift
 //  Xib_Playground
 //
 //  Created by MasayaNakakuki on 2023/06/29.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DefaultModel {
+final class HomeModel {
     var name: String
     var age: Int
     var height: Double

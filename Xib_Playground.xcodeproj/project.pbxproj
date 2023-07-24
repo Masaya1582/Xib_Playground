@@ -19,10 +19,10 @@
 		4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E52A4D9D67003F06BF /* Assets.swift */; };
 		4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E72A4D9D6E003F06BF /* LocalizableStrings.swift */; };
 		4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8E92A4D9D73003F06BF /* Fonts.swift */; };
-		4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */; };
-		4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */; };
-		4011E8F02A4D9DC6003F06BF /* DefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */; };
-		4011E8F22A4D9E05003F06BF /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* DefaultModel.swift */; };
+		4011E8EC2A4D9D8D003F06BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8EB2A4D9D8D003F06BF /* HomeViewModel.swift */; };
+		4011E8EF2A4D9DC6003F06BF /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8ED2A4D9DC6003F06BF /* HomeTableViewCell.swift */; };
+		4011E8F02A4D9DC6003F06BF /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */; };
+		4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* HomeModel.swift */; };
 		4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */; };
 		40D3B0132A56B2CB00E9A002 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3B0122A56B2CB00E9A002 /* NSObjectExtension.swift */; };
 		40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3B0152A56B3E400E9A002 /* ViewControllerInjectable.swift */; };
@@ -44,10 +44,10 @@
 		4011E8E52A4D9D67003F06BF /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		4011E8E72A4D9D6E003F06BF /* LocalizableStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableStrings.swift; sourceTree = "<group>"; };
 		4011E8E92A4D9D73003F06BF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
-		4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
-		4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTableViewCell.xib; sourceTree = "<group>"; };
-		4011E8F12A4D9E05003F06BF /* DefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
+		4011E8EB2A4D9D8D003F06BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4011E8ED2A4D9DC6003F06BF /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		4011E8F12A4D9E05003F06BF /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		40D3B0122A56B2CB00E9A002 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		40D3B0152A56B3E400E9A002 /* ViewControllerInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerInjectable.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		4011E8E22A4D9D49003F06BF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				4011E8EB2A4D9D8D003F06BF /* DefaultViewModel.swift */,
+				4011E8EB2A4D9D8D003F06BF /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -179,8 +179,8 @@
 		4011E8E32A4D9D4D003F06BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4011E8ED2A4D9DC6003F06BF /* DefaultTableViewCell.swift */,
-				4011E8EE2A4D9DC6003F06BF /* DefaultTableViewCell.xib */,
+				4011E8ED2A4D9DC6003F06BF /* HomeTableViewCell.swift */,
+				4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */,
 				1E3E3D4F2A67D6D500DB681F /* DesignableView */,
 			);
 			path = Views;
@@ -189,7 +189,7 @@
 		4011E8E42A4D9D51003F06BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4011E8F12A4D9E05003F06BF /* DefaultModel.swift */,
+				4011E8F12A4D9E05003F06BF /* HomeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,7 +282,7 @@
 				4011E8DF2A4D9D31003F06BF /* Localizable.strings in Resources */,
 				4011E8CE2A4D9B70003F06BF /* LaunchScreen.storyboard in Resources */,
 				4011E8DD2A4D9D20003F06BF /* Colors.xcassets in Resources */,
-				4011E8F02A4D9DC6003F06BF /* DefaultTableViewCell.xib in Resources */,
+				4011E8F02A4D9DC6003F06BF /* HomeTableViewCell.xib in Resources */,
 				4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */,
 				4011E8D82A4D9B81003F06BF /* HomeViewController.xib in Resources */,
 				4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */,
@@ -360,14 +360,14 @@
 			files = (
 				4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */,
 				40D3B0132A56B2CB00E9A002 /* NSObjectExtension.swift in Sources */,
-				4011E8F22A4D9E05003F06BF /* DefaultModel.swift in Sources */,
+				4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */,
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
 				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
-				4011E8EF2A4D9DC6003F06BF /* DefaultTableViewCell.swift in Sources */,
+				4011E8EF2A4D9DC6003F06BF /* HomeTableViewCell.swift in Sources */,
 				40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */,
-				4011E8EC2A4D9D8D003F06BF /* DefaultViewModel.swift in Sources */,
+				4011E8EC2A4D9D8D003F06BF /* HomeViewModel.swift in Sources */,
 				4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */,
 				1E3E3D512A67D6E500DB681F /* DesignableButton.swift in Sources */,
 			);
