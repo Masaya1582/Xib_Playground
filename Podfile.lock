@@ -1,4 +1,5 @@
 PODS:
+  - HideShowPasswordTextField (0.3)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -8,6 +9,7 @@ PODS:
   - SwiftGen (6.6.2)
 
 DEPENDENCIES:
+  - HideShowPasswordTextField (from `https://github.com/Guidebook/HideShowPasswordTextField`)
   - RxCocoa
   - RxSwift
   - SwiftGen (~> 6.0)
@@ -19,12 +21,22 @@ SPEC REPOS:
     - RxSwift
     - SwiftGen
 
+EXTERNAL SOURCES:
+  HideShowPasswordTextField:
+    :git: https://github.com/Guidebook/HideShowPasswordTextField
+
+CHECKOUT OPTIONS:
+  HideShowPasswordTextField:
+    :commit: d85212236651d141ba387b65edcff9940ab894f3
+    :git: https://github.com/Guidebook/HideShowPasswordTextField
+
 SPEC CHECKSUMS:
+  HideShowPasswordTextField: 9426177a6b6498a6084e29ad65bba7d1157951b7
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
 
-PODFILE CHECKSUM: 909629b2de5f34edb09d6803c0d20ccc91617e2d
+PODFILE CHECKSUM: 1d64e0dca3b4965b21985583dd89ea7322a6be95
 
 COCOAPODS: 1.12.1
