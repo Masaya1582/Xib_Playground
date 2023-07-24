@@ -11,9 +11,12 @@ import RxCocoa
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var sumLabel: UILabel!
+    @IBOutlet private weak var textField: UITextField!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,17 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        // Bind the text field input to the viewModel's inputs
+        textField.rx.text
+            .orEmpty
+            .bind(to: viewModel.inputs.numberInput)
+            .disposed(by: disposeBag)
+
+        // Bind the sum result to the label
+        viewModel.outputs.sum
+            .map { "Sum: \($0)" }
+            .drive(sumLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 

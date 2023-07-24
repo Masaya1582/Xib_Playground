@@ -4,12 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="sumLabel" destination="1ss-ab-0dV" id="tpz-r4-cjp"/>
+                <outlet property="textField" destination="CbD-uF-w1e" id="bWm-fx-Eqw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +20,49 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="j0M-7j-dgB">
+                    <rect key="frame" x="42" y="159" width="309" height="184"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ss-ab-0dV">
+                            <rect key="frame" x="0.0" y="0.0" width="309" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="hgV-tp-FfC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CbD-uF-w1e">
+                            <rect key="frame" x="0.0" y="142" width="309" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="JH2-jV-bMg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="CbD-uF-w1e" firstAttribute="leading" secondItem="j0M-7j-dgB" secondAttribute="leading" id="pfz-1x-alJ"/>
+                        <constraint firstAttribute="trailing" secondItem="CbD-uF-w1e" secondAttribute="trailing" id="rY2-2M-6LD"/>
+                        <constraint firstItem="1ss-ab-0dV" firstAttribute="leading" secondItem="j0M-7j-dgB" secondAttribute="leading" id="vdd-fs-t7Y"/>
+                        <constraint firstAttribute="trailing" secondItem="1ss-ab-0dV" secondAttribute="trailing" id="zH4-Vh-Gfp"/>
+                    </constraints>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="bakcground_color"/>
+            <constraints>
+                <constraint firstItem="j0M-7j-dgB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="Sh8-ST-43u"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="j0M-7j-dgB" secondAttribute="trailing" constant="42" id="XC6-Mn-aca"/>
+                <constraint firstItem="j0M-7j-dgB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="iXP-H0-0qW"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="bakcground_color">
+            <color red="0.79199999570846558" green="0.9179999828338623" blue="0.9100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
