@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var resultLabel: UILabel!
+    @IBOutlet private weak var startButton: DesignableButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,29 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        startButton.rx.tap
+            .flatMapLatest { [unowned self] in
+                self.fetchDataObservable()
+                    .timeout(.seconds(2), scheduler: MainScheduler.instance)
+            }
+            .subscribe(onNext: { [weak self] data in
+                self?.resultLabel.text = data
+            }, onError: { [weak self] error in
+                self?.resultLabel.text = "Task took too long!"
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func fetchDataObservable() -> Observable<String> {
+        // Simulate a time-consuming task
+        return Observable<String>.create { observer in
+            DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+                observer.onNext("Data is fetched!")
+                observer.onCompleted()
+            }
+
+            return Disposables.create()
+        }
     }
 }
 
