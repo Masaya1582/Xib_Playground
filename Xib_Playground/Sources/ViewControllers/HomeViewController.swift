@@ -14,8 +14,24 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var resultLabel: UILabel!
+    @IBOutlet private weak var retryButton: DesignableButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
+    private var fetchDataObservable: Observable<String> {
+        return Observable.create { observer in
+            // Simulate a network request that sometimes fails
+            let shouldFail = Bool.random()
+            if shouldFail {
+                observer.onError(NSError(domain: "com.app", code: 1, userInfo: nil))
+            } else {
+                observer.onNext("Data is fetched!")
+                observer.onCompleted()
+            }
+            return Disposables.create()
+        }
+    }
 
     // MARK: - Initialize
     init(dependency: Dependency) {
@@ -39,11 +55,15 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        retryButton.rx.tap
+            .flatMapLatest { [unowned self] in
+                self.fetchDataObservable
+                    .retry(when:) { errorObservable in
+                        errorObservable.delay(.seconds(1), scheduler: MainScheduler.instance)
+                    }
+            }
+            .bind(to: resultLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
