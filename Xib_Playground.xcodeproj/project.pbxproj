@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E3E3D512A67D6E500DB681F /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E3D502A67D6E500DB681F /* DesignableButton.swift */; };
+		1E8F062C2A723F530089927A /* PostCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F062A2A723F530089927A /* PostCompleteViewController.swift */; };
+		1E8F062D2A723F530089927A /* PostCompleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8F062B2A723F530089927A /* PostCompleteViewController.xib */; };
 		4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */; };
 		4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */; };
 		4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8CA2A4D9B70003F06BF /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		1E3E3D502A67D6E500DB681F /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		1E8F062A2A723F530089927A /* PostCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCompleteViewController.swift; sourceTree = "<group>"; };
+		1E8F062B2A723F530089927A /* PostCompleteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCompleteViewController.xib; sourceTree = "<group>"; };
 		4011E8BE2A4D9B6F003F06BF /* Xib_Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xib_Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 			children = (
 				4011E8D52A4D9B81003F06BF /* HomeViewController.swift */,
 				4011E8D62A4D9B81003F06BF /* HomeViewController.xib */,
+				1E8F062A2A723F530089927A /* PostCompleteViewController.swift */,
+				1E8F062B2A723F530089927A /* PostCompleteViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 				4011E8DD2A4D9D20003F06BF /* Colors.xcassets in Resources */,
 				4011E8F02A4D9DC6003F06BF /* HomeTableViewCell.xib in Resources */,
 				4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */,
+				1E8F062D2A723F530089927A /* PostCompleteViewController.xib in Resources */,
 				4011E8D82A4D9B81003F06BF /* HomeViewController.xib in Resources */,
 				4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */,
 			);
@@ -361,6 +368,7 @@
 				4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */,
 				40D3B0132A56B2CB00E9A002 /* NSObjectExtension.swift in Sources */,
 				4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */,
+				1E8F062C2A723F530089927A /* PostCompleteViewController.swift in Sources */,
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
