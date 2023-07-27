@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostCompleteViewController" customModule="Xib_Playground" customModuleProvider="target">
+            <connections>
+                <outlet property="backToOdaiButton" destination="r2c-CG-L24" id="mv9-zg-rIR"/>
+                <outlet property="commentLabel" destination="ZM6-w7-dKu" id="Xv1-kW-En8"/>
+                <outlet property="imageView" destination="hvo-v6-iKk" id="Pud-Wi-nE3"/>
+                <outlet property="shareButton" destination="pcw-na-i2L" id="ZLV-Ax-KyI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="写真でひとこと" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbO-Wc-le4">
+                    <rect key="frame" x="48" y="91" width="297" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="s1Z-oM-ArM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hvo-v6-iKk">
+                    <rect key="frame" x="96.666666666666686" y="171" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="hvo-v6-iKk" secondAttribute="height" multiplier="1:1" id="7V1-S4-D1U"/>
+                        <constraint firstAttribute="width" constant="200" id="Sqy-Od-8cB"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZM6-w7-dKu">
+                    <rect key="frame" x="48" y="403" width="297" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="lIT-Rl-QLw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="DdN-uP-SDd">
+                    <rect key="frame" x="48" y="483" width="297" height="128"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-na-i2L" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="297" height="48"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="bb3-CM-7Q3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="共有する"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2c-CG-L24" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="80" width="297" height="48"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="Y6W-GN-Cht"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="お題に戻る"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="DdN-uP-SDd" firstAttribute="top" secondItem="ZM6-w7-dKu" secondAttribute="bottom" constant="32" id="3va-xu-wOj"/>
+                <constraint firstItem="DdN-uP-SDd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="6aZ-qX-hhh"/>
+                <constraint firstItem="ZM6-w7-dKu" firstAttribute="top" secondItem="hvo-v6-iKk" secondAttribute="bottom" constant="32" id="6yy-b7-jmI"/>
+                <constraint firstItem="ZM6-w7-dKu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="Ca7-FC-Ato"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cbO-Wc-le4" secondAttribute="trailing" constant="48" id="JM2-Pj-35C"/>
+                <constraint firstItem="hvo-v6-iKk" firstAttribute="top" secondItem="cbO-Wc-le4" secondAttribute="bottom" constant="48" id="SSa-Zg-BUx"/>
+                <constraint firstItem="cbO-Wc-le4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="b4W-da-7kY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZM6-w7-dKu" secondAttribute="trailing" constant="48" id="hua-De-Zc3"/>
+                <constraint firstItem="cbO-Wc-le4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="ijd-d4-4Ww"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DdN-uP-SDd" secondAttribute="trailing" constant="48" id="jNO-Iu-ems"/>
+                <constraint firstItem="hvo-v6-iKk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="svY-bJ-Aoe"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="21"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="pcw-na-i2L">
+            <size key="intrinsicContentSize" width="98" height="41"/>
+        </designable>
+        <designable name="r2c-CG-L24">
+            <size key="intrinsicContentSize" width="122" height="41"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
