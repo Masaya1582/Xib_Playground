@@ -14,6 +14,8 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var textField: UITextField!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,6 +33,7 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.becomeFirstResponder()
         bind(to: viewModel)
     }
 
