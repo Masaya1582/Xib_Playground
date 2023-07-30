@@ -1,4 +1,5 @@
 PODS:
+  - M13Checkbox (3.4.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -8,23 +9,26 @@ PODS:
   - SwiftGen (6.6.2)
 
 DEPENDENCIES:
+  - M13Checkbox
   - RxCocoa
   - RxSwift
   - SwiftGen (~> 6.0)
 
 SPEC REPOS:
   trunk:
+    - M13Checkbox
     - RxCocoa
     - RxRelay
     - RxSwift
     - SwiftGen
 
 SPEC CHECKSUMS:
+  M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
 
-PODFILE CHECKSUM: 909629b2de5f34edb09d6803c0d20ccc91617e2d
+PODFILE CHECKSUM: 14689d793baa7958f7783d716658f910b9803dd2
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.11.3

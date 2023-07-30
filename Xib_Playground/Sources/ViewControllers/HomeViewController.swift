@@ -8,12 +8,14 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import M13Checkbox
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var checkBox: M13Checkbox!
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,6 +33,8 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkBox.boxType = .square
+        checkBox.stateChangeAnimation = .expand(.stroke)
         bind(to: viewModel)
     }
 
