@@ -15,6 +15,8 @@
 		1E4FCB182A777E12008E2556 /* ShoppingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E4FCB162A777E12008E2556 /* ShoppingViewController.xib */; };
 		1E4FCB1B2A777E1F008E2556 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4FCB192A777E1F008E2556 /* SettingViewController.swift */; };
 		1E4FCB1C2A777E1F008E2556 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E4FCB1A2A777E1F008E2556 /* SettingViewController.xib */; };
+		1E4FCB1F2A778209008E2556 /* HogeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4FCB1D2A778209008E2556 /* HogeViewController.swift */; };
+		1E4FCB202A778209008E2556 /* HogeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E4FCB1E2A778209008E2556 /* HogeViewController.xib */; };
 		4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */; };
 		4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */; };
 		4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8CA2A4D9B70003F06BF /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		1E4FCB162A777E12008E2556 /* ShoppingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingViewController.xib; sourceTree = "<group>"; };
 		1E4FCB192A777E1F008E2556 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E4FCB1A2A777E1F008E2556 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		1E4FCB1D2A778209008E2556 /* HogeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HogeViewController.swift; sourceTree = "<group>"; };
+		1E4FCB1E2A778209008E2556 /* HogeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HogeViewController.xib; sourceTree = "<group>"; };
 		4011E8BE2A4D9B6F003F06BF /* Xib_Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xib_Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				1E4FCB162A777E12008E2556 /* ShoppingViewController.xib */,
 				1E4FCB192A777E1F008E2556 /* SettingViewController.swift */,
 				1E4FCB1A2A777E1F008E2556 /* SettingViewController.xib */,
+				1E4FCB1D2A778209008E2556 /* HogeViewController.swift */,
+				1E4FCB1E2A778209008E2556 /* HogeViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				1E4FCB1C2A777E1F008E2556 /* SettingViewController.xib in Resources */,
 				1E4FCB142A777E01008E2556 /* DriveViewController.xib in Resources */,
 				1E4FCB182A777E12008E2556 /* ShoppingViewController.xib in Resources */,
+				1E4FCB202A778209008E2556 /* HogeViewController.xib in Resources */,
 				4011E8CE2A4D9B70003F06BF /* LaunchScreen.storyboard in Resources */,
 				4011E8DD2A4D9D20003F06BF /* Colors.xcassets in Resources */,
 				4011E8F02A4D9DC6003F06BF /* HomeTableViewCell.xib in Resources */,
@@ -392,6 +399,7 @@
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
+				1E4FCB1F2A778209008E2556 /* HogeViewController.swift in Sources */,
 				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
 				4011E8EF2A4D9DC6003F06BF /* HomeTableViewCell.swift in Sources */,
 				40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */,
