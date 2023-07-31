@@ -30,6 +30,7 @@ internal enum Asset {
     internal static let imgApple = ImageAsset(name: "img_apple")
     internal static let imgFacebook = ImageAsset(name: "img_facebook")
     internal static let imgGoogle = ImageAsset(name: "img_google")
+    internal static let imgHeadBack = ImageAsset(name: "img_head_back")
     internal static let imgBarack = ImageAsset(name: "img_barack")
     internal static let imgBiden = ImageAsset(name: "img_biden")
     internal static let imgBill = ImageAsset(name: "img_bill")
