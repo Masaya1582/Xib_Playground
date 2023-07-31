@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="button" destination="cUp-DD-lmW" id="oCM-tc-fP6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,47 +20,37 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="J43-z5-OCI">
-                    <rect key="frame" x="36.666666666666657" y="328" width="320" height="196"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzq-eE-Rll">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="320" id="QSt-pL-9cN"/>
-                                <constraint firstAttribute="height" constant="48" id="ijf-48-eB6"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4G-CL-oPn" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="148" width="320" height="48"/>
-                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="48" id="CIc-j0-mEf"/>
-                                <constraint firstAttribute="width" constant="320" id="OgP-o6-UVt"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="Tap Me"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <integer key="value" value="24"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                    </subviews>
-                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUp-DD-lmW" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                    <rect key="frame" x="36.666666666666657" y="402" width="320" height="48"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="GHD-gN-0n0"/>
+                        <constraint firstAttribute="height" constant="48" id="Skm-PK-2eP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Show HogeView"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="J43-z5-OCI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="3hU-4S-cku"/>
-                <constraint firstItem="J43-z5-OCI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aTw-HC-RUu"/>
+                <constraint firstItem="cUp-DD-lmW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bGC-Ui-bHF"/>
+                <constraint firstItem="cUp-DD-lmW" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="tNH-l0-Hpz"/>
             </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <designables>
+        <designable name="cUp-DD-lmW">
+            <size key="intrinsicContentSize" width="182" height="41"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

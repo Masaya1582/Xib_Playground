@@ -1,21 +1,20 @@
 //
-//  HomeViewController.swift
+//  ShoppingViewController.swift
 //  Xib_Playground
 //
-//  Created by MasayaNakakuki on 2023/06/29.
+//  Created by 中久木 雅哉(Nakakuki Masaya) on 2023/07/31.
+//  Copyright (c) 2023 ReNKCHANNEL. All rihgts reserved.
 //
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-final class HomeViewController: UIViewController {
+final class ShoppingViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
-    @IBOutlet private weak var button: DesignableButton!
-
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,17 +38,15 @@ final class HomeViewController: UIViewController {
 }
 
 // MARK: - Bindings
-private extension HomeViewController {
+private extension ShoppingViewController {
     func bind(to viewModel: Dependency) {
-        button.rx.tap.asSignal()
-            .emit(onNext: { [weak self] in
-                let viewController = HogeViewController()
-                viewController.hidesBottomBarWhenPushed = true
-                self?.navigationController?.pushViewController(viewController, animated: true)
-            })
-            .disposed(by: disposeBag)
+        //        <#Button#>.rx.tap.asSignal()
+        //            .emit(onNext: { [weak self] in
+        //                <#Actions#>
+        //            })
+        //            .disposed(by: disposeBag)
     }
 }
 
 // MARK: - ViewControllerInjectable
-extension HomeViewController: ViewControllerInjectable {}
+extension ShoppingViewController: ViewControllerInjectable {}
