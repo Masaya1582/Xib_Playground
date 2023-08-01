@@ -14,6 +14,12 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var button: DesignableButton!
+
+    private var timer: Timer!
+    private var changeImageNo = 0
+    private let imageNameArray = ["img_donald", "img_biden", "img_barack"]
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,7 +37,21 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = UIImage(named: imageNameArray[0])
         bind(to: viewModel)
+    }
+
+    private func displayImage() {
+        let imageName = imageNameArray[changeImageNo]
+        imageView.image = UIImage(named: imageName)
+    }
+
+    @objc func updateTimer(_ timer: Timer) {
+        changeImageNo += 1
+        if changeImageNo > 2 {
+            changeImageNo = 0
+        }
+        displayImage()
     }
 
 }
@@ -39,11 +59,20 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        button.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                // 停止状態なら再生できるようにする
+                if self?.timer == nil {
+                    self?.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self?.updateTimer(_:)), userInfo: nil, repeats: true)
+                    self?.button.setTitle("ストップ", for: .normal)
+                } else {
+                    // 再生中なら停止できるようにする
+                    self?.timer.invalidate()
+                    self?.timer = nil
+                    self?.button.setTitle("再生", for: .normal)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
