@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="button" destination="lrD-cF-mYF" id="CEW-Mw-G54"/>
+                <outlet property="imageView" destination="4qO-bw-GFp" id="x4X-zK-uOa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,43 +21,37 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="J43-z5-OCI">
-                    <rect key="frame" x="36.666666666666657" y="328" width="320" height="196"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzq-eE-Rll">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="320" id="QSt-pL-9cN"/>
-                                <constraint firstAttribute="height" constant="48" id="ijf-48-eB6"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4G-CL-oPn" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="148" width="320" height="48"/>
-                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="48" id="CIc-j0-mEf"/>
-                                <constraint firstAttribute="width" constant="320" id="OgP-o6-UVt"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="Tap Me"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <integer key="value" value="24"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                    </subviews>
-                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4qO-bw-GFp">
+                    <rect key="frame" x="24" y="159" width="345" height="345"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4qO-bw-GFp" secondAttribute="height" multiplier="280: 280" id="Bdp-VN-76o"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrD-cF-mYF" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                    <rect key="frame" x="52" y="552" width="289" height="48"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Iyx-np-Og0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Start"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="J43-z5-OCI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="3hU-4S-cku"/>
-                <constraint firstItem="J43-z5-OCI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aTw-HC-RUu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lrD-cF-mYF" secondAttribute="trailing" constant="52" id="400-2m-5Rt"/>
+                <constraint firstItem="4qO-bw-GFp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="NTx-LH-O3B"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4qO-bw-GFp" secondAttribute="trailing" constant="24" id="Rko-Ck-YJ5"/>
+                <constraint firstItem="lrD-cF-mYF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="52" id="UQN-Jb-4CV"/>
+                <constraint firstItem="lrD-cF-mYF" firstAttribute="top" secondItem="4qO-bw-GFp" secondAttribute="bottom" constant="48" id="XXD-ef-6j7"/>
+                <constraint firstItem="4qO-bw-GFp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="rig-YZ-Ov6"/>
             </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
