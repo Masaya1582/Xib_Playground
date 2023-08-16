@@ -14,6 +14,16 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    private let artist1 = Artist(name: "Taylor Swift", songs: [
+        Song(title: "Love Story"),
+        Song(title: "Shake it Off")
+    ])
+
+    private let artist2 = Artist(name: "Ed Sheeran", songs: [
+        Song(title: "Shape of You"),
+        Song(title: "Thinking Out Loud")
+    ])
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +49,17 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        let artists = [artist1, artist2]
+        let allSongs = artists.flatMap { $0.songs }
+
+        for song in allSongs {
+            print("Songs: \(song.title)")
+        }
+        //        <#Button#>.rx.tap.asSignal()
+        //            .emit(onNext: { [weak self] in
+        //                <#Actions#>
+        //            })
+        //            .disposed(by: disposeBag)
     }
 }
 
