@@ -36,11 +36,11 @@ class CounterViewModel: CounterViewModelType, CounterViewModelInputs, CounterVie
     // Outputs
     let counter: Driver<Int>
 
+    // Properties
+    private let counterRelay = BehaviorRelay<Int>(value: 0)
     private let disposeBag = DisposeBag()
 
     init() {
-        let counterRelay = BehaviorRelay<Int>(value: 0)
-
         increment
             .withLatestFrom(counterRelay)
             .map { $0 + 1 }
@@ -58,6 +58,8 @@ class CounterViewModel: CounterViewModelType, CounterViewModelInputs, CounterVie
             .bind(to: counterRelay)
             .disposed(by: disposeBag)
 
-        counter = counterRelay.asDriver()
+        counter = counterRelay
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: 0)
     }
 }
