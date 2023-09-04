@@ -42,12 +42,20 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind(to viewModel: HomeViewModelType) {
-        textField.rx.text.orEmpty
+        textField.rx.controlEvent(.editingChanged)
+            .withLatestFrom(textField.rx.text.orEmpty)
+            .map { input in
+                return input.allSatisfy { $0.isNumber } ? input : ""
+            }
             .bind(to: viewModel.inputs.textFieldInput)
             .disposed(by: disposeBag)
 
         viewModel.outputs.userName
             .drive(nameLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.userName
+            .drive(textField.rx.text)
             .disposed(by: disposeBag)
     }
 }
