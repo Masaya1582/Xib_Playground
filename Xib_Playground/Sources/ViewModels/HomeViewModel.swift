@@ -36,7 +36,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     private let disposeBag = DisposeBag()
 
     init() {
-        textFieldInput
+        textFieldInput.asObservable()
             .bind(to: _userName)
             .disposed(by: disposeBag)
 
