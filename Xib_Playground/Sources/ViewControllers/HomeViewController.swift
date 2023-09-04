@@ -15,7 +15,6 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var nameLabel: UILabel!
 
-    private var previousText: String = ""
     private let viewModel = HomeViewModel()
     private let disposeBag = DisposeBag()
 
@@ -35,11 +34,11 @@ private extension HomeViewController {
             .bind(to: viewModel.inputs.textFieldInput)
             .disposed(by: disposeBag)
 
-        viewModel.outputs.userName
+        viewModel.outputs.squareRootOfTwo
             .drive(nameLabel.rx.text)
             .disposed(by: disposeBag)
 
-        viewModel.outputs.userName
+        viewModel.outputs.squareRootOfTwo
             .drive(textField.rx.text)
             .disposed(by: disposeBag)
     }

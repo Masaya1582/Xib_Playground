@@ -13,7 +13,7 @@ protocol HomeViewModelInputs: AnyObject {
 }
 
 protocol HomeViewModelOutputs: AnyObject {
-    var userName: Driver<String> { get }
+    var squareRootOfTwo: Driver<String> { get }
 }
 
 protocol HomeViewModelType: AnyObject {
@@ -26,28 +26,28 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     // MARK: - Input Sources
     var textFieldInput = PublishRelay<String>()
     // MARK: - Output Sources
-    let userName: Driver<String>
+    let squareRootOfTwo: Driver<String>
 
     // MARK: - Properties
-    private let _userName = BehaviorRelay<String>(value: "")
-    private var previousText = ""
+    private let _squareRootOfTwo = BehaviorRelay<String>(value: "")
+    private var previousInput = ""
     var inputs: HomeViewModelInputs { return self }
     var outputs: HomeViewModelOutputs { return self }
 
     private let disposeBag = DisposeBag()
 
     init() {
-        userName = _userName.asDriver(onErrorJustReturn: "")
+        squareRootOfTwo = _squareRootOfTwo.asDriver(onErrorJustReturn: "")
 
         textFieldInput.asObservable()
             .map { [weak self] newText in
                 guard let self = self else { return "" }
                 if newText.allSatisfy({ $0.isNumber }) {
-                    self.previousText = newText
+                    self.previousInput = newText
                 }
-                return self.previousText
+                return self.previousInput
             }
-            .bind(to: _userName)
+            .bind(to: _squareRootOfTwo)
             .disposed(by: disposeBag)
     }
 
