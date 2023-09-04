@@ -30,17 +30,25 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
 
     // MARK: - Properties
     private let _userName = BehaviorRelay<String>(value: "")
+    private var previousText = ""
     var inputs: HomeViewModelInputs { return self }
     var outputs: HomeViewModelOutputs { return self }
 
     private let disposeBag = DisposeBag()
 
     init() {
+        userName = _userName.asDriver(onErrorJustReturn: "")
+
         textFieldInput.asObservable()
+            .map { [weak self] newText in
+                guard let self = self else { return "" }
+                if newText.allSatisfy({ $0.isNumber }) {
+                    self.previousText = newText
+                }
+                return self.previousText
+            }
             .bind(to: _userName)
             .disposed(by: disposeBag)
-
-        userName = _userName.asDriver(onErrorJustReturn: "")
     }
 
 }

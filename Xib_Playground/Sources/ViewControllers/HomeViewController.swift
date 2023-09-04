@@ -30,17 +30,9 @@ final class HomeViewController: UIViewController {
 // MARK: - Bindings
 private extension HomeViewController {
     func bind() {
-        textField.rx.controlEvent(.editingChanged)
-            .map { [weak self] in self?.textField.text ?? "" } // Get the current text
-            .map { [weak self] newText in
-                guard let self else { return "" }
-                if newText.allSatisfy({ $0.isNumber }) {
-                    // Update the previousText if the input is valid
-                    self.previousText = newText
-                }
-                return self.previousText // Return the previous text
-            }
-            .bind(to: textField.rx.text) // Bind to the text field
+        textField.rx.text
+            .orEmpty
+            .bind(to: viewModel.inputs.textFieldInput)
             .disposed(by: disposeBag)
 
         viewModel.outputs.userName
