@@ -10,44 +10,37 @@ import RxSwift
 import RxCocoa
 
 final class HomeViewController: UIViewController {
-    // MARK: - Dependency
-    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var nameLabel: UILabel!
 
+    private var previousText: String = ""
+    private let viewModel = HomeViewModel()
     private let disposeBag = DisposeBag()
-    private let viewModel: Dependency
-
-    // MARK: - Initialize
-    init(dependency: Dependency) {
-        self.viewModel = dependency
-        super.init(nibName: Self.className, bundle: Self.bundle)
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: viewModel)
+        bind()
     }
 
 }
 
 // MARK: - Bindings
 private extension HomeViewController {
-    func bind(to viewModel: HomeViewModelType) {
+    func bind() {
         textField.rx.controlEvent(.editingChanged)
-            .withLatestFrom(textField.rx.text.orEmpty)
-            .map { input in
-                return input.allSatisfy { $0.isNumber } ? input : ""
+            .map { [weak self] in self?.textField.text ?? "" } // Get the current text
+            .map { [weak self] newText in
+                guard let self else { return "" }
+                if newText.allSatisfy({ $0.isNumber }) {
+                    // Update the previousText if the input is valid
+                    self.previousText = newText
+                }
+                return self.previousText // Return the previous text
             }
-            .bind(to: viewModel.inputs.textFieldInput)
+            .bind(to: textField.rx.text) // Bind to the text field
             .disposed(by: disposeBag)
 
         viewModel.outputs.userName
@@ -59,6 +52,3 @@ private extension HomeViewController {
             .disposed(by: disposeBag)
     }
 }
-
-// MARK: - ViewControllerInjectable
-extension HomeViewController: ViewControllerInjectable {}
