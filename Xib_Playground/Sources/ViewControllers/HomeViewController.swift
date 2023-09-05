@@ -11,9 +11,14 @@ import RxCocoa
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var firstTextField: UITextField!
+    @IBOutlet private weak var secondTextField: UITextField!
+    @IBOutlet private weak var thirdTextField: UITextField!
+    @IBOutlet private weak var sendCodeButton: DesignableButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -34,16 +39,64 @@ final class HomeViewController: UIViewController {
         bind(to: viewModel)
     }
 
+    private func showAlertView() {
+        let alert = UIAlertController(title: "Success", message: "Your PhoneNumber was sent successfully!", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            print("OK Tapped")
+        })
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
 
 // MARK: - Bind
 private extension HomeViewController {
-    func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+    func bind(to viewModel: HomeViewModelType) {
+        // 一番目のTextFieldの入力値をViewModelに流す
+        firstTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.textFieldInput1)
+            .disposed(by: disposeBag)
+
+        // 二番目のTextFieldの入力値をViewModelに流す
+        secondTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.textFieldInput2)
+            .disposed(by: disposeBag)
+
+        // 三番目のTextFieldの入力値をViewModelに流す
+        thirdTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.textFieldInput3)
+            .disposed(by: disposeBag)
+
+        // ViewModelで処理された一番目の入力値をTextFieldに返す
+        viewModel.outputs.phoneNumber1
+            .drive(firstTextField.rx.text)
+            .disposed(by: disposeBag)
+
+        // ViewModelで処理された二番目の入力値をTextFieldに返す
+        viewModel.outputs.phoneNumber2
+            .drive(secondTextField.rx.text)
+            .disposed(by: disposeBag)
+
+        // ViewModelで処理された三番目の入力値をTextFieldに返す
+        viewModel.outputs.phoneNumber3
+            .drive(thirdTextField.rx.text)
+            .disposed(by: disposeBag)
+
+        // ボタンの押せる/押せないを制御する(合わせて色も変える)
+        viewModel.outputs.sendCodeEnabled
+            .drive(onNext: { [weak self] sendCodeEnabled in
+                self?.sendCodeButton.isEnabled = sendCodeEnabled
+                self?.sendCodeButton.backgroundColor = sendCodeEnabled ? .systemIndigo : .lightGray
+            })
+            .disposed(by: disposeBag)
+
+        // ボタンがタップされた時にAlertViewを表示する
+        sendCodeButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                self?.showAlertView()
+            })
+            .disposed(by: disposeBag)
     }
 }
 
