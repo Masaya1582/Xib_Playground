@@ -11,9 +11,14 @@ import RxCocoa
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var firstTextField: UITextField!
+    @IBOutlet private weak var secondTextField: UITextField!
+    @IBOutlet private weak var thirdTextField: UITextField!
+    @IBOutlet private weak var sendCodeButton: DesignableButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -38,12 +43,43 @@ final class HomeViewController: UIViewController {
 
 // MARK: - Bindings
 private extension HomeViewController {
-    func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+    func bind(to viewModel: HomeViewModelType) {
+        firstTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.textFieldInput1)
+            .disposed(by: disposeBag)
+
+        secondTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.textFieldInput2)
+            .disposed(by: disposeBag)
+
+        thirdTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.textFieldInput3)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.phoneNumber1
+            .drive(firstTextField.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.phoneNumber2
+            .drive(secondTextField.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.phoneNumber3
+            .drive(thirdTextField.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.sendCodeEnabled
+            .drive(onNext: { [weak self] sendCodeEnabled in
+                self?.sendCodeButton.isEnabled = sendCodeEnabled
+                self?.sendCodeButton.backgroundColor = sendCodeEnabled ? .systemIndigo : .lightGray
+            })
+            .disposed(by: disposeBag)
+
+        sendCodeButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                // TODO: Send Code Action
+            })
+            .disposed(by: disposeBag)
     }
 }
 

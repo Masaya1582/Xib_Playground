@@ -5,11 +5,16 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="firstTextField" destination="hRr-zG-tB8" id="zrz-mm-B5m"/>
+                <outlet property="secondTextField" destination="34d-Ys-SAm" id="D2N-yJ-cRh"/>
+                <outlet property="sendCodeButton" destination="6MA-hw-6KR" id="GKl-oo-YIq"/>
+                <outlet property="thirdTextField" destination="ImW-dP-6i9" id="f5I-qx-tcj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +22,78 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v5i-Ul-dPD">
+                    <rect key="frame" x="26.666666666666657" y="179" width="340" height="36"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="090" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRr-zG-tB8">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="8BP-D0-HNl"/>
+                                <constraint firstAttribute="width" constant="100" id="UKl-aZ-YyP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1234" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34d-Ys-SAm">
+                            <rect key="frame" x="120" y="0.0" width="100" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="Frk-n7-vu0"/>
+                                <constraint firstAttribute="height" constant="36" id="exI-R6-Kht"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5678" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ImW-dP-6i9">
+                            <rect key="frame" x="240" y="0.0" width="100" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="O54-md-Fr4"/>
+                                <constraint firstAttribute="width" constant="100" id="b6z-Sc-iEn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MA-hw-6KR" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                    <rect key="frame" x="36" y="455" width="321" height="64"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="7RL-Xp-TZg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Send Code"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="systemYellowColor"/>
+            <constraints>
+                <constraint firstItem="6MA-hw-6KR" firstAttribute="top" secondItem="v5i-Ul-dPD" secondAttribute="bottom" constant="240" id="Fm4-co-Mad"/>
+                <constraint firstItem="6MA-hw-6KR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="36" id="VUD-vB-KP5"/>
+                <constraint firstItem="v5i-Ul-dPD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="h8x-ln-2LZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6MA-hw-6KR" secondAttribute="trailing" constant="36" id="oQY-P2-7SI"/>
+                <constraint firstItem="v5i-Ul-dPD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qmg-R1-Evx"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <designables>
+        <designable name="6MA-hw-6KR">
+            <size key="intrinsicContentSize" width="94" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
