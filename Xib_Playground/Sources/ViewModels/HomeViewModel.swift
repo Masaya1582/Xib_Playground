@@ -38,6 +38,9 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     var phoneNumber3: Driver<String>
     var sendCodeEnabled: Driver<Bool>
 
+    var inputs: HomeViewModelInputs { return self }
+    var outputs: HomeViewModelOutputs { return self }
+
     // MARK: - Properties
     private var _textFieldInput1 = BehaviorRelay<String>(value: "")
     private var _textFieldInput2 = BehaviorRelay<String>(value: "")
@@ -51,8 +54,6 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     private static let phoneNumber3MinimumInput = 4
     private static let minimumPhoneNumberCount = 11
     private var _sendCodeEnabled = BehaviorRelay<Bool>(value: false)
-    var inputs: HomeViewModelInputs { return self }
-    var outputs: HomeViewModelOutputs { return self }
 
     private let disposeBag = DisposeBag()
 
@@ -74,7 +75,7 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
         textFieldInput1
             .map { [weak self] textFieldInput1 in
                 guard let self else { return "" }
-                if textFieldInput1.allSatisfy({ $0.isNumber }) && textFieldInput1.count <= HomeViewModel.phoneNumber1MinimumInput  {
+                if textFieldInput1.allSatisfy({ $0.isNumber }) && textFieldInput1.count <= HomeViewModel.phoneNumber1MinimumInput {
                     self.previousText1 = textFieldInput1
                 }
                 return self.previousText1
