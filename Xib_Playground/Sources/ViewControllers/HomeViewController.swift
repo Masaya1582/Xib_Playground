@@ -39,7 +39,7 @@ final class HomeViewController: UIViewController {
         bind(to: viewModel)
     }
 
-    private func showAlerView() {
+    private func showAlertView() {
         let alert = UIAlertController(title: "Success", message: "Your PhoneNumber was sent successfully!", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             print("OK Tapped")
@@ -94,7 +94,7 @@ private extension HomeViewController {
         // ボタンがタップされた時にAlertViewを表示する
         sendCodeButton.rx.tap.asSignal()
             .emit(onNext: { [weak self] in
-                self?.showAlerView()
+                self?.showAlertView()
             })
             .disposed(by: disposeBag)
     }
