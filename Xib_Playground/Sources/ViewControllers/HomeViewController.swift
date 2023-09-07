@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    private let toyBox1 = ["Teddy Bear", "LEGO Bricks"]
+    private let toyBox2 = ["Action Figure", "Doll"]
+    private let toyBox3 = ["Hot Wheels", "Play-Doh"]
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,11 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        let toyChest = [toyBox1, toyBox2, toyBox3].flatMap { toyBox in
+            return toyBox
+        }
+
+        print("Toys: \(toyChest)")
     }
 }
 
