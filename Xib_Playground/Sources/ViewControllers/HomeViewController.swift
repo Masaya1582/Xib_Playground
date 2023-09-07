@@ -49,6 +49,7 @@ private extension HomeViewController {
         combineLatestObservable.subscribe(onNext: {  message in
             print(message)
         })
+        .disposed(by: disposeBag)
 
         iceCreamSubject.accept("Chocolate")
         pizzaSubject.accept("Pepperoni")
