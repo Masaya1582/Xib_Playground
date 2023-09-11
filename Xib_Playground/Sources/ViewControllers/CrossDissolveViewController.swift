@@ -1,20 +1,21 @@
 //
-//  HomeViewController.swift
+//  CrossDissolveViewController.swift
 //  Xib_Playground
 //
-//  Created by MasayaNakakuki on 2023/06/29.
+//  Created by 中久木 雅哉(Nakakuki Masaya) on 2023/09/11.
+//  Copyright (c) 2023 ReNKCHANNEL. All rihgts reserved.
 //
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-final class HomeViewController: UIViewController {
+final class CrossDissolveViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
-    @IBOutlet private weak var showPopupViewButton: DesignableButton!
+    @IBOutlet private weak var closeButton: DesignableButton!
 
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
@@ -23,6 +24,8 @@ final class HomeViewController: UIViewController {
     init(dependency: Dependency) {
         self.viewModel = dependency
         super.init(nibName: Self.className, bundle: Self.bundle)
+        self.modalPresentationStyle = .overFullScreen
+        self.modalTransitionStyle = .crossDissolve
     }
 
     @available(*, unavailable)
@@ -39,16 +42,15 @@ final class HomeViewController: UIViewController {
 }
 
 // MARK: - Bind
-private extension HomeViewController {
+private extension CrossDissolveViewController {
     func bind(to viewModel: Dependency) {
-        showPopupViewButton.rx.tap.asSignal()
+        closeButton.rx.tap.asSignal()
             .emit(onNext: { [weak self] in
-                let controller = CrossDissolveViewController()
-                self?.present(controller, animated: true)
+                self?.dismiss(animated: true)
             })
             .disposed(by: disposeBag)
     }
 }
 
 // MARK: - ViewControllerInjectable
-extension HomeViewController: ViewControllerInjectable {}
+extension CrossDissolveViewController: ViewControllerInjectable {}
