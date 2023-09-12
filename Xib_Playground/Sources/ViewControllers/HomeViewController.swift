@@ -34,16 +34,35 @@ final class HomeViewController: UIViewController {
         bind(to: viewModel)
     }
 
+    private func fetchUserData() -> Observable<String> {
+        return Observable.just("User Data")
+    }
+
+    private func fetchWeatherData() -> Observable<String> {
+        return Observable.just("Weather Data")
+    }
+
+    private func fetchNewsData() -> Observable<String> {
+        return Observable.just("News Data")
+    }
+
+    private func fetchDataFromMultipleSources() -> Observable<String> {
+        return Observable.of(fetchUserData(), fetchWeatherData(), fetchNewsData())
+            .flatMap { dataObservable in
+                return dataObservable
+            }
+    }
+
 }
 
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        fetchDataFromMultipleSources()
+            .subscribe(onNext: { data in
+                print("Received data: \(data)")
+            })
+            .disposed(by: disposeBag)
     }
 }
 
