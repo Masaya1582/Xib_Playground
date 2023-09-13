@@ -5,11 +5,15 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="datePicker" destination="m5g-5l-Vsl" id="igW-nD-Wp3"/>
+                <outlet property="notificationButton" destination="Hv7-d8-YGU" id="PmZ-4q-NsE"/>
+                <outlet property="notificationLabel" destination="QlN-ez-ODS" id="RgH-WP-JZJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +21,56 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlN-ez-ODS">
+                    <rect key="frame" x="48" y="119" width="297" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="hAx-3r-Rjk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="m5g-5l-Vsl">
+                    <rect key="frame" x="0.0" y="267" width="393" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="jLm-CK-iHt"/>
+                    </constraints>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hv7-d8-YGU">
+                    <rect key="frame" x="48" y="547" width="297" height="48"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="73p-6o-8Af"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Set My Notification"/>
+                    <connections>
+                        <action selector="setNotificationAction:" destination="-1" eventType="touchUpInside" id="7nz-DQ-6Vl"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Hv7-d8-YGU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="348-lL-shl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QlN-ez-ODS" secondAttribute="trailing" constant="48" id="4tW-Uk-Nfq"/>
+                <constraint firstItem="QlN-ez-ODS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="652-59-rqz"/>
+                <constraint firstItem="Hv7-d8-YGU" firstAttribute="top" secondItem="m5g-5l-Vsl" secondAttribute="bottom" constant="120" id="KdN-7P-xW7"/>
+                <constraint firstItem="m5g-5l-Vsl" firstAttribute="top" secondItem="QlN-ez-ODS" secondAttribute="bottom" constant="100" id="PLT-Z4-62U"/>
+                <constraint firstItem="m5g-5l-Vsl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RjW-5o-XS2"/>
+                <constraint firstItem="QlN-ez-ODS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="fwp-KB-JNL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hv7-d8-YGU" secondAttribute="trailing" constant="48" id="oAY-CZ-v8W"/>
+                <constraint firstItem="QlN-ez-ODS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="qsg-XD-fC9"/>
+                <constraint firstAttribute="trailing" secondItem="m5g-5l-Vsl" secondAttribute="trailing" id="uo6-fv-XNl"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
