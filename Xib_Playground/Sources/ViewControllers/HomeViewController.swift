@@ -9,27 +9,23 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeViewController: UIViewController {
-    // MARK: - Dependency
-    typealias Dependency = Void
-
+final class HomeViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet private weak var showSwiftUIViewButton: UIButton!
 
     private let disposeBag = DisposeBag()
-    // private let viewMoel = <#ViewModel名#>
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: ())
+        bind()
     }
 
 }
 
 // MARK: - Bindings
 private extension HomeViewController {
-    func bind(to dependency: Dependency) {
+    func bind() {
         showSwiftUIViewButton.rx.tap.asSignal()
             .emit(onNext: { [weak self] in
                 let view = PopupSwiftUIView(

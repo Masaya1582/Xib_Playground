@@ -66,7 +66,7 @@ struct PopupSwiftUIView: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         })
-        .background(Asset.Colors.mainColor.swiftUIColor)
+        .background(.orange)
         .cornerRadius(80)
         .frame(height: 56)
     }
