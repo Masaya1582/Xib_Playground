@@ -41,7 +41,7 @@ private extension HomeViewController {
             .bind(to: viewModel.inputs.reset)
             .disposed(by: disposeBag)
 
-        viewModel.outputs.counter
+        viewModel.outputs.counterValue
             .map { String($0) }
             .drive(counterLabel.rx.text)
             .disposed(by: disposeBag)

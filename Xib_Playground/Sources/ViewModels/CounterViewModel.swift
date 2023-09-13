@@ -15,7 +15,7 @@ protocol CounterViewModelInputs {
 }
 
 protocol CounterViewModelOutputs {
-    var counter: Driver<Int> { get }
+    var counterValue: Driver<Int> { get }
 }
 
 protocol CounterViewModelType {
@@ -24,7 +24,6 @@ protocol CounterViewModelType {
 }
 
 class CounterViewModel: CounterViewModelType, CounterViewModelInputs, CounterViewModelOutputs {
-
     var inputs: CounterViewModelInputs { return self }
     var outputs: CounterViewModelOutputs { return self }
 
@@ -34,31 +33,32 @@ class CounterViewModel: CounterViewModelType, CounterViewModelInputs, CounterVie
     let reset = PublishRelay<Void>()
 
     // Outputs
-    let counter: Driver<Int>
+    let counterValue: Driver<Int>
 
     // Properties
-    private let counterRelay = BehaviorRelay<Int>(value: 0)
+    private let _counterValue = BehaviorRelay<Int>(value: 0)
     private let disposeBag = DisposeBag()
 
     init() {
         increment
-            .withLatestFrom(counterRelay)
+            .withLatestFrom(_counterValue)
             .map { $0 + 1 }
-            .bind(to: counterRelay)
+            .bind(to: _counterValue)
             .disposed(by: disposeBag)
 
         decrement
-            .withLatestFrom(counterRelay)
+            .withLatestFrom(_counterValue)
             .map { $0 - 1 }
-            .bind(to: counterRelay)
+            .bind(to: _counterValue)
             .disposed(by: disposeBag)
 
         reset
             .map { 0 }
-            .bind(to: counterRelay)
+            .bind(to: _counterValue)
             .disposed(by: disposeBag)
 
-        counter = counterRelay
+        counterValue = _counterValue
+            .asObservable()
             .distinctUntilChanged()
             .asDriver(onErrorJustReturn: 0)
     }
