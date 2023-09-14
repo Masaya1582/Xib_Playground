@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1E3E3D512A67D6E500DB681F /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E3D502A67D6E500DB681F /* DesignableButton.swift */; };
 		1E514EDE2AAEDF2400C9CB9A /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E514EDD2AAEDF2400C9CB9A /* DesignableView.swift */; };
+		1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */; };
+		1EC0E5322AB2A968003DA972 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */; };
+		1EC0E5332AB2A968003DA972 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */; };
 		4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */; };
 		4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */; };
 		4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8CA2A4D9B70003F06BF /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		1E3E3D502A67D6E500DB681F /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		1E514EDD2AAEDF2400C9CB9A /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
+		1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
 		4011E8BE2A4D9B6F003F06BF /* Xib_Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xib_Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,13 +85,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		1E3E3D4F2A67D6D500DB681F /* DesignableView */ = {
+		1E3E3D4F2A67D6D500DB681F /* DesignableComponents */ = {
 			isa = PBXGroup;
 			children = (
 				1E3E3D502A67D6E500DB681F /* DesignableButton.swift */,
 				1E514EDD2AAEDF2400C9CB9A /* DesignableView.swift */,
+				1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */,
+				1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */,
+				1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */,
 			);
-			path = DesignableView;
+			path = DesignableComponents;
 			sourceTree = "<group>";
 		};
 		4011E8B52A4D9B6F003F06BF = {
@@ -184,7 +193,7 @@
 			children = (
 				4011E8ED2A4D9DC6003F06BF /* HomeTableViewCell.swift */,
 				4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */,
-				1E3E3D4F2A67D6D500DB681F /* DesignableView */,
+				1E3E3D4F2A67D6D500DB681F /* DesignableComponents */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,15 +370,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EC0E5332AB2A968003DA972 /* DesignableImageView.swift in Sources */,
 				4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */,
 				40D3B0132A56B2CB00E9A002 /* NSObjectExtension.swift in Sources */,
 				4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */,
+				1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */,
 				1E514EDE2AAEDF2400C9CB9A /* DesignableView.swift in Sources */,
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
 				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
 				4011E8EF2A4D9DC6003F06BF /* HomeTableViewCell.swift in Sources */,
+				1EC0E5322AB2A968003DA972 /* DesignableLabel.swift in Sources */,
 				40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */,
 				4011E8EC2A4D9D8D003F06BF /* HomeViewModel.swift in Sources */,
 				4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */,
