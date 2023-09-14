@@ -22,13 +22,12 @@ protocol HomeViewModelType: AnyObject {
 }
 
 class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
-
-    // MARK: - Input Sources
-    // MARK: - Output Sources
-
     // MARK: - Properties
     var inputs: HomeViewModelInputs { return self }
     var outputs: HomeViewModelOutputs { return self }
+
+    // MARK: - Input Sources
+    // MARK: - Output Sources
 
     private let disposeBag = DisposeBag()
 
