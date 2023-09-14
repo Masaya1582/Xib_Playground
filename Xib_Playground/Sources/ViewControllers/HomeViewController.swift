@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    private let fizzbuzz = 15
+    private let fizz = 3
+    private let buzz = 5
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,7 +34,17 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        for number in 1...100 {
+            print(getFizzBuzz(number))
+        }
         bind(to: viewModel)
+    }
+
+    private func getFizzBuzz(_ i: Int) -> String {
+        if i.isMultiple(of: fizzbuzz) { return "FizzBuzz" }
+        if i.isMultiple(of: fizz) { return "Fizz" }
+        if i.isMultiple(of: buzz) { return "Buzz" }
+        return String(i)
     }
 
 }
