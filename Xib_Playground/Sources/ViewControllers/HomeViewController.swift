@@ -8,12 +8,17 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import UserNotifications
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var statusLabel: UILabel!
+    @IBOutlet private weak var statusButton: DesignableButton!
+
+    private let center = UNUserNotificationCenter.current()
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,7 +36,23 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestAuthorization()
         bind(to: viewModel)
+    }
+
+    private func requestAuthorization() {
+        // 通知を表示するための承認がまだない場合は、承認をリクエストする
+        center.requestAuthorization(options: [.alert, .sound]) { granted, error in
+            if let error = error {
+                print("Error requesting authorization: \(error.localizedDescription)")
+            } else if granted {
+                // Authorizationが許可された場合
+                print("Authorization granted")
+            } else {
+                // Authorizationが拒否された場合
+                print("Authorization denied")
+            }
+        }
     }
 
 }
@@ -39,11 +60,29 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        statusButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.center.getNotificationSettings { settings in
+                    DispatchQueue.main.async {
+                        switch settings.authorizationStatus {
+                        case .authorized:
+                            self.statusLabel.text = "Status: Authorized"
+                        case .denied:
+                            self.statusLabel.text = "Status: Denied"
+                        case .notDetermined:
+                            self.statusLabel.text = "Status: NotDetermined"
+                        case .provisional:
+                            self.statusLabel.text = "Status: Provisional"
+                        case .ephemeral:
+                            self.statusLabel.text = "Status: Ephemeral"
+                        @unknown default:
+                            fatalError("Unknown authorization status")
+                        }
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
