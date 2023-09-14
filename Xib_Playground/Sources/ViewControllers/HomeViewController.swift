@@ -20,7 +20,6 @@ class HomeViewController: UIViewController {
 
     private let locationManager = CLLocationManager()
     private let disposeBag = DisposeBag()
-    // private let viewMoel = <#ViewModel名#>
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
