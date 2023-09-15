@@ -5,11 +5,15 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="LCG-Wz-mVI" id="V8p-6L-hzC"/>
+                <outlet property="showPopupButton" destination="7rm-qx-QhX" id="1uE-CF-aNI"/>
+                <outlet property="titleLabel" destination="zsm-vC-1wY" id="RER-Z5-ZCv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +21,54 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ボタンを押せ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsm-vC-1wY">
+                    <rect key="frame" x="42" y="107" width="309" height="28.666666666666657"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LCG-Wz-mVI">
+                    <rect key="frame" x="56.666666666666657" y="215.66666666666663" width="280" height="280"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="LCG-Wz-mVI" secondAttribute="height" multiplier="1:1" id="IpL-H2-Rd4"/>
+                        <constraint firstAttribute="width" constant="280" id="vtC-7O-EaD"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rm-qx-QhX" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                    <rect key="frame" x="48" y="575.66666666666663" width="297" height="56"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="Mpd-uc-RWQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Show Popup"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="27"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="zsm-vC-1wY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="4oI-xo-jiA"/>
+                <constraint firstItem="7rm-qx-QhX" firstAttribute="top" secondItem="LCG-Wz-mVI" secondAttribute="bottom" constant="80" id="5qn-Ev-l7s"/>
+                <constraint firstItem="7rm-qx-QhX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="HbY-aM-fke"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zsm-vC-1wY" secondAttribute="trailing" constant="42" id="UsR-8O-r4T"/>
+                <constraint firstItem="LCG-Wz-mVI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="f5t-cx-9ic"/>
+                <constraint firstItem="zsm-vC-1wY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="i1P-J0-Sd8"/>
+                <constraint firstItem="LCG-Wz-mVI" firstAttribute="top" secondItem="zsm-vC-1wY" secondAttribute="bottom" constant="80" id="lXk-sM-tBL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7rm-qx-QhX" secondAttribute="trailing" constant="48" id="tzx-kL-LQl"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

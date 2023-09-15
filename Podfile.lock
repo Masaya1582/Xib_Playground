@@ -1,4 +1,7 @@
 PODS:
+  - DynamicBlurView (4.1.0)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -8,23 +11,28 @@ PODS:
   - SwiftGen (6.6.2)
 
 DEPENDENCIES:
+  - PopupDialog (~> 1.1)
   - RxCocoa
   - RxSwift
   - SwiftGen (~> 6.0)
 
 SPEC REPOS:
   trunk:
+    - DynamicBlurView
+    - PopupDialog
     - RxCocoa
     - RxRelay
     - RxSwift
     - SwiftGen
 
 SPEC CHECKSUMS:
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
 
-PODFILE CHECKSUM: 909629b2de5f34edb09d6803c0d20ccc91617e2d
+PODFILE CHECKSUM: ef23c779d2b015d69d30c32e9af2a3c0be3a91d5
 
 COCOAPODS: 1.12.1
