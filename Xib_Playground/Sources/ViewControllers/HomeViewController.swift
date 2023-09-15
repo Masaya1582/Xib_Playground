@@ -69,6 +69,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         cell.configure(fruitsArray[indexPath.row])
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
 
