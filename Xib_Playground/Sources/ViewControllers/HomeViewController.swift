@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var tableView: UITableView!
+
+    private let fruitsArray: [String] = ["りんご", "みかん", "バナナ", "ぶどう", "メロン", "スイカ", "マンゴー"]
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,7 +34,14 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         bind(to: viewModel)
+    }
+
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
     }
 
 }
@@ -45,6 +55,28 @@ private extension HomeViewController {
 //            })
 //            .disposed(by: disposeBag)
     }
+}
+
+// MARK: - TableView
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fruitsArray.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(fruitsArray[indexPath.row])
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.view.frame.height / 10
+    }
+
 }
 
 // MARK: - ViewControllerInjectable
