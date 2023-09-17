@@ -14,6 +14,7 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    private let bagOfCandies: [String?] = ["Sweet", nil, "Sour", nil, "Chewy"]
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +40,10 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        let yummyCandies = bagOfCandies.compactMap { candy in
+            return candy
+        }
+        print("Yummy Candies: \(yummyCandies)")
     }
 }
 
