@@ -22,7 +22,7 @@ protocol HomeViewModelType: AnyObject {
     var outputs: HomeViewModelOutputs { get }
 }
 
-class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
+final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
     // MARK: - Properties
     var inputs: HomeViewModelInputs { return self }
     var outputs: HomeViewModelOutputs { return self }
