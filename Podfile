@@ -6,6 +6,7 @@ target 'Xib_Playground' do
   use_frameworks!
 
   # Pods for Xib_Playground
+    pod 'Action'
     pod 'SwiftGen', '~> 6.0'
     pod 'RxSwift'
     pod 'RxCocoa'
