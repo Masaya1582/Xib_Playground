@@ -5,11 +5,15 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="5Gh-fv-oOn" id="RLA-te-DrA"/>
+                <outlet property="openAlbumButton" destination="0W1-dn-Ktj" id="CGG-oV-U8s"/>
+                <outlet property="openCameraButton" destination="Pyy-Ij-b9V" id="nub-hW-FhZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +21,76 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Gh-fv-oOn">
+                    <rect key="frame" x="56.666666666666657" y="179" width="280" height="280"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5Gh-fv-oOn" secondAttribute="height" multiplier="1:1" id="Ec8-PD-o3S"/>
+                        <constraint firstAttribute="width" constant="280" id="Mdn-I0-ENH"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="i1S-J0-sch">
+                    <rect key="frame" x="42" y="507" width="309" height="180"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0W1-dn-Ktj" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="309" height="60"/>
+                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="TbS-7h-JGr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Open Album"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="27"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyy-Ij-b9V" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="120" width="309" height="60"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="xIw-td-ZEd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Open Camera"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="27"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="5Gh-fv-oOn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="FCl-62-tDR"/>
+                <constraint firstItem="i1S-J0-sch" firstAttribute="top" secondItem="5Gh-fv-oOn" secondAttribute="bottom" constant="48" id="HI5-hG-nAl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i1S-J0-sch" secondAttribute="trailing" constant="42" id="Yy5-Fi-ovt"/>
+                <constraint firstItem="5Gh-fv-oOn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cS0-i3-yPw"/>
+                <constraint firstItem="i1S-J0-sch" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="d6d-zE-PTn"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <designables>
+        <designable name="0W1-dn-Ktj">
+            <size key="intrinsicContentSize" width="139" height="41"/>
+        </designable>
+        <designable name="Pyy-Ij-b9V">
+            <size key="intrinsicContentSize" width="154" height="41"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -10,5 +10,6 @@ target 'Xib_Playground' do
     pod 'SwiftGen', '~> 6.0'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'CLImageEditor/AllTools'
 
 end
