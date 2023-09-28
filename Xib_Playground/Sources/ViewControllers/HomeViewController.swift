@@ -14,6 +14,10 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var tableView: UITableView!
+
+    private let imageNameArray: [String] = ["img_biden", "img_donald", "img_barack", "img_george_w", "img_bill", "img_george_hw", "img_ronald", "img_jimmy", "img_gerald"]
+    private let presidentNameArray: [String] = ["Joe Biden", "Donald Trump", "Barack Obama ", "George W. Bush", "Bill Clinton ", "George H.W. Bush", "Ronald Reagan", "Jimmy Carter", "Gerald Ford"]
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,20 +35,38 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: viewModel)
+        setupTableView()
+    }
+
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
     }
 
 }
 
-// MARK: - Bind
-private extension HomeViewController {
-    func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+// TableView
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    // セクション内のRowの数
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return imageNameArray.count
     }
+
+    // セルに表示させたいものの設定
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(imageName: imageNameArray[indexPath.row], name: presidentNameArray[indexPath.row])
+        return cell
+    }
+
+    // 高さ
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.view.frame.height / 8
+    }
+
 }
 
 // MARK: - ViewControllerInjectable

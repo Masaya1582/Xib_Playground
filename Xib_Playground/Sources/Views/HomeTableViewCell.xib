@@ -16,8 +16,37 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="502" height="184"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pxc-pV-bdf">
+                        <rect key="frame" x="20" y="42" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="FVU-lm-Ah8"/>
+                            <constraint firstAttribute="height" constant="100" id="qDx-dK-Jca"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwj-BZ-7eo">
+                        <rect key="frame" x="132" y="80" width="350" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="c0N-PR-N86"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pxc-pV-bdf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="31J-xM-OaG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="pwj-BZ-7eo" secondAttribute="trailing" id="3gv-r0-2Pc"/>
+                    <constraint firstItem="pwj-BZ-7eo" firstAttribute="leading" secondItem="Pxc-pV-bdf" secondAttribute="trailing" constant="12" id="9EO-RT-WIb"/>
+                    <constraint firstItem="Pxc-pV-bdf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="d3L-E0-0Pe"/>
+                    <constraint firstItem="pwj-BZ-7eo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lDt-lo-n47"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="nameLabel" destination="pwj-BZ-7eo" id="gsR-uA-W6w"/>
+                <outlet property="presidentImageView" destination="Pxc-pV-bdf" id="ayW-nl-hhr"/>
+            </connections>
             <point key="canvasLocation" x="268.70229007633588" y="38.028169014084511"/>
         </tableViewCell>
     </objects>
