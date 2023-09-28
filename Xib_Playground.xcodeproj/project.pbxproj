@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E3E3D512A67D6E500DB681F /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E3D502A67D6E500DB681F /* DesignableButton.swift */; };
+		1E4470D72AC503EE00FFAD8C /* SampleSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4470D62AC503EE00FFAD8C /* SampleSwiftUIView.swift */; };
+		1E4470D92AC5045900FFAD8C /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4470D82AC5045900FFAD8C /* HostingController.swift */; };
 		1E514EDE2AAEDF2400C9CB9A /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E514EDD2AAEDF2400C9CB9A /* DesignableView.swift */; };
 		1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */; };
 		1EC0E5322AB2A968003DA972 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		1E3E3D502A67D6E500DB681F /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		1E4470D62AC503EE00FFAD8C /* SampleSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSwiftUIView.swift; sourceTree = "<group>"; };
+		1E4470D82AC5045900FFAD8C /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		1E514EDD2AAEDF2400C9CB9A /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 				4011E8ED2A4D9DC6003F06BF /* HomeTableViewCell.swift */,
 				4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */,
 				1E3E3D4F2A67D6D500DB681F /* DesignableComponents */,
+				1E4470D62AC503EE00FFAD8C /* SampleSwiftUIView.swift */,
+				1E4470D82AC5045900FFAD8C /* HostingController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +382,7 @@
 				4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */,
 				1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */,
 				1E514EDE2AAEDF2400C9CB9A /* DesignableView.swift in Sources */,
+				1E4470D92AC5045900FFAD8C /* HostingController.swift in Sources */,
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
@@ -384,6 +391,7 @@
 				1EC0E5322AB2A968003DA972 /* DesignableLabel.swift in Sources */,
 				40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */,
 				4011E8EC2A4D9D8D003F06BF /* HomeViewModel.swift in Sources */,
+				1E4470D72AC503EE00FFAD8C /* SampleSwiftUIView.swift in Sources */,
 				4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */,
 				1E3E3D512A67D6E500DB681F /* DesignableButton.swift in Sources */,
 			);
