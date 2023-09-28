@@ -8,12 +8,15 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
+    // MARK: - Properties
 
+    // MARK: - Initialize
     override func prepareForReuse() {
         super.prepareForReuse()
 
     }
 
+    // MARK: - Setup
     func configure() {
 
     }

@@ -36,7 +36,7 @@ final class HomeViewController: UIViewController {
 
 }
 
-// MARK: - Bind
+// MARK: - Binding
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
 //        <#Button#>.rx.tap.asSignal()

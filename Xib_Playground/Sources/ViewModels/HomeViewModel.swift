@@ -32,6 +32,7 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
 
     private let disposeBag = DisposeBag()
 
+    // MARK: - Initialize
     init() {
         
     }
