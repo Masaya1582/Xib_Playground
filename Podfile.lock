@@ -2,6 +2,24 @@ PODS:
   - Action (5.0.0):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
+  - CLImageEditor/AllTools (0.2.4):
+    - CLImageEditor/Core
+    - CLImageEditor/EmoticonTool
+    - CLImageEditor/ResizeTool
+    - CLImageEditor/SplashTool
+    - CLImageEditor/StickerTool
+    - CLImageEditor/TextTool
+  - CLImageEditor/Core (0.2.4)
+  - CLImageEditor/EmoticonTool (0.2.4):
+    - CLImageEditor/Core
+  - CLImageEditor/ResizeTool (0.2.4):
+    - CLImageEditor/Core
+  - CLImageEditor/SplashTool (0.2.4):
+    - CLImageEditor/Core
+  - CLImageEditor/StickerTool (0.2.4):
+    - CLImageEditor/Core
+  - CLImageEditor/TextTool (0.2.4):
+    - CLImageEditor/Core
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -12,6 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - Action
+  - CLImageEditor/AllTools
   - RxCocoa
   - RxSwift
   - SwiftGen (~> 6.0)
@@ -19,6 +38,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Action
+    - CLImageEditor
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -26,11 +46,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Action: 47f1825511907b4fcd79dd7a7db9526c20f78018
+  CLImageEditor: dc3e5358f641368da3a76fc1c744a4c2ceb270ad
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
 
-PODFILE CHECKSUM: 09b21854cb9a732d5424e0e7a6088fab4af0e2ff
+PODFILE CHECKSUM: cee8b35cbaaf29bdd385de934d18fe23913fa521
 
 COCOAPODS: 1.12.1
