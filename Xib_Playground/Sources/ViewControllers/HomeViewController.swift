@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var nameTextField: UITextField!
+    @IBOutlet private weak var showNextViewButton: DesignableButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,15 @@ final class HomeViewController: UIViewController {
 // MARK: - Binding
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        showNextViewButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                let nextViewController = NextViewController(nibName: "NextViewController", bundle: nil)
+                nextViewController.modalPresentationStyle = .fullScreen
+                guard let userName = self?.nameTextField.text else { return }
+                nextViewController.userName = userName
+                self?.present(nextViewController, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
