@@ -10,11 +10,9 @@ import RxCocoa
 import Action
 
 protocol HomeViewModelInputs: AnyObject {
-
 }
 
 protocol HomeViewModelOutputs: AnyObject {
-
 }
 
 protocol HomeViewModelType: AnyObject {
@@ -34,7 +32,6 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
 
     // MARK: - Initialize
     init() {
-        
     }
 
 }

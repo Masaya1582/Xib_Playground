@@ -13,12 +13,10 @@ class HomeTableViewCell: UITableViewCell {
     // MARK: - Initialize
     override func prepareForReuse() {
         super.prepareForReuse()
-
     }
 
     // MARK: - Setup
     func configure() {
-
     }
     
 }
