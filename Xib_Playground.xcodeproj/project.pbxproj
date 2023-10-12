@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1E3E3D512A67D6E500DB681F /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E3D502A67D6E500DB681F /* DesignableButton.swift */; };
 		1E514EDE2AAEDF2400C9CB9A /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E514EDD2AAEDF2400C9CB9A /* DesignableView.swift */; };
+		1E62EE682AD7AABB0031CB1B /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E62EE662AD7AABB0031CB1B /* HomeCollectionViewCell.swift */; };
+		1E62EE692AD7AABB0031CB1B /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E62EE672AD7AABB0031CB1B /* HomeCollectionViewCell.xib */; };
 		1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */; };
 		1EC0E5322AB2A968003DA972 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */; };
 		1EC0E5332AB2A968003DA972 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		1E3E3D502A67D6E500DB681F /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		1E514EDD2AAEDF2400C9CB9A /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		1E62EE662AD7AABB0031CB1B /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		1E62EE672AD7AABB0031CB1B /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
 		1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,24 @@
 				1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */,
 			);
 			path = DesignableComponents;
+			sourceTree = "<group>";
+		};
+		1E62EE6A2AD7AAEE0031CB1B /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				4011E8ED2A4D9DC6003F06BF /* HomeTableViewCell.swift */,
+				4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		1E62EE6B2AD7AAF70031CB1B /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				1E62EE662AD7AABB0031CB1B /* HomeCollectionViewCell.swift */,
+				1E62EE672AD7AABB0031CB1B /* HomeCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		4011E8B52A4D9B6F003F06BF = {
@@ -191,8 +213,8 @@
 		4011E8E32A4D9D4D003F06BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4011E8ED2A4D9DC6003F06BF /* HomeTableViewCell.swift */,
-				4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */,
+				1E62EE6A2AD7AAEE0031CB1B /* TableViewCells */,
+				1E62EE6B2AD7AAF70031CB1B /* CollectionViewCells */,
 				1E3E3D4F2A67D6D500DB681F /* DesignableComponents */,
 			);
 			path = Views;
@@ -294,6 +316,7 @@
 				4011E8DF2A4D9D31003F06BF /* Localizable.strings in Resources */,
 				4011E8CE2A4D9B70003F06BF /* LaunchScreen.storyboard in Resources */,
 				4011E8DD2A4D9D20003F06BF /* Colors.xcassets in Resources */,
+				1E62EE692AD7AABB0031CB1B /* HomeCollectionViewCell.xib in Resources */,
 				4011E8F02A4D9DC6003F06BF /* HomeTableViewCell.xib in Resources */,
 				4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */,
 				4011E8D82A4D9B81003F06BF /* HomeViewController.xib in Resources */,
@@ -380,6 +403,7 @@
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
 				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
+				1E62EE682AD7AABB0031CB1B /* HomeCollectionViewCell.swift in Sources */,
 				4011E8EF2A4D9DC6003F06BF /* HomeTableViewCell.swift in Sources */,
 				1EC0E5322AB2A968003DA972 /* DesignableLabel.swift in Sources */,
 				40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */,
