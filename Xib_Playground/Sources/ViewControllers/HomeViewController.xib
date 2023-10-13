@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="searchResultLabel" destination="DS6-6l-5Z5" id="FBZ-fb-kPl"/>
+                <outlet property="searchTextField" destination="DI5-qX-raC" id="0VC-dq-Dwe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,35 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS6-6l-5Z5">
+                    <rect key="frame" x="48" y="179" width="297" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="2mW-1G-Lx1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DI5-qX-raC">
+                    <rect key="frame" x="48" y="331" width="297" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="wls-fE-eLe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DS6-6l-5Z5" secondAttribute="trailing" constant="48" id="BgM-1N-va1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DI5-qX-raC" secondAttribute="trailing" constant="48" id="Hrx-3Y-onR"/>
+                <constraint firstItem="DS6-6l-5Z5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="L7g-if-r9c"/>
+                <constraint firstItem="DS6-6l-5Z5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="LNF-T5-2ch"/>
+                <constraint firstItem="DI5-qX-raC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="iSS-ZO-qVm"/>
+                <constraint firstItem="DI5-qX-raC" firstAttribute="top" secondItem="DS6-6l-5Z5" secondAttribute="bottom" constant="120" id="yKP-hq-q7i"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
