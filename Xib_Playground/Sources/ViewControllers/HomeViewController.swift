@@ -11,9 +11,12 @@ import RxCocoa
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModel
 
     // MARK: - Properties
+    @IBOutlet private weak var searchResultLabel: UILabel!
+    @IBOutlet private weak var searchTextField: UITextField!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -38,12 +41,20 @@ final class HomeViewController: UIViewController {
 
 // MARK: - Binding
 private extension HomeViewController {
-    func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+    func bind(to viewModel: HomeViewModel) {
+        searchTextField.rx.text.orEmpty
+            .throttle(.milliseconds(1000), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .flatMapLatest { query in
+                return viewModel.searchData(for: query)
+                    .asDriver(onErrorJustReturn: "Error Searching")
+            }
+            .subscribe(onNext: { [weak self] searchResults in
+                self?.searchResultLabel.text = searchResults
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

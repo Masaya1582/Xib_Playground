@@ -9,29 +9,26 @@ import RxSwift
 import RxCocoa
 import Action
 
-protocol HomeViewModelInputs: AnyObject {
-}
-
-protocol HomeViewModelOutputs: AnyObject {
-}
-
-protocol HomeViewModelType: AnyObject {
-    var inputs: HomeViewModelInputs { get }
-    var outputs: HomeViewModelOutputs { get }
-}
-
-final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
-    // MARK: - Properties
-    var inputs: HomeViewModelInputs { return self }
-    var outputs: HomeViewModelOutputs { return self }
-
-    // MARK: - Input Sources
-    // MARK: - Output Sources
-
-    private let disposeBag = DisposeBag()
-
-    // MARK: - Initialize
-    init() {
+final class HomeViewModel {
+    func searchData(for query: String) -> Observable<String> {
+        let searchResults = [
+            "Apple",
+            "Banana",
+            "Cherry",
+            "Date",
+            "Fig",
+            "Grapes",
+            "Lemon",
+            "Mango",
+            "Orange",
+            "Pineapple",
+            "Strawberry",
+            "Watermelon"
+        ]
+        return Observable.just(
+            searchResults
+                .filter{ $0.lowercased().contains(query.lowercased())}
+                .joined(separator: ", ")
+        )
     }
-
 }
