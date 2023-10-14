@@ -5,11 +5,18 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="birthdayTextField" destination="17a-wo-wHf" id="lYu-ga-Yev"/>
+                <outlet property="idTextField" destination="kH2-o1-Jpj" id="WiT-96-CSz"/>
+                <outlet property="nameTextField" destination="s7A-gt-HaW" id="t1k-To-s6o"/>
+                <outlet property="okButton" destination="EGz-p8-Z1T" id="JGx-P2-pMO"/>
+                <outlet property="passwordTextField" destination="v1p-yi-Kes" id="tEe-Lr-uqN"/>
+                <outlet property="progressLabel" destination="gWd-Go-rzD" id="8d8-hW-dg2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +24,88 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWd-Go-rzD">
+                    <rect key="frame" x="48" y="99" width="297" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="oaZ-Xk-q5V"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="CO2-z9-IxN">
+                    <rect key="frame" x="42" y="171" width="309" height="264"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s7A-gt-HaW">
+                            <rect key="frame" x="0.0" y="0.0" width="309" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="aQN-a6-uRc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17a-wo-wHf">
+                            <rect key="frame" x="0.0" y="72" width="309" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="d2z-Eg-U7c"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kH2-o1-Jpj">
+                            <rect key="frame" x="0.0" y="144" width="309" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="QE1-PO-pKT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v1p-yi-Kes">
+                            <rect key="frame" x="0.0" y="216" width="309" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="lwv-Xk-Gpl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGz-p8-Z1T" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                    <rect key="frame" x="42" y="535" width="309" height="60"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="84F-b1-LQM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="OK"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="27"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EGz-p8-Z1T" secondAttribute="trailing" constant="42" id="0zG-Wy-JIS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CO2-z9-IxN" secondAttribute="trailing" constant="42" id="C42-9i-IcM"/>
+                <constraint firstItem="CO2-z9-IxN" firstAttribute="top" secondItem="gWd-Go-rzD" secondAttribute="bottom" constant="48" id="JJe-4A-v65"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gWd-Go-rzD" secondAttribute="trailing" constant="48" id="Q5K-ep-BZ9"/>
+                <constraint firstItem="gWd-Go-rzD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="V50-gn-ZNP"/>
+                <constraint firstItem="gWd-Go-rzD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="YYH-hT-xZM"/>
+                <constraint firstItem="CO2-z9-IxN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="cn6-cW-WKd"/>
+                <constraint firstItem="EGz-p8-Z1T" firstAttribute="top" secondItem="CO2-z9-IxN" secondAttribute="bottom" constant="100" id="dTo-kc-PCS"/>
+                <constraint firstItem="EGz-p8-Z1T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="yRP-ds-teg"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
