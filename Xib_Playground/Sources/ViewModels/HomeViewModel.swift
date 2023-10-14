@@ -54,12 +54,15 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
             .bind(to: filledTextFieldsCount)
             .disposed(by: disposeBag)
 
-        isOKButtonEnabled = filledTextFieldsCount.map { $0 == 4 }.asDriver(onErrorJustReturn: false)
-        progressLabel = filledTextFieldsCount.map { count in
-            let progress = count * 25
-            return "Progress: \(progress)%"
-        }
-        .asDriver(onErrorJustReturn: "Progress: 0%")
+        isOKButtonEnabled = filledTextFieldsCount
+            .map { $0 == 4 }
+            .asDriver(onErrorJustReturn: false)
+        progressLabel = filledTextFieldsCount
+            .map { count in
+                let progress = count * 25
+                return "Progress: \(progress)%"
+            }
+            .asDriver(onErrorJustReturn: "Progress: 0%")
     }
 
 }
