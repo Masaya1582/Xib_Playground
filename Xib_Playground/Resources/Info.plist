@@ -19,5 +19,18 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconSymbolName</key>
+			<string>camera</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>アイテムを出品</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>出品する</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.exhibit.button</string>
+		</dict>
+	</array>
 </dict>
 </plist>
