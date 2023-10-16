@@ -11,9 +11,13 @@ import RxCocoa
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var idTextFIeld: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: DesignableButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +43,19 @@ final class HomeViewController: UIViewController {
 // MARK: - Binding
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        idTextFIeld.rx.text.orEmpty
+            .bind(to: viewModel.inputs.idInput)
+            .disposed(by: disposeBag)
+        passwordTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.passwordInput)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.isLoginButtonEnabled
+            .drive(onNext: { [weak self] loginButtonEnabled in
+                self?.loginButton.isEnabled = loginButtonEnabled
+                self?.loginButton.backgroundColor = loginButtonEnabled ? .systemIndigo : .lightGray
+            })
+            .disposed(by: disposeBag)
     }
 }
 
