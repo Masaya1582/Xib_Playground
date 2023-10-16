@@ -41,7 +41,7 @@ internal enum Asset {
     internal static let imgGerald = ImageAsset(name: "img_gerald")
     internal static let imgJimmy = ImageAsset(name: "img_jimmy")
     internal static let imgRonald = ImageAsset(name: "img_ronald")
-    internal static let imgStudy = ImageAsset(name: "img_study")
+    internal static let imgWaterfall = ImageAsset(name: "img_waterfall")
   }
   internal enum Colors {
     internal static let bakcgroundColor = ColorAsset(name: "bakcground_color")
