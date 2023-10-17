@@ -14,6 +14,7 @@
 		1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */; };
 		1EC0E5322AB2A968003DA972 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */; };
 		1EC0E5332AB2A968003DA972 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */; };
+		1EF7E6302ADE49ED0032015B /* PressableMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF7E62F2ADE49ED0032015B /* PressableMaterialButton.swift */; };
 		4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */; };
 		4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */; };
 		4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8CA2A4D9B70003F06BF /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
 		1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		1EF7E62F2ADE49ED0032015B /* PressableMaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableMaterialButton.swift; sourceTree = "<group>"; };
 		4011E8BE2A4D9B6F003F06BF /* Xib_Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xib_Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */,
 				1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */,
 				1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */,
+				1EF7E62F2ADE49ED0032015B /* PressableMaterialButton.swift */,
 			);
 			path = DesignableComponents;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				1E514EDE2AAEDF2400C9CB9A /* DesignableView.swift in Sources */,
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
+				1EF7E6302ADE49ED0032015B /* PressableMaterialButton.swift in Sources */,
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
 				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
 				1E62EE682AD7AABB0031CB1B /* HomeCollectionViewCell.swift in Sources */,
