@@ -12,9 +12,9 @@ import UserNotificationsUI
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
 
-    @IBOutlet weak var offerItemImageView: UIImageView!
-    @IBOutlet weak var offerMoneyLabel: UILabel!
-    @IBOutlet weak var offerCommentLabel: UILabel!
+    @IBOutlet private weak var offerItemImageView: UIImageView!
+    @IBOutlet private weak var offerMoneyLabel: UILabel!
+    @IBOutlet private weak var offerCommentLabel: UILabel!
     
     func didReceive(_ notification: UNNotification) {
         if let validTitle = notification.request.content.userInfo["title"] as? String,

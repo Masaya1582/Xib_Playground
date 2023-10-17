@@ -548,7 +548,7 @@
 				DEVELOPMENT_TEAM = YLUL9XKLDZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TrumpNotificationContentExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = TrumpNotificationContentExtension;
+				INFOPLIST_KEY_CFBundleDisplayName = OfferNotificationContentExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -574,7 +574,7 @@
 				DEVELOPMENT_TEAM = YLUL9XKLDZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TrumpNotificationContentExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = TrumpNotificationContentExtension;
+				INFOPLIST_KEY_CFBundleDisplayName = OfferNotificationContentExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
