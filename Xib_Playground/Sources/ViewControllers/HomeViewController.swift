@@ -9,43 +9,35 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class HomeViewController: UIViewController {
-    // MARK: - Dependency
-    typealias Dependency = Void
-
-    // MARK: - Properties
-    private let disposeBag = DisposeBag()
-    private let viewModel: Dependency
-
-    // MARK: - Initialize
-    init(dependency: Dependency) {
-        self.viewModel = dependency
-        super.init(nibName: Self.className, bundle: Self.bundle)
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
+final class HomeViewController: UIViewController, UIContextMenuInteractionDelegate {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: viewModel)
+        let button = UIButton(type: .system)
+        button.setTitle("Show Context Menu", for: .normal)
+        button.frame = CGRect(x: 100, y: 200, width: 200, height: 40)
+        view.addSubview(button)
+
+        // Create a UIContextMenuInteraction and set the delegate
+        let contextMenuInteraction = UIContextMenuInteraction(delegate: self)
+        button.addInteraction(contextMenuInteraction)
+    }
+
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
+            // Create context menu items
+            let action1 = UIAction(title: "Action 1", image: UIImage(systemName: "star.fill")) { action in
+                // Handle the action when selected
+                // You can put your code here
+            }
+            let action2 = UIAction(title: "Action 2", image: UIImage(systemName: "heart.fill")) { action in
+                // Handle the action when selected
+                // You can put your code here
+            }
+
+            // Return a UIMenu with your actions
+            return UIMenu(title: "Context Menu", children: [action1, action2])
+        }
     }
 
 }
-
-// MARK: - Binding
-private extension HomeViewController {
-    func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-    }
-}
-
-// MARK: - ViewControllerInjectable
-extension HomeViewController: ViewControllerInjectable {}
