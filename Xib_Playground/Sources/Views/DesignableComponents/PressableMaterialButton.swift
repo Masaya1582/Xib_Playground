@@ -7,9 +7,8 @@
 
 import UIKit
 
-class PressAnimationButton: UIButton {
-
-    private var shadowOffsetHeight: CGFloat = 5
+final class PressAnimationButton: UIButton {
+    private var originalBackgroundColor: UIColor?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,59 +23,27 @@ class PressAnimationButton: UIButton {
     // MARK: - Configure UI
     private func configureUI() {
         self.layer.cornerRadius = self.frame.height / 2
-        addShadow(with: .white)
+        originalBackgroundColor = self.backgroundColor
+        self.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
 
-    private func addShadow(with color: UIColor) {
-        self.layer.shadowOffset = CGSize(width: 0, height: shadowOffsetHeight)
-        self.layer.shadowColor = color.cgColor
-        self.layer.shadowRadius = 1.0
-        self.layer.shadowOpacity = 1.0
-    }
-}
-
-// MARK: - Touches methods
-extension PressAnimationButton {
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        pressedButtonAnimation()
+    @objc private func buttonTapped() {
+        animateTappedState()
     }
 
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        releasedButtonAnimation()
-    }
-
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-        releasedButtonAnimation()
-    }
-
-    private func pressedButtonAnimation() {
-        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseIn) {
-            self.transform = CGAffineTransform(translationX: 0, y: self.shadowOffsetHeight)
+    private func animateTappedState() {
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut) {
+            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            self.backgroundColor = self.originalBackgroundColor?.withAlphaComponent(0.8)
+        } completion: { _ in
+            self.animateReleasedState()
         }
-        addShadowHeightAnimation(from: self.shadowOffsetHeight, to: 0, option: .easeIn)
     }
 
-    private func releasedButtonAnimation() {
-        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut) {
+    private func animateReleasedState() {
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut) {
             self.transform = CGAffineTransform.identity
+            self.backgroundColor = self.originalBackgroundColor
         }
-        addShadowHeightAnimation(from: 0, to: self.shadowOffsetHeight, option: .easeOut)
     }
-
-    private func addShadowHeightAnimation(from fromValue: CGFloat, to toValue: CGFloat, option: CAMediaTimingFunctionName) {
-        let animation = CABasicAnimation(keyPath: "shadowOffset")
-        animation.duration = 0.1
-        animation.fromValue = CGSize(width: 0, height: fromValue)
-        animation.toValue = CGSize(width: 0, height: toValue)
-        animation.timingFunction = CAMediaTimingFunction(name: option)
-        animation.autoreverses = false
-        animation.isRemovedOnCompletion = false
-        animation.fillMode = CAMediaTimingFillMode.forwards
-        self.layer.add(animation, forKey: nil)
-    }
-
 }
