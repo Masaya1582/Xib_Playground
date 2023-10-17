@@ -14,6 +14,11 @@
 		1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */; };
 		1EC0E5322AB2A968003DA972 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */; };
 		1EC0E5332AB2A968003DA972 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */; };
+		1EF7E5E42ADE2F180032015B /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF7E5B12ADE10030032015B /* UserNotifications.framework */; };
+		1EF7E5E52ADE2F180032015B /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF7E5B32ADE10030032015B /* UserNotificationsUI.framework */; };
+		1EF7E5E82ADE2F180032015B /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF7E5E72ADE2F180032015B /* NotificationViewController.swift */; };
+		1EF7E5EB2ADE2F180032015B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EF7E5E92ADE2F180032015B /* MainInterface.storyboard */; };
+		1EF7E5EF2ADE2F180032015B /* TrumpNotificationContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1EF7E5E32ADE2F180032015B /* TrumpNotificationContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */; };
 		4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */; };
 		4011E8CB2A4D9B70003F06BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8CA2A4D9B70003F06BF /* Assets.xcassets */; };
@@ -28,12 +33,36 @@
 		4011E8EC2A4D9D8D003F06BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8EB2A4D9D8D003F06BF /* HomeViewModel.swift */; };
 		4011E8EF2A4D9DC6003F06BF /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8ED2A4D9DC6003F06BF /* HomeTableViewCell.swift */; };
 		4011E8F02A4D9DC6003F06BF /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */; };
-		4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* HomeModel.swift */; };
+		4011E8F22A4D9E05003F06BF /* OfferLocalNotificationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* OfferLocalNotificationBuilder.swift */; };
 		4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */; };
 		40D3B0132A56B2CB00E9A002 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3B0122A56B2CB00E9A002 /* NSObjectExtension.swift */; };
 		40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3B0152A56B3E400E9A002 /* ViewControllerInjectable.swift */; };
 		844A2A7CC692AB7AE5144D68 /* Pods_Xib_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EF7E5ED2ADE2F180032015B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4011E8B62A4D9B6F003F06BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EF7E5E22ADE2F180032015B;
+			remoteInfo = TrumpNotificationContentExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1EF7E5BF2ADE10030032015B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1EF7E5EF2ADE2F180032015B /* TrumpNotificationContentExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1E3E3D502A67D6E500DB681F /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
@@ -43,6 +72,12 @@
 		1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
 		1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		1EF7E5B12ADE10030032015B /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		1EF7E5B32ADE10030032015B /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		1EF7E5E32ADE2F180032015B /* TrumpNotificationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TrumpNotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EF7E5E72ADE2F180032015B /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		1EF7E5EA2ADE2F180032015B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		1EF7E5EC2ADE2F180032015B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4011E8BE2A4D9B6F003F06BF /* Xib_Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xib_Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +94,7 @@
 		4011E8EB2A4D9D8D003F06BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4011E8ED2A4D9DC6003F06BF /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
-		4011E8F12A4D9E05003F06BF /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		4011E8F12A4D9E05003F06BF /* OfferLocalNotificationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferLocalNotificationBuilder.swift; sourceTree = "<group>"; };
 		4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		40D3B0122A56B2CB00E9A002 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		40D3B0152A56B3E400E9A002 /* ViewControllerInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerInjectable.swift; sourceTree = "<group>"; };
@@ -69,6 +104,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1EF7E5E02ADE2F180032015B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF7E5E52ADE2F180032015B /* UserNotificationsUI.framework in Frameworks */,
+				1EF7E5E42ADE2F180032015B /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4011E8BB2A4D9B6F003F06BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,10 +163,21 @@
 			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
+		1EF7E5E62ADE2F180032015B /* TrumpNotificationContentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1EF7E5E72ADE2F180032015B /* NotificationViewController.swift */,
+				1EF7E5E92ADE2F180032015B /* MainInterface.storyboard */,
+				1EF7E5EC2ADE2F180032015B /* Info.plist */,
+			);
+			path = TrumpNotificationContentExtension;
+			sourceTree = "<group>";
+		};
 		4011E8B52A4D9B6F003F06BF = {
 			isa = PBXGroup;
 			children = (
 				4011E8C02A4D9B6F003F06BF /* Xib_Playground */,
+				1EF7E5E62ADE2F180032015B /* TrumpNotificationContentExtension */,
 				4011E8BF2A4D9B6F003F06BF /* Products */,
 				1A300EBE5DE20C68DDB3A5A5 /* Pods */,
 				B49943C8182FF3B44B6BC674 /* Frameworks */,
@@ -133,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				4011E8BE2A4D9B6F003F06BF /* Xib_Playground.app */,
+				1EF7E5E32ADE2F180032015B /* TrumpNotificationContentExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,7 +279,7 @@
 		4011E8E42A4D9D51003F06BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4011E8F12A4D9E05003F06BF /* HomeModel.swift */,
+				4011E8F12A4D9E05003F06BF /* OfferLocalNotificationBuilder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */,
+				1EF7E5B12ADE10030032015B /* UserNotifications.framework */,
+				1EF7E5B32ADE10030032015B /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -255,6 +313,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1EF7E5E22ADE2F180032015B /* TrumpNotificationContentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EF7E5F02ADE2F190032015B /* Build configuration list for PBXNativeTarget "TrumpNotificationContentExtension" */;
+			buildPhases = (
+				1EF7E5DF2ADE2F180032015B /* Sources */,
+				1EF7E5E02ADE2F180032015B /* Frameworks */,
+				1EF7E5E12ADE2F180032015B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrumpNotificationContentExtension;
+			productName = TrumpNotificationContentExtension;
+			productReference = 1EF7E5E32ADE2F180032015B /* TrumpNotificationContentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4011E8BD2A4D9B6F003F06BF /* Xib_Playground */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4011E8D22A4D9B70003F06BF /* Build configuration list for PBXNativeTarget "Xib_Playground" */;
@@ -265,10 +340,12 @@
 				4011E8BC2A4D9B6F003F06BF /* Resources */,
 				4CA0D6758D655D1A05F9E9B0 /* [CP] Embed Pods Frameworks */,
 				4011E8F52A4DA04B003F06BF /* SwiftLint */,
+				1EF7E5BF2ADE10030032015B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1EF7E5EE2ADE2F180032015B /* PBXTargetDependency */,
 			);
 			name = Xib_Playground;
 			productName = Xib_Playground;
@@ -282,9 +359,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					1EF7E5E22ADE2F180032015B = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					4011E8BD2A4D9B6F003F06BF = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -304,11 +384,20 @@
 			projectRoot = "";
 			targets = (
 				4011E8BD2A4D9B6F003F06BF /* Xib_Playground */,
+				1EF7E5E22ADE2F180032015B /* TrumpNotificationContentExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1EF7E5E12ADE2F180032015B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF7E5EB2ADE2F180032015B /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4011E8BC2A4D9B6F003F06BF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,6 +478,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1EF7E5DF2ADE2F180032015B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF7E5E82ADE2F180032015B /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4011E8BA2A4D9B6F003F06BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,7 +493,7 @@
 				1EC0E5332AB2A968003DA972 /* DesignableImageView.swift in Sources */,
 				4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */,
 				40D3B0132A56B2CB00E9A002 /* NSObjectExtension.swift in Sources */,
-				4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */,
+				4011E8F22A4D9E05003F06BF /* OfferLocalNotificationBuilder.swift in Sources */,
 				1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */,
 				1E514EDE2AAEDF2400C9CB9A /* DesignableView.swift in Sources */,
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
@@ -415,7 +512,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1EF7E5EE2ADE2F180032015B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EF7E5E22ADE2F180032015B /* TrumpNotificationContentExtension */;
+			targetProxy = 1EF7E5ED2ADE2F180032015B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		1EF7E5E92ADE2F180032015B /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EF7E5EA2ADE2F180032015B /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		4011E8CC2A4D9B70003F06BF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -427,6 +540,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1EF7E5F12ADE2F190032015B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YLUL9XKLDZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrumpNotificationContentExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OfferNotificationContentExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masa4y44-.masaya.nakakuki.Xib-Playground.TrumpNotificationContentExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1EF7E5F22ADE2F190032015B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YLUL9XKLDZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrumpNotificationContentExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OfferNotificationContentExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masa4y44-.masaya.nakakuki.Xib-Playground.TrumpNotificationContentExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		4011E8D02A4D9B70003F06BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -545,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EB0B3FD753A1B13C5E383329 /* Pods-Xib_Playground.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -578,6 +744,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8FD51EC4ED984FB4DC036D16 /* Pods-Xib_Playground.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -610,6 +777,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1EF7E5F02ADE2F190032015B /* Build configuration list for PBXNativeTarget "TrumpNotificationContentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EF7E5F12ADE2F190032015B /* Debug */,
+				1EF7E5F22ADE2F190032015B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4011E8B92A4D9B6F003F06BF /* Build configuration list for PBXProject "Xib_Playground" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

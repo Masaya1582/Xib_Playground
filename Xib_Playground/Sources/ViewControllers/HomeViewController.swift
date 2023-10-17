@@ -8,12 +8,15 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import UserNotifications
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var showNotificationButton: UIButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,19 @@ final class HomeViewController: UIViewController {
 // MARK: - Binding
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        showNotificationButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                self?.showCustomNotification()
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func showCustomNotification() {
+        OfferLocalNotificationBuilder()
+            .setActions()
+            .setCategory()
+            .setContent()
+            .build()
     }
 }
 
