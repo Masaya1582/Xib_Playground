@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import StoreKit
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
@@ -32,6 +33,13 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let windowScene = view.window?.windowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
+        }
     }
 
 }
