@@ -167,8 +167,8 @@
 			children = (
 				4011E8E42A4D9D51003F06BF /* Models */,
 				4011E8E32A4D9D4D003F06BF /* Views */,
-				4011E8E22A4D9D49003F06BF /* ViewModels */,
 				4011E8E12A4D9D43003F06BF /* ViewControllers */,
+				4011E8E22A4D9D49003F06BF /* ViewModels */,
 				40D3B0112A56B2BC00E9A002 /* Extensions */,
 				40D3B0142A56B3CF00E9A002 /* Protocols */,
 			);
