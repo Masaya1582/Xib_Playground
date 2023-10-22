@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="bottomSlider" destination="fAl-hz-pvj" id="fse-Jx-0mj"/>
+                <outlet property="sliderValueLabel" destination="Vx6-aX-4tl" id="DIU-GB-yTD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +19,28 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fAl-hz-pvj">
+                    <rect key="frame" x="30" y="742" width="333" height="31"/>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-aX-4tl">
+                    <rect key="frame" x="0.0" y="120.00000000000001" width="393" height="28.666666666666671"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="fAl-hz-pvj" secondAttribute="bottom" constant="80" id="0R0-FM-Y0y"/>
+                <constraint firstItem="Vx6-aX-4tl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Cbk-ac-m3q"/>
+                <constraint firstItem="Vx6-aX-4tl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="kYi-fs-U4o"/>
+                <constraint firstItem="fAl-hz-pvj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="nJd-7a-F0e"/>
+                <constraint firstAttribute="trailing" secondItem="fAl-hz-pvj" secondAttribute="trailing" constant="32" id="p07-kb-tQn"/>
+                <constraint firstItem="Vx6-aX-4tl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="y5F-8D-c71"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
 </document>

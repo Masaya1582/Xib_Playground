@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var sliderValueLabel: UILabel!
+    @IBOutlet private weak var bottomSlider: UISlider!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,12 @@ final class HomeViewController: UIViewController {
 // MARK: - Binding
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        bottomSlider.rx.value
+            .map { value in
+                return String(format: "Percent: %.0f %%", value * 100)
+            }
+            .bind(to: sliderValueLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
