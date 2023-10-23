@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import APIKit
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
@@ -31,19 +32,34 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerNewPost()
         bind(to: viewModel)
     }
 
+    private func registerNewPost() {
+        Session.send(CreatePostRequest()) { result in
+            switch result {
+            case .success(let post):
+                print("New Post Created")
+                print("ID: \(post.id)")
+                print("Title: \(post.title)")
+                print("Body: \(post.body)")
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+
+    }
 }
 
 // MARK: - Binding
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        //        <#Button#>.rx.tap.asSignal()
+        //            .emit(onNext: { [weak self] in
+        //                <#Actions#>
+        //            })
+        //            .disposed(by: disposeBag)
     }
 }
 
