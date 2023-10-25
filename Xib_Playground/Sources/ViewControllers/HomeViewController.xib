@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="realTimeLabel" destination="2sD-pR-cRv" id="l6P-2g-trx"/>
+                <outlet property="realTimeTextField" destination="gQX-dY-Jpy" id="NML-pY-hML"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,36 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sD-pR-cRv">
+                    <rect key="frame" x="48" y="139" width="297" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="hjt-UG-wup"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQX-dY-Jpy">
+                    <rect key="frame" x="48" y="307" width="297" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="rUM-Kw-AQa"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="gQX-dY-Jpy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="Qe7-Il-OX6"/>
+                <constraint firstItem="2sD-pR-cRv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="TbT-rb-PPb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gQX-dY-Jpy" secondAttribute="trailing" constant="48" id="dHe-HO-w21"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2sD-pR-cRv" secondAttribute="trailing" constant="48" id="gbJ-Pf-0TT"/>
+                <constraint firstItem="gQX-dY-Jpy" firstAttribute="top" secondItem="2sD-pR-cRv" secondAttribute="bottom" constant="120" id="iev-4Z-3nf"/>
+                <constraint firstItem="2sD-pR-cRv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="yBP-Iu-mqp"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>

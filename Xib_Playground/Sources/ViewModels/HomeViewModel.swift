@@ -10,9 +10,11 @@ import RxCocoa
 import Action
 
 protocol HomeViewModelInputs: AnyObject {
+    var textFieldInput: PublishRelay<String> { get }
 }
 
 protocol HomeViewModelOutputs: AnyObject {
+    var userInput: Driver<String> { get }
 }
 
 protocol HomeViewModelType: AnyObject {
@@ -26,12 +28,21 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
     var outputs: HomeViewModelOutputs { return self }
 
     // MARK: - Input Sources
+    var textFieldInput = PublishRelay<String>()
     // MARK: - Output Sources
+    let userInput: Driver<String>
 
+    private let _userInput = BehaviorRelay<String>(value: "")
     private let disposeBag = DisposeBag()
 
     // MARK: - Initialize
     init() {
+        textFieldInput
+            .bind(to: _userInput)
+            .disposed(by: disposeBag)
+
+        userInput = _userInput
+            .asDriver(onErrorJustReturn: "")
     }
 
 }

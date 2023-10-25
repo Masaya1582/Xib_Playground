@@ -11,9 +11,12 @@ import RxCocoa
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var realTimeLabel: UILabel!
+    @IBOutlet private weak var realTimeTextField: UITextField!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,14 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        realTimeTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.textFieldInput)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.userInput
+            .drive(realTimeLabel.rx.text)
+            .disposed(by: disposeBag)
+
     }
 }
 
