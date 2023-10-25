@@ -5,11 +5,15 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="ahoImageView" destination="MsQ-IO-Kdk" id="pZG-6a-f4v"/>
+                <outlet property="countLabel" destination="gYb-9M-SSn" id="DH9-Ay-wrk"/>
+                <outlet property="incrementButton" destination="yqI-OK-9wb" id="0hR-Zp-njy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +21,61 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYb-9M-SSn">
+                    <rect key="frame" x="48" y="99" width="297" height="39"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MsQ-IO-Kdk">
+                    <rect key="frame" x="56.666666666666657" y="218" width="280" height="280"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="280" id="d7E-Gq-7kj"/>
+                        <constraint firstAttribute="width" constant="280" id="dRM-Es-Myc"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqI-OK-9wb" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                    <rect key="frame" x="48" y="578" width="297" height="60"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="tmZ-1u-cEE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Increment">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="27"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gYb-9M-SSn" secondAttribute="trailing" constant="48" id="05U-Vm-H8a"/>
+                <constraint firstItem="gYb-9M-SSn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="0f0-a8-eoh"/>
+                <constraint firstItem="gYb-9M-SSn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="1DF-Sg-yqv"/>
+                <constraint firstItem="yqI-OK-9wb" firstAttribute="top" secondItem="MsQ-IO-Kdk" secondAttribute="bottom" constant="80" id="GWV-ak-QJc"/>
+                <constraint firstItem="MsQ-IO-Kdk" firstAttribute="top" secondItem="gYb-9M-SSn" secondAttribute="bottom" constant="80" id="JTh-tK-W5F"/>
+                <constraint firstItem="MsQ-IO-Kdk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cBc-1r-9aQ"/>
+                <constraint firstItem="yqI-OK-9wb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="m5D-rD-a0V"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yqI-OK-9wb" secondAttribute="trailing" constant="48" id="teo-E0-t6C"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <designables>
+        <designable name="yqI-OK-9wb">
+            <size key="intrinsicContentSize" width="115" height="41"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
