@@ -11,9 +11,14 @@ import RxCocoa
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var idLabel: UILabel!
+    @IBOutlet private weak var passwordLabel: UILabel!
+    @IBOutlet private weak var idTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +44,21 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        idTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.idInput)
+            .disposed(by: disposeBag)
+
+        passwordTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.passwordInput)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.idOutput
+            .drive(idLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.passwordOutput
+            .drive(passwordLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
