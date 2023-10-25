@@ -16,9 +16,37 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="502" height="184"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxf-Ro-cOJ">
+                        <rect key="frame" x="32" y="76" width="389" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="z8A-6c-DVq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDx-89-zUl">
+                        <rect key="frame" x="441" y="76.666666666666671" width="51" height="31"/>
+                        <connections>
+                            <action selector="toggleSettingAction:" destination="KGk-i7-Jjw" eventType="valueChanged" id="efo-Il-iPP"/>
+                        </connections>
+                    </switch>
+                </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Vxf-Ro-cOJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9vs-MP-cqa"/>
+                    <constraint firstAttribute="trailing" secondItem="XDx-89-zUl" secondAttribute="trailing" constant="12" id="VWp-fn-aGg"/>
+                    <constraint firstItem="XDx-89-zUl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fHM-CS-J9c"/>
+                    <constraint firstItem="XDx-89-zUl" firstAttribute="leading" secondItem="Vxf-Ro-cOJ" secondAttribute="trailing" constant="20" id="omx-89-pLh"/>
+                    <constraint firstItem="Vxf-Ro-cOJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="qZt-fi-ldQ"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="settingLabel" destination="Vxf-Ro-cOJ" id="8EJ-F5-15h"/>
+                <outlet property="settingSwitch" destination="XDx-89-zUl" id="6PT-JS-33A"/>
+            </connections>
             <point key="canvasLocation" x="268.70229007633588" y="38.028169014084511"/>
         </tableViewCell>
     </objects>
