@@ -52,20 +52,20 @@ private extension HomeViewController {
             .bind(to: viewModel.inputs.passwordInput)
             .disposed(by: disposeBag)
 
-        viewModel.outputs.isShowIdWarning
-            .drive(onNext: { [weak self] isShowIdWarning in
-                self?.idLimitLabel.isHidden = isShowIdWarning
-                if isShowIdWarning {
+        viewModel.outputs.isIdWarningHidden
+            .drive(onNext: { [weak self] isIdWarningHidden in
+                self?.idLimitLabel.isHidden = isIdWarningHidden
+                if !isIdWarningHidden {
                     self?.idLimitLabel.text = "IDの上限を超えました"
                     self?.idLimitLabel.textColor = .red
                 }
             })
             .disposed(by: disposeBag)
 
-        viewModel.outputs.isShowPasswordWarning
-            .drive(onNext: { [weak self] isShowPasswordWarning in
-                self?.passwordLimitLabel.isHidden = isShowPasswordWarning
-                if isShowPasswordWarning {
+        viewModel.outputs.isPasswordWarningHidden
+            .drive(onNext: { [weak self] isPasswordWarningHidden in
+                self?.passwordLimitLabel.isHidden = isPasswordWarningHidden
+                if !isPasswordWarningHidden {
                     self?.passwordLimitLabel.text = "使用できない文字が含まれています"
                     self?.passwordLimitLabel.textColor = .red
                 }

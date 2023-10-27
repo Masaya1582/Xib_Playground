@@ -15,8 +15,8 @@ protocol HomeViewModelInputs: AnyObject {
 }
 
 protocol HomeViewModelOutputs: AnyObject {
-    var isShowIdWarning: Driver<Bool> { get }
-    var isShowPasswordWarning: Driver<Bool> { get }
+    var isIdWarningHidden: Driver<Bool> { get }
+    var isPasswordWarningHidden: Driver<Bool> { get }
 }
 
 protocol HomeViewModelType: AnyObject {
@@ -33,27 +33,27 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
     var idInput = PublishRelay<String>()
     var passwordInput = PublishRelay<String>()
     // MARK: - Output Sources
-    let isShowIdWarning: Driver<Bool>
-    let isShowPasswordWarning: Driver<Bool>
+    let isIdWarningHidden: Driver<Bool>
+    let isPasswordWarningHidden: Driver<Bool>
 
     private let disposeBag = DisposeBag()
 
     // MARK: - Initialize
     init() {
-        let idWarningHiddenObservable = idInput
+        let idWarningHidden = idInput
             .map { id in
                 return id.count <= 10
             }
             .asDriver(onErrorJustReturn: false)
 
-        let passwordWarningHiddenObservable = passwordInput
+        let passwordWarningHidden = passwordInput
             .map { password in
                 return !password.contains("@")
             }
             .asDriver(onErrorJustReturn: false)
 
-        isShowIdWarning = idWarningHiddenObservable
-        isShowPasswordWarning = passwordWarningHiddenObservable
+        isIdWarningHidden = idWarningHidden
+        isPasswordWarningHidden = passwordWarningHidden
     }
 
 }

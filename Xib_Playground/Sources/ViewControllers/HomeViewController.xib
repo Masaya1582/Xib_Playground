@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="X6f-Gz-D53">
-                    <rect key="frame" x="48" y="179" width="320" height="240"/>
+                    <rect key="frame" x="48" y="179" width="320" height="200"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="LR0-WS-FqE">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0O-pr-YUA">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
@@ -38,10 +38,10 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eM-Z6-MCx">
-                                    <rect key="frame" x="0.0" y="40" width="320" height="40"/>
+                                    <rect key="frame" x="0.0" y="40" width="320" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="320" id="Oid-XV-6P5"/>
-                                        <constraint firstAttribute="height" constant="40" id="gVo-JG-7Pz"/>
+                                        <constraint firstAttribute="height" constant="20" id="gVo-JG-7Pz"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,7 +50,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="mnQ-8N-zLE">
-                            <rect key="frame" x="0.0" y="160" width="320" height="80"/>
+                            <rect key="frame" x="0.0" y="140" width="320" height="60"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R1O-cH-gD7">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
@@ -62,9 +62,9 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ2-T1-ZAG">
-                                    <rect key="frame" x="0.0" y="40" width="0.0" height="40"/>
+                                    <rect key="frame" x="0.0" y="40" width="0.0" height="20"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="Lhq-Ad-sUG"/>
+                                        <constraint firstAttribute="height" constant="20" id="Lhq-Ad-sUG"/>
                                         <constraint firstAttribute="width" constant="320" id="S7M-Yj-nfG"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
