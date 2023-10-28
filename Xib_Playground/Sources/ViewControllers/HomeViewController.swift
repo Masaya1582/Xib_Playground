@@ -14,6 +14,7 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    private let numbers = Observable.of(1, 2, 3, 4, 5)
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +40,13 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        numbers
+        // DO = ただ覗くだけ
+            .do(onNext: { number in
+                print(number)
+            })
+            .subscribe()
+            .disposed(by: disposeBag)
     }
 }
 
