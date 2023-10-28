@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var activitySwitch: UISwitch!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,12 +42,20 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-    }
+        let switchValueObservable = activitySwitch.rx.value.asObservable()
+
+        switchValueObservable
+            .do(onNext: { switchValue in
+                self.activityIndicator.isHidden = !switchValue
+                if switchValue {
+                    self.activityIndicator.startAnimating()
+                } else {
+                    self.activityIndicator.stopAnimating()
+                }
+            })
+            .subscribe()
+            .disposed(by: disposeBag)
+        }
 }
 
 // MARK: - ViewControllerInjectable
