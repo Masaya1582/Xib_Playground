@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="vpx-ta-qdM" id="6dW-Hm-fk9"/>
+                <outlet property="activitySwitch" destination="0r1-db-6vX" id="8qm-TR-eOi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,22 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0r1-db-6vX">
+                    <rect key="frame" x="172" y="767" width="51" height="31"/>
+                </switch>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vpx-ta-qdM">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0r1-db-6vX" secondAttribute="bottom" constant="20" id="LGp-bb-Mio"/>
+                <constraint firstItem="0r1-db-6vX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RGN-ft-4mo"/>
+                <constraint firstItem="vpx-ta-qdM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aRw-MX-be8"/>
+                <constraint firstItem="vpx-ta-qdM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ohY-aO-Scv"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
