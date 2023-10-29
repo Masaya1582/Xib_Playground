@@ -8,12 +8,15 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import WebKit
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var blogWebView: WKWebView!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,10 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        if let url = URL(string: "https://masasophi.com") {
+            let request = URLRequest(url: url)
+            blogWebView.load(request)
+        }
     }
 }
 
