@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="customDatePicker" destination="b6e-Vp-CL2" id="i74-jS-wRn"/>
+                <outlet property="dateLabel" destination="Dyn-52-40r" id="t6O-bP-OYa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,27 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="b6e-Vp-CL2">
+                    <rect key="frame" x="0.0" y="327.66666666666669" width="393" height="216.00000000000006"/>
+                </datePicker>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyn-52-40r">
+                    <rect key="frame" x="48" y="99" width="297" height="28.666666666666671"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="b6e-Vp-CL2" secondAttribute="trailing" id="FvR-e6-0xP"/>
+                <constraint firstItem="b6e-Vp-CL2" firstAttribute="top" secondItem="Dyn-52-40r" secondAttribute="bottom" constant="200" id="NPR-aN-wvS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dyn-52-40r" secondAttribute="trailing" constant="48" id="Tfb-Na-Mpt"/>
+                <constraint firstItem="b6e-Vp-CL2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UiW-AP-h5Q"/>
+                <constraint firstItem="Dyn-52-40r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="idw-ij-BUJ"/>
+                <constraint firstItem="Dyn-52-40r" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="msJ-sh-lt9"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>

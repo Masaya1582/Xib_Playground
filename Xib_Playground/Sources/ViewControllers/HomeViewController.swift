@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var customDatePicker: UIDatePicker!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,14 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        customDatePicker.rx.date
+            .map { date in
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MMM dd日 HH:mm"
+                return dateFormatter.string(from: date)
+            }
+            .bind(to: dateLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
