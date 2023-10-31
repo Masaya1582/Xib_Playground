@@ -5,11 +5,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="colorPicker" destination="wWt-K8-cKw" id="vFi-MF-oVQ"/>
+                <outlet property="colorView" destination="GJk-2h-nDf" id="vUL-BZ-Pyj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +20,31 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <colorWell contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wWt-K8-cKw">
+                    <rect key="frame" x="182.66666666666666" y="790" width="28" height="28"/>
+                </colorWell>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJk-2h-nDf">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="782"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GJk-2h-nDf" secondAttribute="trailing" id="HcU-9i-LnE"/>
+                <constraint firstItem="GJk-2h-nDf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MFp-7e-sdS"/>
+                <constraint firstItem="wWt-K8-cKw" firstAttribute="top" secondItem="GJk-2h-nDf" secondAttribute="bottom" constant="8" id="Sbk-JV-LSm"/>
+                <constraint firstItem="wWt-K8-cKw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gKU-49-4k0"/>
+                <constraint firstItem="GJk-2h-nDf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iff-Ce-Lyq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wWt-K8-cKw" secondAttribute="bottom" id="t22-T0-A8K"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
