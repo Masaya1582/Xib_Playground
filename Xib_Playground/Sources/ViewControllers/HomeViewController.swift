@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var colorView: UIView!
+    @IBOutlet private weak var colorPicker: UIColorWell!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,14 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        colorPicker.rx.controlEvent(.valueChanged)
+            .map { [weak self] _ in
+                return self?.colorPicker.selectedColor
+            }
+            .bind { [weak self] color in
+                self?.colorView.backgroundColor = color
+            }
+            .disposed(by: disposeBag)
     }
 }
 
