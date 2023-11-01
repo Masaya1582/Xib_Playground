@@ -16,9 +16,44 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="502" height="184"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gID-fo-dUy">
+                        <rect key="frame" x="2" y="2" width="498" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="pjG-r1-Lre"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOe-qR-ixO">
+                        <rect key="frame" x="2" y="181" width="498" height="1"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="YVV-Xm-qmV"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jav-b8-GqH">
+                        <rect key="frame" x="0.0" y="3" width="502" height="178"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="JOe-qR-ixO" secondAttribute="bottom" constant="2" id="Iia-nQ-lLS"/>
+                    <constraint firstItem="jav-b8-GqH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Khq-LP-bi8"/>
+                    <constraint firstItem="JOe-qR-ixO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="Oht-U2-KiR"/>
+                    <constraint firstAttribute="trailing" secondItem="gID-fo-dUy" secondAttribute="trailing" constant="2" id="SEG-IS-PPY"/>
+                    <constraint firstItem="jav-b8-GqH" firstAttribute="top" secondItem="gID-fo-dUy" secondAttribute="bottom" id="eeb-wV-ySK"/>
+                    <constraint firstItem="gID-fo-dUy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="f5Q-Ma-VCK"/>
+                    <constraint firstItem="gID-fo-dUy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="mj4-lT-V12"/>
+                    <constraint firstAttribute="trailing" secondItem="JOe-qR-ixO" secondAttribute="trailing" constant="2" id="qVd-bW-8IA"/>
+                    <constraint firstAttribute="trailing" secondItem="jav-b8-GqH" secondAttribute="trailing" id="xwZ-Vw-Cdt"/>
+                    <constraint firstItem="JOe-qR-ixO" firstAttribute="top" secondItem="jav-b8-GqH" secondAttribute="bottom" id="z65-e6-Yfu"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="colorView" destination="jav-b8-GqH" id="v0Z-gb-ePe"/>
+            </connections>
             <point key="canvasLocation" x="268.70229007633588" y="38.028169014084511"/>
         </tableViewCell>
     </objects>
