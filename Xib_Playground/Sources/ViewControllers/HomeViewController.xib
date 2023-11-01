@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="countryPicker" destination="qjl-gQ-qiV" id="Pbj-be-Q7u"/>
+                <outlet property="selectedPickerLabel" destination="jkU-Zr-lHe" id="LuA-Ew-bQp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,28 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qjl-gQ-qiV">
+                    <rect key="frame" x="0.0" y="336" width="393" height="216"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkU-Zr-lHe">
+                    <rect key="frame" x="48" y="107" width="297" height="28.666666666666657"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qjl-gQ-qiV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1ln-cL-mbu"/>
+                <constraint firstItem="jkU-Zr-lHe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="Hfb-TH-Wvp"/>
+                <constraint firstItem="qjl-gQ-qiV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KGw-Bc-ntf"/>
+                <constraint firstItem="qjl-gQ-qiV" firstAttribute="top" secondItem="jkU-Zr-lHe" secondAttribute="bottom" constant="200" id="mAD-BX-iKv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jkU-Zr-lHe" secondAttribute="trailing" constant="48" id="mKr-eI-EXZ"/>
+                <constraint firstItem="jkU-Zr-lHe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="thR-aQ-1jJ"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>

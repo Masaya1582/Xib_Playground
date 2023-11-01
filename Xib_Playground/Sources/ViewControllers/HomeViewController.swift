@@ -14,6 +14,12 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var selectedPickerLabel: UILabel!
+    @IBOutlet private weak var countryPicker: UIPickerView!
+
+    private let selectedValueRelay = PublishRelay<String>()
+    private let countryArray: [String] = ["Japan", "France", "Germany", "Italy", "India", "United States"]
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,6 +37,9 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        countryPicker.dataSource = self
+        countryPicker.delegate = self
+        countryPicker.reloadAllComponents()
         bind(to: viewModel)
     }
 
@@ -39,11 +48,32 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        countryPicker.rx.itemSelected
+            .subscribe(onNext: { [weak self] row, _ in
+                guard let self else { return }
+                let selectedValue = self.countryArray[row]
+                self.selectedValueRelay.accept(selectedValue)
+            })
+            .disposed(by: disposeBag)
+
+        selectedValueRelay
+            .bind(to: selectedPickerLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+}
+
+extension HomeViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countryArray.count
+    }
+
+    // MARK: - UIPickerViewDelegate method
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return countryArray[row]
     }
 }
 
