@@ -9,14 +9,17 @@ import UIKit
 
 final class HomeTableViewCell: UITableViewCell {
     // MARK: - Properties
+    @IBOutlet private weak var colorView: UIView!
 
     // MARK: - Initialize
     override func prepareForReuse() {
         super.prepareForReuse()
+        colorView.backgroundColor = nil
     }
 
     // MARK: - Setup
-    func configure() {
+    func configure(color: UIColor) {
+        colorView.backgroundColor = color
     }
     
 }
