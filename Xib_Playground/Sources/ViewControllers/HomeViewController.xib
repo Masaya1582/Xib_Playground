@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="progressBarView" destination="Pt0-lO-nbm" id="6iX-HM-6SA"/>
+                <outlet property="progressSliderView" destination="8If-4t-6el" id="ymK-Ft-AHS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,28 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="300" translatesAutoresizingMaskIntoConstraints="NO" id="QG3-gs-Pb4">
+                    <rect key="frame" x="36.666666666666657" y="259" width="320" height="334"/>
+                    <subviews>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pt0-lO-nbm">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="4"/>
+                        </progressView>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8If-4t-6el">
+                            <rect key="frame" x="-2" y="304" width="324" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="320" id="wPh-P7-8sJ"/>
+                            </constraints>
+                        </slider>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="QG3-gs-Pb4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="x3V-ie-ZH3"/>
+                <constraint firstItem="QG3-gs-Pb4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="yeP-R8-w5A"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
