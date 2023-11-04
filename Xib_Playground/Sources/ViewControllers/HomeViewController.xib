@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="kochoImageView" destination="Mq2-Jt-K77" id="P7i-ns-pVJ"/>
+                <outlet property="kochoSlider" destination="Uw1-pj-E8T" id="UoT-D9-OA5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +19,32 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headmaster" translatesAutoresizingMaskIntoConstraints="NO" id="Mq2-Jt-K77">
+                    <rect key="frame" x="76.666666666666686" y="179" width="240" height="240"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="240" id="rm9-ML-BVx"/>
+                        <constraint firstAttribute="width" constant="240" id="wL7-v4-AiF"/>
+                    </constraints>
+                </imageView>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uw1-pj-E8T">
+                    <rect key="frame" x="46" y="579" width="301" height="31"/>
+                </slider>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <constraints>
+                <constraint firstItem="Uw1-pj-E8T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="Ved-ZX-kA4"/>
+                <constraint firstItem="Mq2-Jt-K77" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="X9D-kV-WRe"/>
+                <constraint firstItem="Mq2-Jt-K77" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="eo9-Ud-8hN"/>
+                <constraint firstItem="Uw1-pj-E8T" firstAttribute="top" secondItem="Mq2-Jt-K77" secondAttribute="bottom" constant="160" id="t0S-VP-qwI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Uw1-pj-E8T" secondAttribute="trailing" constant="48" id="um2-xJ-t9T"/>
+                <constraint firstItem="Uw1-pj-E8T" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vKK-Kj-wUd"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
+    <resources>
+        <image name="headmaster" width="225" height="225"/>
+    </resources>
 </document>

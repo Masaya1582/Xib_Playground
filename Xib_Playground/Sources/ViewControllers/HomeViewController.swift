@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var kochoImageView: UIImageView!
+    @IBOutlet private weak var kochoSlider: UISlider!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -39,11 +42,13 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        let sliderValueDriver = kochoSlider.rx.value.asDriver()
+
+        sliderValueDriver
+            .drive(onNext: { [weak self] sliderValue in
+                self?.kochoImageView.alpha = CGFloat(sliderValue)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
