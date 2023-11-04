@@ -14,6 +14,11 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var tableView: UITableView!
+
+    private let menu: [(image: UIImage, name: String, price: Double)] = [
+        (Asset.Assets.burger.image, "Burger", 3.5), (Asset.Assets.spaghetti.image, "Spaghetti", 12.0), (Asset.Assets.nuggets.image, "Nuggets", 4.0), (Asset.Assets.pizza.image, "Pizza", 7.5), (Asset.Assets.pancakes.image, "Pancake", 2.7), (Asset.Assets.burger.image, "Burger", 3.5), (Asset.Assets.spaghetti.image, "Spaghetti", 12.0), (Asset.Assets.nuggets.image, "Nuggets", 4.0), (Asset.Assets.pizza.image, "Pizza", 7.5), (Asset.Assets.pancakes.image, "Pancake", 2.7)
+    ]
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -31,7 +36,14 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         bind(to: viewModel)
+    }
+
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
     }
 
 }
@@ -45,6 +57,29 @@ private extension HomeViewController {
 //            })
 //            .disposed(by: disposeBag)
     }
+}
+
+// MARK: - TableView
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    // セクション内のRowの数
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menu.count
+    }
+
+    // セルに表示させたいものの設定
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(image: menu[indexPath.row].image, name: menu[indexPath.row].name, price: menu[indexPath.row].price)
+        return cell
+    }
+
+    // 高さ
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.view.frame.height / 8
+    }
+
 }
 
 // MARK: - ViewControllerInjectable

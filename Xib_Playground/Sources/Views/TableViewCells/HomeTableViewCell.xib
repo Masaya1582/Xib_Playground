@@ -16,9 +16,43 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="502" height="184"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p6g-4s-izD">
+                        <rect key="frame" x="12" y="52" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="9Zl-k0-Ade"/>
+                            <constraint firstAttribute="width" constant="80" id="sSr-qa-BDP"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kq-s3-thW">
+                        <rect key="frame" x="103.99999999999999" y="80" width="51.333333333333329" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohm-cr-2G0">
+                        <rect key="frame" x="430.33333333333331" y="82.333333333333329" width="39.666666666666686" height="19.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ohm-cr-2G0" secondAttribute="trailing" constant="12" id="7NZ-aF-XGx"/>
+                    <constraint firstItem="p6g-4s-izD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Jjo-Pb-TM2"/>
+                    <constraint firstItem="2kq-s3-thW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Mms-zI-4eO"/>
+                    <constraint firstItem="2kq-s3-thW" firstAttribute="leading" secondItem="p6g-4s-izD" secondAttribute="trailing" constant="12" id="WGQ-hf-px5"/>
+                    <constraint firstItem="Ohm-cr-2G0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="i0N-KX-G8j"/>
+                    <constraint firstItem="p6g-4s-izD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="ppb-QH-0BM"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="menuImageView" destination="p6g-4s-izD" id="BfE-Xl-wyH"/>
+                <outlet property="menuNameLabel" destination="2kq-s3-thW" id="Q8B-Fh-HZz"/>
+                <outlet property="menuPriceLabel" destination="Ohm-cr-2G0" id="ZKR-Ob-8Nm"/>
+            </connections>
             <point key="canvasLocation" x="268.70229007633588" y="38.028169014084511"/>
         </tableViewCell>
     </objects>
