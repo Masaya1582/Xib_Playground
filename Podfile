@@ -10,5 +10,6 @@ target 'Xib_Playground' do
     pod 'SwiftGen', '~> 6.0'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'RxDataSources', '~> 5.0'
 
 end
