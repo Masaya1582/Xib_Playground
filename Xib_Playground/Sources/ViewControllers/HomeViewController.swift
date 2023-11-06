@@ -15,6 +15,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var textViewLabel: UILabel!
+    @IBOutlet private weak var sampleTextView: UITextView!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,11 +43,9 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        sampleTextView.rx.text.orEmpty
+            .bind(to: textViewLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
