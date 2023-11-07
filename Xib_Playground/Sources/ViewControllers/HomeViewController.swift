@@ -14,7 +14,17 @@ final class HomeViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
+    enum LoginError: Error {
+        case invalidUsername
+        case invalidPassword
+    }
+
     // MARK: - Properties
+    @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var usernameTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: DesignableButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,11 +50,35 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        loginButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                do {
+                    try self?.performLogin()
+                    self?.errorLabel.text = "Login successful!"
+                    self?.errorLabel.textColor = .green
+                } catch LoginError.invalidUsername {
+                    self?.errorLabel.text = "Invalid username"
+                    self?.errorLabel.textColor = .red
+                } catch LoginError.invalidPassword {
+                    self?.errorLabel.text = "Invalid password"
+                    self?.errorLabel.textColor = .red
+                } catch {
+                    self?.errorLabel.text = "An unexpected error occurred"
+                    self?.errorLabel.textColor = .red
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func performLogin() throws {
+        let username = usernameTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        if username.isEmpty {
+            throw LoginError.invalidUsername
+        }
+        if password.isEmpty {
+            throw LoginError.invalidPassword
+        }
     }
 }
 
