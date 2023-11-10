@@ -72,6 +72,11 @@
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <designables>
+        <designable name="WAA-1y-9h6">
+            <size key="intrinsicContentSize" width="79" height="41"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

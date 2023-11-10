@@ -63,7 +63,8 @@ private extension HomeViewController {
                 self.showAlert(message: "Registration failed")
                 print("Error Details: \(error.localizedDescription)")
             } else {
-                self.showAlert(message: "Registration successful!")
+                let controller = SignupOKViewController()
+                self.navigationController?.pushViewController(controller, animated: true)
             }
         }
     }
