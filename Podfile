@@ -16,5 +16,6 @@ target 'Xib_Playground' do
     pod 'Firebase/Messaging'
     pod 'Firebase/Crashlytics'
     pod 'Firebase/Performance'
+    pod 'GoogleSignIn'
   
 end
