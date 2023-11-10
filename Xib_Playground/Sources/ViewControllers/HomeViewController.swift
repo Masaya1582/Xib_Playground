@@ -69,7 +69,7 @@ private extension HomeViewController {
     }
 
     func showAlert(message: String) {
-        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Result", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
