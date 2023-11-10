@@ -9,12 +9,17 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Firebase
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var idTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: DesignableButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,11 +45,32 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        loginButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                guard let id = self?.idTextField.text, !id.isEmpty,
+                      let password = self?.passwordTextField.text, !password.isEmpty else {
+                    self?.showAlert(message: "Please enter both ID and password.")
+                    return
+                }
+                self?.loginUserToFirebase(id: id, password: password)
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func loginUserToFirebase(id: String, password: String) {
+        Auth.auth().signIn(withEmail: id, password: password) { authResult, error in
+            if let error = error {
+                self.showAlert(message: "Login failed. \(error.localizedDescription)", isSuccess: false)
+            } else {
+                self.showAlert(message: "Login successful!", isSuccess: true)
+            }
+        }
+    }
+
+    func showAlert(message: String, isSuccess: Bool = true) {
+        let alert = UIAlertController(title: isSuccess ? "Success" : "Warning", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
