@@ -7,16 +7,14 @@
 
 import Foundation
 
-final class HomeModel {
-    var name: String
-    var age: Int
-    var height: Double
-    var isHuman: Bool
+enum PokemonType {
+    case fire
+    case water
+    case grass
+    case electric
+}
 
-    init(name: String, age: Int, height: Double, isHuman: Bool) {
-        self.name = name
-        self.age = age
-        self.height = height
-        self.isHuman = isHuman
-    }
+struct Pokemon {
+    var name: String
+    var type: PokemonType
 }
