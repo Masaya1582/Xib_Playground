@@ -1,5 +1,5 @@
 //
-//  HomeModel.swift
+//  Pokemon.swift
 //  Xib_Playground
 //
 //  Created by MasayaNakakuki on 2023/06/29.
@@ -7,16 +7,23 @@
 
 import Foundation
 
-final class HomeModel {
-    var name: String
-    var age: Int
-    var height: Double
-    var isHuman: Bool
+protocol PokemonBehavior {
+    var name: String { get }
+    var level: Int { get set }
 
-    init(name: String, age: Int, height: Double, isHuman: Bool) {
-        self.name = name
-        self.age = age
-        self.height = height
-        self.isHuman = isHuman
+    func attack()
+    func heal()
+}
+
+final class Pikachu: PokemonBehavior {
+    var name: String = "Pikachu"
+    var level: Int = 10
+
+    func attack() {
+        print("Pikachu used Thunderbolt!")
+    }
+
+    func heal() {
+        print("Pikachu used Potion.")
     }
 }
