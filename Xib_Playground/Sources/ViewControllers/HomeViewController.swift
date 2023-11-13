@@ -16,6 +16,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var farewellButton: DesignableButton!
+
+    private var pikachu: Pokemon? = Pokemon(name: "Pikachu")
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -41,11 +44,11 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        farewellButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                self?.pikachu = nil
+            })
+            .disposed(by: disposeBag)
     }
 }
 
