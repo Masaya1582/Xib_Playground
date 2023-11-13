@@ -33,19 +33,51 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: viewModel)
+        fetchPokemon { result in
+            switch result {
+            case .success(let pokemon):
+                print("Successfully fetched Pokémon data:")
+                print("Name: \(pokemon.name)")
+                print("Height: \(pokemon.height)")
+                print("Weight: \(pokemon.weight)")
+            case .failure(let error):
+                print("Failed to fetch Pokemon data. Error: \(error)")
+            }
+        }
     }
 
 }
 
 // MARK: - Bind
 private extension HomeViewController {
-    func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+    func fetchPokemon(completion: @escaping (Result<Pokemon, APIError>) -> Void) {
+        let apiURLString = "https://pokeapi.co/api/v2/pokemon/25"
+
+        guard let url = URL(string: apiURLString) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let _ = error {
+                completion(.failure(.requestFailed))
+                return
+            }
+
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+
+            do {
+                let decoder = JSONDecoder()
+                let pokemonData = try decoder.decode(Pokemon.self, from: data)
+                completion(.success(pokemonData))
+            } catch {
+                completion(.failure(.decodingFailure))
+            }
+        }
+        task.resume()
     }
 }
 
