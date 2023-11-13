@@ -16,6 +16,13 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    private let pokemonCollection: [Pokemon] = [
+        Pokemon(name: "Bulbasaur", evolution: "Ivysaur"),
+        Pokemon(name: "Charmander", evolution: "Charmeleon"),
+        Pokemon(name: "Squirtle", evolution: "Wartortle"),
+        Pokemon(name: "Pikachu", evolution: nil),
+        Pokemon(name: "Jigglypuff", evolution: "Wigglytuff")
+    ]
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -41,11 +48,19 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        let pokemonObservable = Observable.from(pokemonCollection)
+
+        // Using compactMap to filter out Pokémon without a valid evolution
+        let evolvedPokemonObservable = pokemonObservable
+            .compactMap { pokemon -> String? in
+                return pokemon.evolution
+            }
+
+        // Subscribe to the evolved Pokémon observable
+        evolvedPokemonObservable.subscribe(onNext: { evolvedPokemon in
+            print("Evolved Pokémon: \(evolvedPokemon)")
+        })
+        .disposed(by: DisposeBag())
     }
 }
 
