@@ -6,48 +6,33 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
-import RxDataSources
-import Firebase
 
 final class HomeViewController: UIViewController {
-    // MARK: - Dependency
-    typealias Dependency = Void
-
     // MARK: - Properties
-    private let disposeBag = DisposeBag()
-    private let viewModel: Dependency
-
-    // MARK: - Initialize
-    init(dependency: Dependency) {
-        self.viewModel = dependency
-        super.init(nibName: Self.className, bundle: Self.bundle)
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private var employeeDepartments = [
+        "Alice": "HR",
+        "Bob": "Finance",
+        "Charlie": "Engineering",
+        "Diana": "HR",
+        "Eva": "Engineering"
+    ]
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: viewModel)
+        departmentForEmployee("Alice")
+        departmentForEmployee("Charlie")
+        departmentForEmployee("Anna")
     }
 
 }
 
-// MARK: - Bind
 private extension HomeViewController {
-    func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+    func departmentForEmployee(_ employee: String) {
+        if let department = employeeDepartments[employee] {
+            print("\(employee) works in the \(department) department.")
+        } else {
+            print("Employee not found or department information not available.")
+        }
     }
 }
-
-// MARK: - ViewControllerInjectable
-extension HomeViewController: ViewControllerInjectable {}
