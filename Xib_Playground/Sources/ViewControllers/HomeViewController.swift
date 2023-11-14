@@ -6,48 +6,45 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
-import RxDataSources
-import Firebase
 
 final class HomeViewController: UIViewController {
-    // MARK: - Dependency
-    typealias Dependency = Void
-
     // MARK: - Properties
-    private let disposeBag = DisposeBag()
-    private let viewModel: Dependency
-
-    // MARK: - Initialize
-    init(dependency: Dependency) {
-        self.viewModel = dependency
-        super.init(nibName: Self.className, bundle: Self.bundle)
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private let pokemonList = ["Pikachu", "Bulbasaur", "Charmander", "Squirtle"]
+    private let allPokemon = [
+        ("Pikachu", "Electric"),
+        ("Bulbasaur", "Grass"),
+        ("Squirtle", "Water"),
+        ("Charmander", "Fire"),
+        ("Vaporeon", "Water")
+    ]
+    private var foundRarePokemon = false
+    private var steps = 0
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: viewModel)
+        practiceForWhileWhere()
+    }
+
+    private func practiceForWhileWhere() {
+        // MARK: - For文
+        for pokemon in pokemonList {
+            print("Your found: \(pokemon)")
+        }
+
+        // MARK: - While文
+        while !foundRarePokemon {
+            steps += 1
+            if steps >= 1_000 {
+                foundRarePokemon = true
+                print("Found a rare pokemon!")
+            }
+        }
+
+        // MARK: - Where文
+        for (name, type) in allPokemon where type == "Water" {
+            print("\(name) is a water type pokemon.")
+        }
     }
 
 }
-
-// MARK: - Bind
-private extension HomeViewController {
-    func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-    }
-}
-
-// MARK: - ViewControllerInjectable
-extension HomeViewController: ViewControllerInjectable {}
