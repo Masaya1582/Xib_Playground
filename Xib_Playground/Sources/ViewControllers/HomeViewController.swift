@@ -16,6 +16,19 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    // Cold Observable
+    private let medowObservable = Observable<String>.create { observer in
+        let pokemonArray = ["Bulbasaur", "Charmander", "Squirtle", "Pikachu"]
+
+        for pokemon in pokemonArray {
+            observer.onNext("You encountered \(pokemon)")
+        }
+        observer.onCompleted()
+        return Disposables.create()
+    }
+    // Hot Observable
+    private let legendaryPokemon = PublishRelay<String>()
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -41,11 +54,29 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        // Cold Observable
+        medowObservable.subscribe { event in
+            print(event)
+        }
+        .disposed(by: disposeBag)
+
+        medowObservable.subscribe { event in
+            print(event)
+        }
+        .disposed(by: disposeBag)
+
+        // Hot Observable
+        legendaryPokemon.accept("Mewtwo")
+        legendaryPokemon.subscribe(onNext: { pokemon in
+            print("Trainer1 encountered \(pokemon)")
+        })
+        .disposed(by: disposeBag)
+
+        legendaryPokemon.accept("Zapdos")
+        legendaryPokemon.subscribe(onNext: { pokemon in
+            print("Trainer2 encountered \(pokemon)")
+        })
+        .disposed(by: disposeBag)
     }
 }
 
