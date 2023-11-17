@@ -13,7 +13,7 @@ import Firebase
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = PokemonViewModel
 
     // MARK: - Properties
     private let disposeBag = DisposeBag()
@@ -41,11 +41,13 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        viewModel.fetchPokemon()
+            .subscribe(onNext: { pokemonList in
+                print("Fetched Pokemon: \(pokemonList)")
+            }, onError: { error in
+                print("Error fetching Pokemon: \(error)")
+            })
+            .disposed(by: disposeBag)
     }
 }
 
