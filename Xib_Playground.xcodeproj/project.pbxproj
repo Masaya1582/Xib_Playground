@@ -14,6 +14,9 @@
 		1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */; };
 		1EC0E5322AB2A968003DA972 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */; };
 		1EC0E5332AB2A968003DA972 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */; };
+		1EF405AD2B072D6F00A31AD8 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF405AC2B072D6F00A31AD8 /* PokemonViewModel.swift */; };
+		1EF405AF2B072D8C00A31AD8 /* PokemonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF405AE2B072D8C00A31AD8 /* PokemonRepository.swift */; };
+		1EF405B12B072DDF00A31AD8 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF405B02B072DDF00A31AD8 /* Pokemon.swift */; };
 		1EF7E6302ADE49ED0032015B /* PressableMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF7E62F2ADE49ED0032015B /* PressableMaterialButton.swift */; };
 		4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */; };
 		4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8C32A4D9B6F003F06BF /* SceneDelegate.swift */; };
@@ -44,6 +47,9 @@
 		1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		1EC0E52F2AB2A968003DA972 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
 		1EC0E5302AB2A968003DA972 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		1EF405AC2B072D6F00A31AD8 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
+		1EF405AE2B072D8C00A31AD8 /* PokemonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRepository.swift; sourceTree = "<group>"; };
+		1EF405B02B072DDF00A31AD8 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		1EF7E62F2ADE49ED0032015B /* PressableMaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableMaterialButton.swift; sourceTree = "<group>"; };
 		4011E8BE2A4D9B6F003F06BF /* Xib_Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xib_Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011E8C12A4D9B6F003F06BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				4011E8EB2A4D9D8D003F06BF /* HomeViewModel.swift */,
+				1EF405AC2B072D6F00A31AD8 /* PokemonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				4011E8F12A4D9E05003F06BF /* HomeModel.swift */,
+				1EF405B02B072DDF00A31AD8 /* Pokemon.swift */,
+				1EF405AE2B072D8C00A31AD8 /* PokemonRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -400,14 +409,17 @@
 				4011E8C22A4D9B6F003F06BF /* AppDelegate.swift in Sources */,
 				40D3B0132A56B2CB00E9A002 /* NSObjectExtension.swift in Sources */,
 				4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */,
+				1EF405AD2B072D6F00A31AD8 /* PokemonViewModel.swift in Sources */,
 				1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */,
 				1E514EDE2AAEDF2400C9CB9A /* DesignableView.swift in Sources */,
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
 				1EF7E6302ADE49ED0032015B /* PressableMaterialButton.swift in Sources */,
 				4011E8E62A4D9D67003F06BF /* Assets.swift in Sources */,
+				1EF405AF2B072D8C00A31AD8 /* PokemonRepository.swift in Sources */,
 				4011E8EA2A4D9D74003F06BF /* Fonts.swift in Sources */,
 				1E62EE682AD7AABB0031CB1B /* HomeCollectionViewCell.swift in Sources */,
+				1EF405B12B072DDF00A31AD8 /* Pokemon.swift in Sources */,
 				4011E8EF2A4D9DC6003F06BF /* HomeTableViewCell.swift in Sources */,
 				1EC0E5322AB2A968003DA972 /* DesignableLabel.swift in Sources */,
 				40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */,

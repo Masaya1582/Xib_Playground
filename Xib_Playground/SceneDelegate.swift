@@ -24,9 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // NavigationControllerを使用しない場合 -----ここから
         window = UIWindow(windowScene: scene as! UIWindowScene)
         window?.makeKeyAndVisible()
-        let homeViewController = HomeViewController()
-//        let viewModel = HomeViewModel()
-//        let homeViewController = HomeViewController(dependency: viewModel)
+        // let homeViewController = HomeViewController()
+        let viewModel = PokemonViewModel()
+        let homeViewController = HomeViewController(dependency: viewModel)
         window?.rootViewController = homeViewController
         // 追記 -----ここまで
     }
