@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // guard let _ = (scene as? UIWindowScene) else { return }
-        // 追記 -----ここから (NavigationControllerを使用する場合)
+        // NavigationControllerを使用する場合 -----ここから
 //        window = UIWindow(windowScene: scene as! UIWindowScene)
 //        window?.makeKeyAndVisible()
 //        let <#名前#>ViewController = <#ファイル名#>()
@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window?.rootViewController = rootViewController
         // 追記 -----ここまで
 
-        // 追記 -----ここから (NavigationControllerを使用しない場合)
+        // NavigationControllerを使用しない場合 -----ここから
         window = UIWindow(windowScene: scene as! UIWindowScene)
         window?.makeKeyAndVisible()
         let homeViewController = HomeViewController()
