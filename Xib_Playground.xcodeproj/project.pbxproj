@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1E3E3D512A67D6E500DB681F /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E3D502A67D6E500DB681F /* DesignableButton.swift */; };
 		1E514EDE2AAEDF2400C9CB9A /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E514EDD2AAEDF2400C9CB9A /* DesignableView.swift */; };
-		1E522A2E2AFE183E00A5B64F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E522A2D2AFE183E00A5B64F /* GoogleService-Info.plist */; };
 		1E62EE682AD7AABB0031CB1B /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E62EE662AD7AABB0031CB1B /* HomeCollectionViewCell.swift */; };
 		1E62EE692AD7AABB0031CB1B /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E62EE672AD7AABB0031CB1B /* HomeCollectionViewCell.xib */; };
 		1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		1E3E3D502A67D6E500DB681F /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		1E514EDD2AAEDF2400C9CB9A /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
-		1E522A2D2AFE183E00A5B64F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E62EE662AD7AABB0031CB1B /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		1E62EE672AD7AABB0031CB1B /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		1EC0E52E2AB2A967003DA972 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				4011E8DE2A4D9D31003F06BF /* Localizable.strings */,
 				4011E8CC2A4D9B70003F06BF /* LaunchScreen.storyboard */,
 				4011E8CF2A4D9B70003F06BF /* Info.plist */,
-				1E522A2D2AFE183E00A5B64F /* GoogleService-Info.plist */,
 				4011E8E02A4D9D38003F06BF /* Font */,
 			);
 			path = Resources;
@@ -321,7 +318,6 @@
 			files = (
 				4011E8DF2A4D9D31003F06BF /* Localizable.strings in Resources */,
 				4011E8CE2A4D9B70003F06BF /* LaunchScreen.storyboard in Resources */,
-				1E522A2E2AFE183E00A5B64F /* GoogleService-Info.plist in Resources */,
 				4011E8DD2A4D9D20003F06BF /* Colors.xcassets in Resources */,
 				1E62EE692AD7AABB0031CB1B /* HomeCollectionViewCell.xib in Resources */,
 				4011E8F02A4D9DC6003F06BF /* HomeTableViewCell.xib in Resources */,

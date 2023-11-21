@@ -11,11 +11,5 @@ target 'Xib_Playground' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxDataSources', '~> 5.0'
-    pod 'Firebase/Analytics'
-    pod 'Firebase/Auth'
-    pod 'Firebase/Messaging'
-    pod 'Firebase/Crashlytics'
-    pod 'Firebase/Performance'
-    pod 'GoogleSignIn'
   
 end

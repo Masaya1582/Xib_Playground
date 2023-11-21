@@ -9,7 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
-import Firebase
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
