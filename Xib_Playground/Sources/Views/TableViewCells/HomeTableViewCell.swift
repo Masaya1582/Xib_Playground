@@ -12,14 +12,17 @@ import RxDataSources
 
 final class HomeTableViewCell: UITableViewCell {
     // MARK: - Properties
+    @IBOutlet private weak var titleLabel: UILabel!
 
     // MARK: - Initialize
     override func prepareForReuse() {
         super.prepareForReuse()
+        titleLabel.text = nil
     }
 
     // MARK: - Setup
-    func configure() {
+    func configure(with title: String) {
+        titleLabel.text = title
     }
     
 }
