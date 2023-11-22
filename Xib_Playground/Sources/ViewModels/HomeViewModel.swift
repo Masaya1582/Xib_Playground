@@ -10,29 +10,18 @@ import RxCocoa
 import RxDataSources
 import Action
 
-protocol HomeViewModelInputs: AnyObject {
-}
+final class HomeViewModel {
+    let sections: Driver<[SectionModel<String, String>]>
 
-protocol HomeViewModelOutputs: AnyObject {
-}
-
-protocol HomeViewModelType: AnyObject {
-    var inputs: HomeViewModelInputs { get }
-    var outputs: HomeViewModelOutputs { get }
-}
-
-final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
-    // MARK: - Properties
-    var inputs: HomeViewModelInputs { return self }
-    var outputs: HomeViewModelOutputs { return self }
-
-    // MARK: - Input Sources
-    // MARK: - Output Sources
-
-    private let disposeBag = DisposeBag()
-
-    // MARK: - Initialize
     init() {
-    }
+        let data: [SectionModel<String, String>] = [
+            SectionModel(model: "Section 1", items: ["Item 1", "Item 2", "Item 3"]),
+            SectionModel(model: "Section 2", items: ["Item 4", "Item 5"]),
+            SectionModel(model: "Section 3", items: ["Item 6", "Item 7", "Item 8"]),
+            SectionModel(model: "Section 4", items: ["Item 9", "Item 10", "Item 11", "Item 12", "Item 13"])
+        ]
 
+        sections = Observable.just(data)
+            .asDriver(onErrorJustReturn: [])
+    }
 }
