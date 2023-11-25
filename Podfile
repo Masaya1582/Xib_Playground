@@ -11,5 +11,6 @@ target 'Xib_Playground' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxDataSources', '~> 5.0'
+    pod 'APIKit', '~> 5.0'
   
 end
