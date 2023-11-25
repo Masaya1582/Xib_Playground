@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import APIKit
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
@@ -40,11 +41,19 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        let pokemonID = Int.random(in: 1...100)
+
+        let request = GetPokemonRequest(method: .get, id: pokemonID)
+        Session.shared.send(request) { result in
+            switch result {
+            case .success(let pokemon):
+                print("Pokemon Name: \(pokemon.name)")
+                print("Pokemon ID: \(pokemon.id)")
+
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
     }
 }
 
