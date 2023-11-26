@@ -7,21 +7,11 @@
 
 import Foundation
 
-final class HomeModel {
-    var name: String
-    var age: Int
-    var height: Double
-    var isHuman: Bool
+struct Pokemon: Codable {
+    let name: String
+    let url: String
+}
 
-    init(name: String, age: Int, height: Double, isHuman: Bool) {
-        self.name = name
-        self.age = age
-        self.height = height
-        self.isHuman = isHuman
-    }
-
-    func pokemonAttack(type: String, attack: String) {
-        print("\(type) type pokemon used \(attack)!")
-
-    }
+struct PokemonResponse: Codable {
+    let results: [Pokemon]
 }

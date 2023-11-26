@@ -12,14 +12,17 @@ import RxDataSources
 
 final class HomeTableViewCell: UITableViewCell {
     // MARK: - Properties
+    @IBOutlet private weak var nameLabel: UILabel!
 
     // MARK: - Initialize
     override func prepareForReuse() {
         super.prepareForReuse()
+        nameLabel.text = nil
     }
 
     // MARK: - Setup
-    func configure() {
+    func configure(pokemon name: String) {
+        nameLabel.text = name
     }
     
 }
