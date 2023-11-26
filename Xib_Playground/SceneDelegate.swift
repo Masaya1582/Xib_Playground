@@ -14,19 +14,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // guard let _ = (scene as? UIWindowScene) else { return }
         // NavigationControllerを使用する場合 -----ここから
-//        window = UIWindow(windowScene: scene as! UIWindowScene)
-//        window?.makeKeyAndVisible()
-//        let <#名前#>ViewController = <#ファイル名#>()
-//        let rootViewController = UINavigationController(rootViewController: <#名前#>ViewController)
-//        window?.rootViewController = rootViewController
+        //        window = UIWindow(windowScene: scene as! UIWindowScene)
+        //        window?.makeKeyAndVisible()
+        //        let <#名前#>ViewController = <#ファイル名#>()
+        //        let rootViewController = UINavigationController(rootViewController: <#名前#>ViewController)
+        //        window?.rootViewController = rootViewController
         // 追記 -----ここまで
 
         // NavigationControllerを使用しない場合 -----ここから
         window = UIWindow(windowScene: scene as! UIWindowScene)
         window?.makeKeyAndVisible()
-        let homeViewController = HomeViewController()
-//        let viewModel = HomeViewModel()
-//        let homeViewController = HomeViewController(dependency: viewModel)
+        //  let homeViewController = HomeViewController()
+        let viewModel = HomeViewModel()
+        let homeViewController = HomeViewController(dependency: viewModel)
         window?.rootViewController = homeViewController
         // 追記 -----ここまで
     }
