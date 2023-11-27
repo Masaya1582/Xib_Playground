@@ -45,6 +45,15 @@ private extension HomeViewController {
 //                <#Actions#>
 //            })
 //            .disposed(by: disposeBag)
+//
+//        <#TextField#>.rx.text.orEmpty
+//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
+//
+//        viewModel.outputs.<#Property#>
+//            .drive { [weak self] <#Property#> in
+//                <#Actions#>
+//            }
+//            .disposed(by: disposeBag)
     }
 }
 
