@@ -15,6 +15,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var labelColorSwitch: UISwitch!
+    @IBOutlet private weak var switchLabel: UILabel!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,11 +43,11 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+        // Switch Text Color
+        labelColorSwitch.rx.isOn
+            .map { $0 ? UIColor.red : UIColor.blue }
+            .bind(to: switchLabel.rx.textColor)
+            .disposed(by: disposeBag)
     }
 }
 
