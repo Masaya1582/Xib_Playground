@@ -21,7 +21,7 @@ final class HomeModel {
     }
 
     func pokemonAttack(type: String, attack: String) {
-        print("\(type) type pokemon used \(attack)!")
+        print("\(type) type Pokemon used \(attack)!")
 
     }
 }
