@@ -46,9 +46,24 @@ internal enum Asset {
     internal static let imgWaterfall = ImageAsset(name: "img_waterfall")
   }
   internal enum Colors {
+    internal static let alertRed = ColorAsset(name: "alert_red")
     internal static let bakcgroundColor = ColorAsset(name: "bakcground_color")
+    internal static let black = ColorAsset(name: "black")
+    internal static let blue = ColorAsset(name: "blue")
     internal static let defaultWhiteColor = ColorAsset(name: "default_white_color")
+    internal static let gray1 = ColorAsset(name: "gray1")
+    internal static let gray2 = ColorAsset(name: "gray2")
+    internal static let gray3 = ColorAsset(name: "gray3")
+    internal static let gray4 = ColorAsset(name: "gray4")
+    internal static let gray5 = ColorAsset(name: "gray5")
+    internal static let gray6 = ColorAsset(name: "gray6")
+    internal static let gray7 = ColorAsset(name: "gray7")
+    internal static let gray8 = ColorAsset(name: "gray8")
+    internal static let gray9 = ColorAsset(name: "gray9")
+    internal static let ivory = ColorAsset(name: "ivory")
     internal static let mainColor = ColorAsset(name: "main_color")
+    internal static let pink = ColorAsset(name: "pink")
+    internal static let white = ColorAsset(name: "white")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
