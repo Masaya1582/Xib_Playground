@@ -15,6 +15,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var presidentImageView: UIImageView!
+    @IBOutlet private weak var imageOpacitySlider: UISlider!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,20 +43,10 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        imageOpacitySlider.rx.value
+            .map { CGFloat($0) }
+            .bind(to: presidentImageView.rx.alpha)
+            .disposed(by: disposeBag)
     }
 }
 
