@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="imageOpacitySlider" destination="v9x-R5-ey2" id="XLm-qU-yyz"/>
+                <outlet property="presidentImageView" destination="zWq-yw-vg2" id="Y6X-3r-lD0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +19,31 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_donald" translatesAutoresizingMaskIntoConstraints="NO" id="zWq-yw-vg2">
+                    <rect key="frame" x="76.666666666666686" y="139" width="240" height="240"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zWq-yw-vg2" secondAttribute="height" multiplier="1:1" id="6bp-ac-iY0"/>
+                        <constraint firstAttribute="width" constant="240" id="off-OL-dRh"/>
+                    </constraints>
+                </imageView>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v9x-R5-ey2">
+                    <rect key="frame" x="46" y="479" width="301" height="31"/>
+                </slider>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v9x-R5-ey2" secondAttribute="trailing" constant="48" id="Qd7-qz-ucq"/>
+                <constraint firstItem="v9x-R5-ey2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="Vlk-OE-qlm"/>
+                <constraint firstItem="zWq-yw-vg2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="VvA-4F-ulS"/>
+                <constraint firstItem="v9x-R5-ey2" firstAttribute="top" secondItem="zWq-yw-vg2" secondAttribute="bottom" constant="100" id="awj-EX-5Xj"/>
+                <constraint firstItem="zWq-yw-vg2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="f4J-U3-mzG"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_donald" width="199" height="253"/>
+    </resources>
 </document>
