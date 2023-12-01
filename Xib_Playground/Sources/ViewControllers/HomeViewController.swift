@@ -15,6 +15,15 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var dateLabel: UILabel!
+
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter
+    }()
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,20 +49,12 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        datePicker.rx.date
+            .map { [weak self] in
+                self?.dateFormatter.string(from: $0) ?? ""
+            }
+            .bind(to: dateLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
