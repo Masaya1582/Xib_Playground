@@ -5,11 +5,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="pokemonSearchBar" destination="ng4-bW-erB" id="2yv-gS-5EI"/>
+                <outlet property="tableView" destination="vd3-NL-86X" id="GUN-Ks-WIk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +20,38 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Find Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="ng4-bW-erB">
+                    <rect key="frame" x="10" y="59" width="373" height="56"/>
+                    <offsetWrapper key="searchTextPositionAdjustment" horizontal="8" vertical="0.0"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                    <scopeButtonTitles>
+                        <string>Title</string>
+                        <string>Title</string>
+                    </scopeButtonTitles>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vd3-NL-86X">
+                    <rect key="frame" x="0.0" y="115" width="393" height="737"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="vd3-NL-86X" secondAttribute="bottom" id="0Pl-O0-dFa"/>
+                <constraint firstItem="vd3-NL-86X" firstAttribute="top" secondItem="ng4-bW-erB" secondAttribute="bottom" id="2De-v5-G02"/>
+                <constraint firstItem="ng4-bW-erB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MX2-LA-1NF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ng4-bW-erB" secondAttribute="trailing" constant="10" id="bUf-Ry-r0K"/>
+                <constraint firstAttribute="trailing" secondItem="vd3-NL-86X" secondAttribute="trailing" id="cCN-y8-ZuB"/>
+                <constraint firstItem="ng4-bW-erB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="shr-oK-Ify"/>
+                <constraint firstItem="vd3-NL-86X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wKR-g4-A51"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
