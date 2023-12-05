@@ -15,6 +15,8 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var showAlertButton: DesignableButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,21 +42,26 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        showAlertButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                self?.showFishorBeefAlertView()
+            })
+            .disposed(by: disposeBag)
     }
+
+    func showFishorBeefAlertView() {
+        let alert = UIAlertController(title: "魚派？肉派？", message: "あなたはどっち？", preferredStyle: .alert)
+        let fishAction = UIAlertAction(title: "魚派", style: .default) { _ in
+            print("魚 selected")
+        }
+        let beefAction = UIAlertAction(title: "肉派", style: .default) { _ in
+           print("肉 selected")
+        }
+        alert.addAction(fishAction)
+        alert.addAction(beefAction)
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
 // MARK: - ViewControllerInjectable
