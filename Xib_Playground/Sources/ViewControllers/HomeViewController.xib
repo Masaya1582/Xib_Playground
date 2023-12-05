@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="searchBar" destination="0ld-fV-Xuf" id="p1L-Jh-juT"/>
+                <outlet property="tableView" destination="39F-pf-z79" id="Aoc-oD-Szo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +20,45 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="検索するぜ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMc-jL-Kvl">
+                    <rect key="frame" x="48" y="71" width="297" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <searchBar contentMode="redraw" placeholder="探す" translatesAutoresizingMaskIntoConstraints="NO" id="0ld-fV-Xuf">
+                    <rect key="frame" x="0.0" y="107" width="393" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="4Bs-zc-KTL"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="39F-pf-z79">
+                    <rect key="frame" x="0.0" y="163" width="393" height="689"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="VMc-jL-Kvl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="3ld-Uy-2xb"/>
+                <constraint firstItem="0ld-fV-Xuf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MQ5-8Z-kZD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VMc-jL-Kvl" secondAttribute="trailing" constant="48" id="OeF-Uy-rwu"/>
+                <constraint firstItem="VMc-jL-Kvl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="QPn-JD-gZU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="39F-pf-z79" secondAttribute="trailing" id="ZyU-cN-rMa"/>
+                <constraint firstItem="39F-pf-z79" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="j9p-PF-fao"/>
+                <constraint firstAttribute="bottom" secondItem="39F-pf-z79" secondAttribute="bottom" id="jev-hU-eNg"/>
+                <constraint firstItem="0ld-fV-Xuf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kHR-at-lKU"/>
+                <constraint firstItem="39F-pf-z79" firstAttribute="top" secondItem="0ld-fV-Xuf" secondAttribute="bottom" id="qbU-nW-HjU"/>
+                <constraint firstItem="0ld-fV-Xuf" firstAttribute="top" secondItem="VMc-jL-Kvl" secondAttribute="bottom" constant="12" id="rGC-ud-C8p"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
