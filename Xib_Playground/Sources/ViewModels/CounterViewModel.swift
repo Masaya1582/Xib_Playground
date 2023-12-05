@@ -58,8 +58,7 @@ class CounterViewModel: CounterViewModelType, CounterViewModelInputs, CounterVie
             .disposed(by: disposeBag)
 
         counterValue = _counterValue
-            .asObservable()
-            .distinctUntilChanged()
             .asDriver(onErrorJustReturn: 0)
+            .distinctUntilChanged()
     }
 }
