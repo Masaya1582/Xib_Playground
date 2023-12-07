@@ -11,6 +11,11 @@ import RxCocoa
 import RxDataSources
 
 final class HomeViewController: UIViewController {
+    // CaseIterable Sample
+    enum CompassDirection: CaseIterable {
+        case north, south, east, west
+    }
+
     // MARK: - Dependency
     typealias Dependency = Void
 
@@ -33,6 +38,11 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
+        print("There are \(CompassDirection.allCases.count) directions")
+        let caseList = CompassDirection.allCases
+            .map { "\($0)" }
+            .joined(separator: ",")
+        print(caseList)
     }
 
 }
