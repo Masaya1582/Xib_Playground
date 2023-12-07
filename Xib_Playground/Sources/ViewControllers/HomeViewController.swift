@@ -15,6 +15,7 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    private var pikachu = Pokemon(name: "Pikachu", attack: 50, level: 20, defence: 30, type: "Electric")
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -33,6 +34,10 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
+        print(pikachu.combatPower)
+        pikachu.combatPower = 1500
+        print(pikachu.attack)
+        print(pikachu.defence)
     }
 
 }

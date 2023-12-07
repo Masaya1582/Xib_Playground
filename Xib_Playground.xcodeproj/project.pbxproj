@@ -31,6 +31,7 @@
 		4011E8F02A4D9DC6003F06BF /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */; };
 		4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* HomeModel.swift */; };
 		4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */; };
+		40B87DC12B21FE9B00449C27 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B87DC02B21FE9B00449C27 /* Pokemon.swift */; };
 		40D3B0132A56B2CB00E9A002 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3B0122A56B2CB00E9A002 /* NSObjectExtension.swift */; };
 		40D3B0162A56B3E400E9A002 /* ViewControllerInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3B0152A56B3E400E9A002 /* ViewControllerInjectable.swift */; };
 		844A2A7CC692AB7AE5144D68 /* Pods_Xib_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */; };
@@ -63,6 +64,7 @@
 		4011E8EE2A4D9DC6003F06BF /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		4011E8F12A4D9E05003F06BF /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		40B87DC02B21FE9B00449C27 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		40D3B0122A56B2CB00E9A002 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		40D3B0152A56B3E400E9A002 /* ViewControllerInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerInjectable.swift; sourceTree = "<group>"; };
 		6CD0A8EB52597155F7D85EC8 /* Pods_Xib_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xib_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				4011E8F12A4D9E05003F06BF /* HomeModel.swift */,
+				40B87DC02B21FE9B00449C27 /* Pokemon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				40D3B0132A56B2CB00E9A002 /* NSObjectExtension.swift in Sources */,
 				4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */,
 				1EC0E5312AB2A968003DA972 /* DesignableTextField.swift in Sources */,
+				40B87DC12B21FE9B00449C27 /* Pokemon.swift in Sources */,
 				1E514EDE2AAEDF2400C9CB9A /* DesignableView.swift in Sources */,
 				4011E8C42A4D9B6F003F06BF /* SceneDelegate.swift in Sources */,
 				4011E8E82A4D9D6E003F06BF /* LocalizableStrings.swift in Sources */,
