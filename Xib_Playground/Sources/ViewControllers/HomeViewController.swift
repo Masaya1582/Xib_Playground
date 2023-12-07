@@ -15,6 +15,11 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var pokemonNameLabel: UILabel!
+    @IBOutlet private weak var savePokemonButton: DesignableButton!
+
+    private let userDefaults = UserDefaults.standard
+    private let pokemonKey = "SavedPokemon"
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -35,26 +40,27 @@ final class HomeViewController: UIViewController {
         bind(to: viewModel)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let savedPokemon = userDefaults.string(forKey: pokemonKey) {
+            pokemonNameLabel.text = "Saved Pokemon: \(savedPokemon)"
+        } else {
+            pokemonNameLabel.text = "No Pokemon saved yet"
+        }
+    }
 }
 
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        savePokemonButton.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                guard let self else { return }
+                let pokemonToSave = "Pikachu"
+                self.userDefaults.set(pokemonToSave, forKey: self.pokemonKey)
+                self.pokemonNameLabel.text = "Saved Pokemon: \(pokemonToSave)"
+            })
+            .disposed(by: disposeBag)
     }
 }
 
