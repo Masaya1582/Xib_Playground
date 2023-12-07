@@ -6,57 +6,19 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
-import RxDataSources
 
 final class HomeViewController: UIViewController {
-    // MARK: - Dependency
-    typealias Dependency = Void
 
-    // MARK: - Properties
-    private let disposeBag = DisposeBag()
-    private let viewModel: Dependency
-
-    // MARK: - Initialize
-    init(dependency: Dependency) {
-        self.viewModel = dependency
-        super.init(nibName: Self.className, bundle: Self.bundle)
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private let pokedex: [String: String] = [
+        "Pikachu": "An Electric-type Pokémon known for its lightning abilities.",
+        "Bulbasaur": "A Grass/Poison-type Pokémon with a plant bulb on its back.",
+        "Charmander": "A Fire-type Pokémon with a flame on its tail."
+    ]
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: viewModel)
-    }
-
-}
-
-// MARK: - Bind
-private extension HomeViewController {
-    func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        guard let pikachu = pokedex["Pikachu"] else { fatalError("Pokemon not found")}
+        print(pikachu)
     }
 }
-
-// MARK: - ViewControllerInjectable
-extension HomeViewController: ViewControllerInjectable {}
