@@ -24,3 +24,8 @@ final class HomeModel {
         print("\(type) type Pokemon used \(attack)!")
     }
 }
+
+struct User {
+    let name: String
+    let favoriteGames: [String]
+}
