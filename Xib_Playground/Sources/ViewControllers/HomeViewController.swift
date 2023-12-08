@@ -15,6 +15,9 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    private let user1 = User(name: "Masaya", favoriteGames: ["Pokemon", "Splatoon", "Animal Crossing"])
+    private let user2 = User(name: "Yuki", favoriteGames: ["Pokemon", "Splatoon", "Animal Crossing"])
+    private let user3 = User(name: "Sho", favoriteGames: ["Pokemon", "Splatoon", "Animal Crossing"])
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -33,6 +36,9 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
+        let users = [user1, user2, user3]
+        let allFavoriteGames = users.flatMap { $0.favoriteGames }
+        print("Favorite Games: \(allFavoriteGames)")
     }
 
 }
@@ -40,21 +46,21 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        //        <#Button#>.rx.tap.asSignal()
+        //            .emit(onNext: { [weak self] in
+        //                <#Actions#>
+        //            })
+        //            .disposed(by: disposeBag)
+        //
+        //        <#TextField#>.rx.text.orEmpty
+        //            .bind(to: <#ViewModel#>.inputs.<#Property#>)
+        //            .disposed(by: disposeBag)
+        //
+        //        viewModel.outputs.<#Property#>
+        //            .drive { [weak self] <#Property#> in
+        //                <#Actions#>
+        //            }
+        //            .disposed(by: disposeBag)
     }
 }
 
