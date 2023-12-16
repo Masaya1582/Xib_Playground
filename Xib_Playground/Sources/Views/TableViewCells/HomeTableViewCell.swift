@@ -12,14 +12,20 @@ import RxDataSources
 
 final class HomeTableViewCell: UITableViewCell {
     // MARK: - Properties
+    @IBOutlet private weak var foodImageView: UIImageView!
+    @IBOutlet private weak var foodNameLabel: UILabel!
 
     // MARK: - Initialize
     override func prepareForReuse() {
         super.prepareForReuse()
+        foodImageView.image = nil
+        foodNameLabel.text = nil
     }
 
     // MARK: - Setup
-    func configure() {
+    func configure(imageName: UIImage, foodName: String) {
+        foodImageView.image = imageName
+        foodNameLabel.text = foodName
     }
     
 }
