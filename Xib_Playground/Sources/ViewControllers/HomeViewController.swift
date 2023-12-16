@@ -15,6 +15,12 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
+        }
+    }
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,21 +46,30 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        let items = Observable.just([
+            SectionModel(model: "Section 1", items: [
+                "Item 1",
+                "Item 2",
+                "Item 3"
+            ]),
+            SectionModel(model: "Section 2", items: [
+                "Item 4",
+                "Item 5"
+            ])
+        ])
+
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(
+            configureCell: { dataSource, tableView, indexPath, item in
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.configure(title: item, subtitle: "Subtitle for \(item)")
+            return cell
+            })
+
+        items
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
     }
 }
 
