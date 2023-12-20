@@ -58,14 +58,9 @@ class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutput
     private let disposeBag = DisposeBag()
 
     init() {
-        phoneNumber1 = _textFieldInput1
-            .asDriver(onErrorJustReturn: "")
-
-        phoneNumber2 = _textFieldInput2
-            .asDriver(onErrorJustReturn: "")
-
-        phoneNumber3 = _textFieldInput3
-            .asDriver(onErrorJustReturn: "")
+        phoneNumber1 = _textFieldInput1.asDriver(onErrorDriveWith: .empty())
+        phoneNumber2 = _textFieldInput2.asDriver(onErrorDriveWith: .empty())
+        phoneNumber3 = _textFieldInput3.asDriver(onErrorDriveWith: .empty())
 
         sendCodeEnabled = _sendCodeEnabled
             .distinctUntilChanged()
