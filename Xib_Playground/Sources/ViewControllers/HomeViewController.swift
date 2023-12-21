@@ -12,9 +12,13 @@ import RxDataSources
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var addressCheckLabel: UILabel!
+    @IBOutlet private weak var addressTextField: UITextField!
+    @IBOutlet private weak var confirmAddressTextField: UITextField!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,21 +44,16 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        addressTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.addressInput)
+            .disposed(by: disposeBag)
+        confirmAddressTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.confirmAddressInput)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.checkResult
+            .drive(addressCheckLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
