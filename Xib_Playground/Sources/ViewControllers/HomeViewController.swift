@@ -15,6 +15,7 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    private var pokemon = Pokemon(name: "Charmander", level: 5, type: "Fire")
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -32,6 +33,14 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Initial State")
+        print("Name] \(pokemon.name), Level: \(pokemon.level), Type: \(pokemon.type)")
+        pokemon.level = 12
+        print("\nGained experience!")
+        print("New Level: \(pokemon.level)")
+        pokemon.evolve()
+        print("\nFinal state")
+        print("Name] \(pokemon.name), Level: \(pokemon.level), Type: \(pokemon.type)")
         bind(to: viewModel)
     }
 
