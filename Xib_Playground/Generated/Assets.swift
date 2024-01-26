@@ -28,7 +28,9 @@ internal enum Asset {
     internal static let accentColor = ColorAsset(name: "AccentColor")
     internal static let imgDalle = ImageAsset(name: "img_dalle")
     internal static let imgLeftHeadBack = ImageAsset(name: "img_left_head_back")
+    internal static let imgPullClose = ImageAsset(name: "img_pull_close")
     internal static let imgRightHeadBack = ImageAsset(name: "img_right_head_back")
+    internal static let imgWaterfall = ImageAsset(name: "img_waterfall")
     internal static let imgBurger = ImageAsset(name: "img_burger")
     internal static let imgNuggets = ImageAsset(name: "img_nuggets")
     internal static let imgPancakes = ImageAsset(name: "img_pancakes")
@@ -43,7 +45,6 @@ internal enum Asset {
     internal static let imgGerald = ImageAsset(name: "img_gerald")
     internal static let imgJimmy = ImageAsset(name: "img_jimmy")
     internal static let imgRonald = ImageAsset(name: "img_ronald")
-    internal static let imgWaterfall = ImageAsset(name: "img_waterfall")
   }
   internal enum Colors {
     internal static let alertRed = ColorAsset(name: "alert_red")
