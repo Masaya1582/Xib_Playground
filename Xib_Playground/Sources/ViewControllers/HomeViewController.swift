@@ -15,6 +15,10 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var passwordLengthLabel: UILabel!
+
+    private let passwordLengthLimit: Int = 12
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,21 +44,13 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        passwordTextField.rx.text.orEmpty
+            .map { [weak self] in
+                guard let self = self else { return "" }
+                return "Remained: \(self.passwordLengthLimit - $0.count) count"
+            }
+            .bind(to: passwordLengthLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
