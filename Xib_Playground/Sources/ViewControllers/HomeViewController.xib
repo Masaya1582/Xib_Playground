@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="Pb3-kL-3Zo" id="Sf3-iM-ob5"/>
+                <outlet property="toggleSwitch" destination="bly-GC-EQF" id="gDo-mi-LaY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,22 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Pb3-kL-3Zo">
+                    <rect key="frame" x="178" y="159" width="37" height="37"/>
+                </activityIndicatorView>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bly-GC-EQF">
+                    <rect key="frame" x="172" y="410.66666666666669" width="51" height="31"/>
+                </switch>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="bly-GC-EQF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="L4X-bV-nFe"/>
+                <constraint firstItem="Pb3-kL-3Zo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="MkN-Ia-Isr"/>
+                <constraint firstItem="bly-GC-EQF" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="PD2-nG-meY"/>
+                <constraint firstItem="Pb3-kL-3Zo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rN2-3g-uRw"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
