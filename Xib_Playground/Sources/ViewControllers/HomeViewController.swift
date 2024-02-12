@@ -33,6 +33,18 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
+        getPokemon()
+    }
+
+    private func getPokemon() {
+        guard let jsonFileURL = Bundle.main.url(forResource: "pokemon", withExtension: "json") else { return }
+        do {
+            let decoder = JSONDecoder()
+            let pokemon = try decoder.decode(Pokemon.self, from: Data(contentsOf: jsonFileURL))
+            print("Name: \(pokemon.name)")
+        } catch {
+            print("Error decoding JSON: \(error.localizedDescription)")
+        }
     }
 
 }

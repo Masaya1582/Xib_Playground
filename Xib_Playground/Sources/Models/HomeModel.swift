@@ -24,3 +24,9 @@ final class HomeModel {
         print("\(type) type Pokemon used \(attack)!")
     }
 }
+
+struct Pokemon: Decodable {
+    var name: String
+    var type: String
+    var abilities: [String]
+}
