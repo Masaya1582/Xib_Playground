@@ -19,8 +19,4 @@ final class HomeModel {
         self.height = height
         self.isHuman = isHuman
     }
-
-    func pokemonAttack(type: String, attack: String) {
-        print("\(type) type Pokemon used \(attack)!")
-    }
 }
