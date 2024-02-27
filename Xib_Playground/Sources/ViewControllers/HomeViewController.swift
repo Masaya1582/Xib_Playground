@@ -12,9 +12,13 @@ import RxDataSources
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var idTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: DesignableButton!
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,21 +44,19 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        idTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.id)
+            .disposed(by: disposeBag)
+        passwordTextField.rx.text.orEmpty
+            .bind(to: viewModel.inputs.password)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.isLoginButtonEnabled
+            .drive { [weak self] isLoginButtonEnabled in
+                self?.loginButton.isEnabled = isLoginButtonEnabled 
+                self?.loginButton.backgroundColor = isLoginButtonEnabled ? Asset.Colors.alertRed.color : Asset.Colors.gray7.color
+            }
+            .disposed(by: disposeBag)
     }
 }
 
