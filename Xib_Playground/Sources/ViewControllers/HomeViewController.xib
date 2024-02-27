@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="idTextField" destination="7TA-3a-z16" id="zNg-Jj-lQa"/>
+                <outlet property="loginButton" destination="4jb-sW-Ops" id="h1m-RP-ve0"/>
+                <outlet property="passwordTextField" destination="73I-Hr-Rht" id="bSF-6y-kLU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +19,64 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="7ih-tP-szo">
+                    <rect key="frame" x="36.666666666666657" y="288" width="320" height="276"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="1XT-7J-gQy">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7TA-3a-z16">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="FeN-Oa-8Qm"/>
+                                        <constraint firstAttribute="width" constant="320" id="ibq-Mc-rWx"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="73I-Hr-Rht">
+                                    <rect key="frame" x="0.0" y="60" width="320" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="320" id="9ea-ak-9Og"/>
+                                        <constraint firstAttribute="height" constant="36" id="CTz-p9-6e2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jb-sW-Ops" customClass="DesignableButton" customModule="Xib_Playground" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="216" width="320" height="60"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="320" id="EtS-Cy-Paf"/>
+                                <constraint firstAttribute="height" constant="60" id="GwF-I6-Hqn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Login"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="28"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="7ih-tP-szo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VTb-ZS-6pT"/>
+                <constraint firstItem="7ih-tP-szo" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="h2d-7f-Ozh"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
+    <designables>
+        <designable name="4jb-sW-Ops">
+            <size key="intrinsicContentSize" width="62" height="41"/>
+        </designable>
+    </designables>
 </document>
