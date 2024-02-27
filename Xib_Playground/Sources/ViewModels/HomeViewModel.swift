@@ -29,6 +29,7 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
     // MARK: - Input Sources
     // MARK: - Output Sources
 
+    // MARK: - Properties
     private let disposeBag = DisposeBag()
 
     // MARK: - Initialize
