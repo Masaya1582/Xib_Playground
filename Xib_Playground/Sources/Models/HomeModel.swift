@@ -7,16 +7,12 @@
 
 import Foundation
 
-final class HomeModel {
+struct Food: Decodable {
     var name: String
-    var age: Int
-    var height: Double
-    var isHuman: Bool
+    var price: String
 
-    init(name: String, age: Int, height: Double, isHuman: Bool) {
+    init(name: String, price: String) {
         self.name = name
-        self.age = age
-        self.height = height
-        self.isHuman = isHuman
+        self.price = price
     }
 }
