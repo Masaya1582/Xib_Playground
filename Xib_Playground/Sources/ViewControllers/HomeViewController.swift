@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxDataSources
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
@@ -18,6 +17,12 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
+        }
+    }
+
+    @IBOutlet private weak var secondTableView: UITableView! {
+        didSet {
+            secondTableView.register(UINib(nibName: "SecondTableViewCell", bundle: nil), forCellReuseIdentifier: "SecondTableViewCell")
         }
     }
 
@@ -49,6 +54,16 @@ private extension HomeViewController {
         viewModel.outputs.food
             .drive(tableView.rx.items) { tableView, row, element in
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: [0, row]) as? HomeTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.configure(with: element)
+                return cell
+            }
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.secondFood
+            .drive(secondTableView.rx.items) { tableView, row, element in
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "SecondTableViewCell", for: [0, row]) as? SecondTableViewCell else {
                     return UITableViewCell()
                 }
                 cell.configure(with: element)
