@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentTableViewCell" rowHeight="120" id="KGk-i7-Jjw" customClass="ContentTableViewCell" customModule="Xib_Playground" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="644" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="644" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsA-76-I9P">
+                        <rect key="frame" x="24" y="0.0" width="596" height="118"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_donald" translatesAutoresizingMaskIntoConstraints="NO" id="Ki7-kN-56B" customClass="DesignableImageView" customModule="Xib_Playground" customModuleProvider="target">
+                                <rect key="frame" x="16" y="19" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="bcT-70-dAI"/>
+                                    <constraint firstAttribute="width" constant="80" id="uTY-9U-LoX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dfi-o2-een">
+                                <rect key="frame" x="104" y="16" width="476" height="86"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donald Trump" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOv-2d-0Ey">
+                                        <rect key="frame" x="0.0" y="0.0" width="476" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="ChD-K1-Cli"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" name="gray1"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make America Great Again!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUx-FE-tPG">
+                                        <rect key="frame" x="0.0" y="56" width="476" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" name="gray5"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="white"/>
+                        <constraints>
+                            <constraint firstItem="Ki7-kN-56B" firstAttribute="centerY" secondItem="wsA-76-I9P" secondAttribute="centerY" id="7zT-kP-1ZA"/>
+                            <constraint firstItem="Ki7-kN-56B" firstAttribute="leading" secondItem="wsA-76-I9P" secondAttribute="leading" constant="16" id="HZX-Qn-AWB"/>
+                            <constraint firstItem="Dfi-o2-een" firstAttribute="top" secondItem="wsA-76-I9P" secondAttribute="top" constant="16" id="Unz-VA-fWO"/>
+                            <constraint firstAttribute="trailing" secondItem="Dfi-o2-een" secondAttribute="trailing" constant="16" id="YzH-d9-Wl7"/>
+                            <constraint firstAttribute="bottom" secondItem="Dfi-o2-een" secondAttribute="bottom" constant="16" id="fPq-16-OEj"/>
+                            <constraint firstItem="Dfi-o2-een" firstAttribute="leading" secondItem="Ki7-kN-56B" secondAttribute="trailing" constant="8" id="sOx-Vj-OGc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="gray9"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wsA-76-I9P" secondAttribute="trailing" constant="24" id="3mR-gh-5q6"/>
+                    <constraint firstItem="wsA-76-I9P" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5FK-zk-AOe"/>
+                    <constraint firstItem="wsA-76-I9P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="R0R-X0-kmJ"/>
+                    <constraint firstAttribute="bottom" secondItem="wsA-76-I9P" secondAttribute="bottom" constant="2" id="afw-Lo-Sew"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="presidentDescriptionLabel" destination="bUx-FE-tPG" id="yY2-8t-9Rt"/>
+                <outlet property="presidentImageView" destination="Ki7-kN-56B" id="fBI-A4-war"/>
+                <outlet property="presidentNameLabel" destination="UOv-2d-0Ey" id="yB2-4X-9HO"/>
+            </connections>
+            <point key="canvasLocation" x="293.12977099236639" y="150.70422535211267"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="Ki7-kN-56B">
+            <size key="intrinsicContentSize" width="199" height="253"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="img_donald" width="199" height="253"/>
+        <namedColor name="gray1">
+            <color red="0.13699999451637268" green="0.13699999451637268" blue="0.13699999451637268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray5">
+            <color red="0.6119999885559082" green="0.6119999885559082" blue="0.6119999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray9">
+            <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
