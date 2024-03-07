@@ -12,9 +12,17 @@ import RxDataSources
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell")
+            tableView.register(UINib(nibName: "ContentTableViewCell", bundle: nil), forCellReuseIdentifier: "ContentTableViewCell")
+            tableView.register(UINib(nibName: "FooterTableViewCell", bundle: nil), forCellReuseIdentifier: "FooterTableViewCell")
+        }
+    }
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,21 +48,29 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        viewModel.outputs.listItem
+            .drive(tableView.rx.items) { tableView, row, element in
+                switch element {
+                case .header:
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell", for: [0, row]) as? HeaderTableViewCell else {
+                        return UITableViewCell()
+                    }
+                    return cell
+                case .content(let president):
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContentTableViewCell", for: [0, row]) as? ContentTableViewCell else {
+                        return UITableViewCell()
+                    }
+                    cell.configure(with: president)
+                    return cell
+                case .footer:
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "FooterTableViewCell", for: [0, row]) as? FooterTableViewCell else {
+                        return UITableViewCell()
+                    }
+                    return cell
+                }
+            }
+            .disposed(by: disposeBag)
+
     }
 }
 
