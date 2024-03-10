@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class HomeModel {
     var name: String
@@ -19,4 +20,9 @@ final class HomeModel {
         self.height = height
         self.isHuman = isHuman
     }
+}
+
+struct President {
+    var name: String
+    var image: UIImage
 }
