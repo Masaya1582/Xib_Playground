@@ -14,6 +14,7 @@ protocol HomeViewModelInputs: AnyObject {
 }
 
 protocol HomeViewModelOutputs: AnyObject {
+    var president: Driver<[President]> { get }
 }
 
 protocol HomeViewModelType: AnyObject {
@@ -28,12 +29,30 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
 
     // MARK: - Input Sources
     // MARK: - Output Sources
+    let president: Driver<[President]>
 
     // MARK: - Properties
+    private let presidentArray: [President] = [
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image),
+        President(name: "Donald Trump", image: Asset.Assets.imgDonald.image)
+    ]
+    private let _president = BehaviorRelay<[President]>(value: [])
     private let disposeBag = DisposeBag()
 
     // MARK: - Initialize
     init() {
+        _president.accept(presidentArray)
+        president = _president.asDriver(onErrorDriveWith: .empty())
     }
 
 }

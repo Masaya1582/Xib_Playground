@@ -8,13 +8,19 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxDataSources
 
 final class HomeViewController: UIViewController {
     // MARK: - Dependency
-    typealias Dependency = Void
+    typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
+    @IBOutlet private weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeCollectionViewCell")
+
+        }
+    }
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -40,21 +46,16 @@ final class HomeViewController: UIViewController {
 // MARK: - Bind
 private extension HomeViewController {
     func bind(to viewModel: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
+        viewModel.outputs.president
+            .drive(collectionView.rx.items) { collectionView, row, element in
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: IndexPath(row: row, section: 0)) as? HomeCollectionViewCell else {
+                    return UICollectionViewCell()
+                }
+                cell.configure(with: element)
+                return cell
+            }
+            .disposed(by: disposeBag)
+
     }
 }
 
