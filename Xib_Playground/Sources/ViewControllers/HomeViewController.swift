@@ -55,6 +55,28 @@ private extension HomeViewController {
 //                <#Actions#>
 //            }
 //            .disposed(by: disposeBag)
+//        viewModel.outputs.listItem
+//            .drive(tableView.rx.items) { tableView, row, element in
+//                switch element {
+//                case .header:
+//                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell", for: [0, row]) as? HeaderTableViewCell else {
+//                        return UITableViewCell()
+//                    }
+//                    return cell
+//                case .content(let president):
+//                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContentTableViewCell", for: [0, row]) as? ContentTableViewCell else {
+//                        return UITableViewCell()
+//                    }
+//                    cell.configure(with: president)
+//                    return cell
+//                case .footer:
+//                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "FooterTableViewCell", for: [0, row]) as? FooterTableViewCell else {
+//                        return UITableViewCell()
+//                    }
+//                    return cell
+//                }
+//            }
+//            .disposed(by: disposeBag)
     }
 }
 
