@@ -55,22 +55,33 @@ private extension HomeViewController {
 //                <#Actions#>
 //            }
 //            .disposed(by: disposeBag)
+//
+//        viewModel.outputs.<#Property#>
+//            .drive(<#tableView or collectionView#>.rx.items) { <#tableView or collectionView#>, row, element in
+//                guard let cell = <#tableView or collectionView#>.dequeueReusableCell(withIdentifier: "<#Identifier#>", for: [0, row]) as? <#TableView or CollectionView#> else {
+//                    return UITableViewCell()
+//                }
+//                cell.configure(with: element)
+//                return cell
+//            }
+//            .disposed(by: disposeBag)
+//
 //        viewModel.outputs.listItem
-//            .drive(tableView.rx.items) { tableView, row, element in
+//            .drive(<#tableView or collectionView#>.rx.items) { <#tableView or collectionView#>, row, element in
 //                switch element {
-//                case .header:
-//                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell", for: [0, row]) as? HeaderTableViewCell else {
+//                case .<#enum Item1#>:
+//                    guard let cell = <#tableView or collectionView#>.dequeueReusableCell(withIdentifier: "<#Identifier#>", for: [0, row]) as? <#TableView or CollectionView#> else {
 //                        return UITableViewCell()
 //                    }
 //                    return cell
-//                case .content(let president):
-//                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContentTableViewCell", for: [0, row]) as? ContentTableViewCell else {
+//                case .<#enum Item2#>(let <#property#>):
+//                    guard let cell = <#tableView or collectionView#>.dequeueReusableCell(withIdentifier: "<#Identifier#>", for: [0, row]) as? <#TableView or CollectionView#> else {
 //                        return UITableViewCell()
 //                    }
-//                    cell.configure(with: president)
+//                    cell.configure(with: element)
 //                    return cell
-//                case .footer:
-//                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "FooterTableViewCell", for: [0, row]) as? FooterTableViewCell else {
+//                case .<#enum Item3#>:
+//                    guard let cell = <#tableView or collectionView#>.dequeueReusableCell(withIdentifier: "<#Identifier#>", for: [0, row]) as? <#TableView or CollectionView#> else {
 //                        return UITableViewCell()
 //                    }
 //                    return cell
