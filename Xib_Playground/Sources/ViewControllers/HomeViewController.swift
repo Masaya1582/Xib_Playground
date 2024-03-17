@@ -15,6 +15,16 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+//    @IBOutlet private weak var tableView: UITableView! {
+//        didSet {
+//            tableView.registerCell(HomeTableViewCell.self)
+//        }
+//    }
+//    @IBOutlet private weak var collectionView: UICollectionView! {
+//        didSet {
+//            collectionView.registerCell(HomeCollectionViewCell.self)
+//        }
+//    }
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -58,9 +68,7 @@ private extension HomeViewController {
 //
 //        viewModel.outputs.<#Property#>
 //            .drive(<#tableView or collectionView#>.rx.items) { <#tableView or collectionView#>, row, element in
-//                guard let cell = <#tableView or collectionView#>.dequeueReusableCell(withIdentifier: "<#Identifier#>", for: [0, row]) as? <#TableView or CollectionView#> else {
-//                    return UITableViewCell()
-//                }
+//                <#tableView or collectionView#>.dequeueReusableCell(<#TableViewCell or CollectionViewCell#>.self, for: indexPath)
 //                cell.configure(with: element)
 //                return cell
 //            }
