@@ -68,7 +68,8 @@ private extension HomeViewController {
 //
 //        viewModel.outputs.<#Property#>
 //            .drive(<#tableView or collectionView#>.rx.items) { <#tableView or collectionView#>, row, element in
-//                <#tableView or collectionView#>.dequeueReusableCell(<#TableViewCell or CollectionViewCell#>.self, for: indexPath)
+//                let indexPath = IndexPath(row: row, section: 0)
+//               let cell = <#tableView or collectionView#>.dequeueReusableCell(<#TableViewCell or CollectionViewCell#>.self, for: indexPath)
 //                cell.configure(with: element)
 //                return cell
 //            }
