@@ -15,6 +15,12 @@ final class HomeViewController: UIViewController {
     typealias Dependency = Void
 
     // MARK: - Properties
+    @IBOutlet private weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeCollectionViewCell")
+        }
+    }
+
     private let disposeBag = DisposeBag()
     private let viewModel: Dependency
 
@@ -33,6 +39,8 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
 
 }
@@ -89,6 +97,32 @@ private extension HomeViewController {
 //            }
 //            .disposed(by: disposeBag)
     }
+}
+
+// MARK: - Extensions
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    // セクション数
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return <#返したい数#>
+//    }
+
+    // セル数
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+
+    // セルに値をセット
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // widthReuseIdentifierにはStoryboardで設定したセルのIDを指定
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+//        // セルに枠線をセット
+//        cell.layer.borderColor = UIColor.<#つけたい色#>.cgColor // 外枠の色
+//        cell.layer.borderWidth = <#太さ#> // 枠線の太さ
+        return cell
+    }
+
 }
 
 // MARK: - ViewControllerInjectable
