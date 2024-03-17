@@ -37,3 +37,12 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
     }
 
 }
+
+// MARK: - Item
+//extension HomeViewModel {
+//    enum ListItem {
+//        case header
+//        case shop(Content)
+//        case footer
+//    }
+//}
