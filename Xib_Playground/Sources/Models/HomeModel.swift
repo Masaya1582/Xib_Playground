@@ -20,3 +20,9 @@ final class HomeModel {
         self.isHuman = isHuman
     }
 }
+
+struct Pokemon: Codable {
+    var name: String
+    var type: String
+    var level: Int
+}
