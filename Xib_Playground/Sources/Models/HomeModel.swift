@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class HomeModel {
     var name: String
@@ -18,5 +19,15 @@ final class HomeModel {
         self.age = age
         self.height = height
         self.isHuman = isHuman
+    }
+}
+
+struct Food {
+    var name: String
+    var image: UIImage
+
+    init(name: String, image: UIImage) {
+        self.name = name
+        self.image = image
     }
 }
