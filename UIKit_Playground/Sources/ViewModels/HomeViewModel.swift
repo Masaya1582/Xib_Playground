@@ -8,11 +8,13 @@
 import Action
 import RxCocoa
 import RxSwift
+import Foundation
+import UIKit
 
 protocol HomeViewModelInputs: AnyObject {}
 
 protocol HomeViewModelOutputs: AnyObject {
-    // var items: Driver<[HomeViewModel.ListItem]> { get }
+     var items: Driver<[UIImage]> { get }
 }
 
 protocol HomeViewModelType: AnyObject {
@@ -27,21 +29,22 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
 
     // MARK: - Input Sources
     // MARK: - Output Sources
-    // let items: Driver<[ListItem]>
+     let items: Driver<[UIImage]>
 
     // MARK: - Properties
-    // private let loadAction: Action<Void, DefaultModel>
+    private let _items: BehaviorRelay<[UIImage]>
     private let disposeBag = DisposeBag()
 
     // MARK: - Initialize
-    init() {}
+    init() {
+        let images = [
+            Asset.Assets.imgPancakes.image,
+            Asset.Assets.imgNuggets.image,
+            Asset.Assets.imgBurger.image,
+            Asset.Assets.imgSpaghetti.image,
+            Asset.Assets.imgPizza.image,
+        ]
+        self._items = BehaviorRelay(value: images)
+        self.items = _items.asDriver(onErrorDriveWith: .empty())
+    }
 }
-
-// MARK: - Item
-// extension HomeViewModel {
-//    enum ListItem {
-//        case header
-//        case shop(Content)
-//        case footer
-//    }
-// }
