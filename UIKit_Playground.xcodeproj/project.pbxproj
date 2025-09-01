@@ -53,6 +53,8 @@
 		4011E8EC2A4D9D8D003F06BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8EB2A4D9D8D003F06BF /* HomeViewModel.swift */; };
 		4011E8F22A4D9E05003F06BF /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011E8F12A4D9E05003F06BF /* HomeModel.swift */; };
 		4011E8F42A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */; };
+		408B993B2E65B0FB00D63223 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B993A2E65B0FB00D63223 /* UILabelExtension.swift */; };
+		408B993E2E65B12E00D63223 /* StringStylizer in Frameworks */ = {isa = PBXBuildFile; productRef = 408B993D2E65B12E00D63223 /* StringStylizer */; };
 		40A481092D0130040015C565 /* PINRemoteImage in Frameworks */ = {isa = PBXBuildFile; productRef = 40A481082D0130040015C565 /* PINRemoteImage */; };
 		40BA840D2C1D098A00F52408 /* CalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA840C2C1D098A00F52408 /* CalculatorTest.swift */; };
 		40BA84142C1D09E200F52408 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA84132C1D09E200F52408 /* Calculator.swift */; };
@@ -100,6 +102,7 @@
 		4011E8EB2A4D9D8D003F06BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4011E8F12A4D9E05003F06BF /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		4011E8F32A4D9ED9003F06BF /* Quicksand-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		408B993A2E65B0FB00D63223 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		40BA840C2C1D098A00F52408 /* CalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTest.swift; sourceTree = "<group>"; };
 		40BA84132C1D09E200F52408 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		40D3B0122A56B2CB00E9A002 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EBB91052D2B6475006BB918 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				408B993E2E65B12E00D63223 /* StringStylizer in Frameworks */,
 				1E83D5DF2C8AD15600D2AC3C /* RxRelay in Frameworks */,
 				1EA913A02D2B63AD00863507 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				1EBB912E2D2B7B27006BB918 /* FirebaseInstallations in Frameworks */,
@@ -299,6 +303,7 @@
 				40D3B0122A56B2CB00E9A002 /* NSObjectExtension.swift */,
 				1EC5A8452BA69465001455DC /* UITableViewExtension.swift */,
 				1EC5A8472BA6958F001455DC /* UICollectionViewExtension.swift */,
+				408B993A2E65B0FB00D63223 /* UILabelExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				1EBB912F2D2B7B27006BB918 /* FirebaseMessaging */,
 				1EBB91312D2B7B27006BB918 /* FirebaseRemoteConfig */,
 				1EBB91332D2B7B27006BB918 /* FirebaseStorage */,
+				408B993D2E65B12E00D63223 /* StringStylizer */,
 			);
 			productName = Xib_Playground;
 			productReference = 1EE5E4DE2C8AD3E300422E13 /* UIKit_Playground.app */;
@@ -413,6 +419,7 @@
 				40A481072D0130040015C565 /* XCRemoteSwiftPackageReference "PINRemoteImage" */,
 				400EE06C2D0D9F1E0005E586 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				1EA9139A2D2B63AD00863507 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				408B993C2E65B12E00D63223 /* XCRemoteSwiftPackageReference "StringStylizer" */,
 			);
 			productRefGroup = 4011E8B52A4D9B6F003F06BF;
 			projectDirPath = "";
@@ -497,6 +504,7 @@
 				4011E8EC2A4D9D8D003F06BF /* HomeViewModel.swift in Sources */,
 				1EC5A8482BA6958F001455DC /* UICollectionViewExtension.swift in Sources */,
 				4011E8D72A4D9B81003F06BF /* HomeViewController.swift in Sources */,
+				408B993B2E65B0FB00D63223 /* UILabelExtension.swift in Sources */,
 				1E3E3D512A67D6E500DB681F /* DesignableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -853,6 +861,14 @@
 				minimumVersion = 5.0.2;
 			};
 		};
+		408B993C2E65B12E00D63223 /* XCRemoteSwiftPackageReference "StringStylizer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kazuhiro4949/StringStylizer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
 		40A481072D0130040015C565 /* XCRemoteSwiftPackageReference "PINRemoteImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pinterest/PINRemoteImage";
@@ -960,6 +976,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 400EE06C2D0D9F1E0005E586 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		408B993D2E65B12E00D63223 /* StringStylizer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 408B993C2E65B12E00D63223 /* XCRemoteSwiftPackageReference "StringStylizer" */;
+			productName = StringStylizer;
 		};
 		40A481082D0130040015C565 /* PINRemoteImage */ = {
 			isa = XCSwiftPackageProductDependency;

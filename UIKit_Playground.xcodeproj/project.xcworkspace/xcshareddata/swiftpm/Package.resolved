@@ -1,5 +1,5 @@
 {
-  "originHash" : "8fd460e134f22eee173ac5261d0653324bd9db225cf1f35debb1916a73201466",
+  "originHash" : "5715a6d2d11f307844e946869672ef123e6678bd882d37bb4d13351db31f3012",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -233,6 +233,15 @@
       "state" : {
         "revision" : "20e2de5322c83df005939d9d9300fab130b49f97",
         "version" : "2.10.1"
+      }
+    },
+    {
+      "identity" : "stringstylizer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kazuhiro4949/StringStylizer",
+      "state" : {
+        "revision" : "d32c5c596d097a9fc4cc30f551ac730c7ef8d8ab",
+        "version" : "5.3.0"
       }
     },
     {
