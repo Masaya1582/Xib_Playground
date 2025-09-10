@@ -14,22 +14,18 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
-        // guard let _ = (scene as? UIWindowScene) else { return }
-        // NavigationControllerを使用する場合
-//        locationManager.requestAlwaysAuthorization()
-//        window = UIWindow(windowScene: scene as! UIWindowScene)
-//        window?.makeKeyAndVisible()
-//        let <#名前#>ViewController = <#ファイル名#>()
-//        let rootViewController = UINavigationController(rootViewController: <#名前#>ViewController)
-//        window?.rootViewController = rootViewController
+        guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        // NavigationControllerを使用しない場合
-        locationManager.requestAlwaysAuthorization()
-        window = UIWindow(windowScene: scene as! UIWindowScene)
-        window?.makeKeyAndVisible()
-        let viewModel = HomeViewModel()
-        let homeViewController = HomeViewController(dependency: viewModel)
-        window?.rootViewController = homeViewController
+        let window = UIWindow(windowScene: windowScene)
+
+        // Build the Weather module
+        let weatherViewController = WeatherModuleBuilder.build()
+        let navigationController = UINavigationController(rootViewController: weatherViewController)
+
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+
+        self.window = window
     }
 
     func sceneDidDisconnect(_: UIScene) {
