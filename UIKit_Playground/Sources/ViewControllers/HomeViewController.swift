@@ -44,7 +44,6 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         bind(to: viewModel)
         print("Hello, World!")
-        print("This is HomeViewController.")
     }
 }
 
