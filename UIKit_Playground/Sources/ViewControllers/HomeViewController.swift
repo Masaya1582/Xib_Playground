@@ -43,6 +43,8 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
+        print("Hello, World!")
+        print("This is HomeViewController.")
     }
 }
 
