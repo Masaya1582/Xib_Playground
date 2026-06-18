@@ -5,37 +5,14 @@
 //  Created by 中久木 雅哉(Nakakuki Masaya) on 2024/05/10.
 //
 
-import RxCocoa
-import RxSwift
 import UIKit
-
-protocol HomeCollectionViewCellDelegate: AnyObject {
-    func homeCollectionViewCellDidTapButton()
-}
 
 final class HomeCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
-    weak var delegate: HomeCollectionViewCellDelegate?
-    private var disposeBag = DisposeBag()
-
-    // MARK: - Initialize
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        disposeBag = DisposeBag()
-    }
+    @IBOutlet private weak var infiniteImageView: UIImageView!
 
     // MARK: - Setup
-    func configure() {
-        bind()
-    }
-}
-
-private extension HomeCollectionViewCell {
-    func bind() {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
+    func configure(with image: UIImage) {
+        infiniteImageView.image = image
     }
 }

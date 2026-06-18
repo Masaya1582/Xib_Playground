@@ -15,17 +15,25 @@ final class HomeViewController: UIViewController {
     typealias Dependency = HomeViewModelType
 
     // MARK: - Properties
-//    @IBOutlet private weak var tableView: UITableView! {
-//        didSet {
-//            tableView.registerCell(HomeTableViewCell.self)
-//        }
-//    }
-//    @IBOutlet private weak var collectionView: UICollectionView! {
-//        didSet {
-//            collectionView.registerCell(HomeCollectionViewCell.self)
-//        }
-//    }
+    @IBOutlet private weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.registerCell(HomeCollectionViewCell.self)
+            collectionView.dataSource = self
+            collectionView.delegate = self
+            collectionView.contentInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
+            collectionView.isPagingEnabled = false
+        }
+    }
     private lazy var viewModel: HomeViewModelType = { fatalError("Use (dependency: ) at initialize controller") }()
+    private var scrollTimer: Timer?
+    private var infiniteImages: [UIImage] = []
+    private let images = [
+        Asset.Assets.imgPancakes.image,
+        Asset.Assets.imgNuggets.image,
+        Asset.Assets.imgBurger.image,
+        Asset.Assets.imgSpaghetti.image,
+        Asset.Assets.imgPizza.image
+    ]
     private let disposeBag = DisposeBag()
 
     // MARK: - Initialize
@@ -42,62 +50,98 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: viewModel)
+        setupInfiniteScrolling()
+        startAutoScroll()
     }
 }
 
 // MARK: - Bind
-private extension HomeViewController {
-    func bind(to _: Dependency) {
-//        <#Button#>.rx.tap.asSignal()
-//            .emit(onNext: { [weak self] in
-//                <#Actions#>
-//            })
-//            .disposed(by: disposeBag)
-//
-//        <#TextField#>.rx.text.orEmpty
-//            .bind(to: <#ViewModel#>.inputs.<#Property#>)
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive { [weak self] <#Property#> in
-//                <#Actions#>
-//            }
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.<#Property#>
-//            .drive(<#tableView or collectionView#>.rx.items) { [weak self] <#tableView or collectionView#>, row, element in
-//                let indexPath = IndexPath(row: row, section: 0)
-//               let cell = <#tableView or collectionView#>.dequeueReusableCell(<#TableViewCell or CollectionViewCell#>.self, for: indexPath)
-//                cell.delegate = self
-//                cell.configure(with: element)
-//                return cell
-//            }
-//            .disposed(by: disposeBag)
-//
-//        viewModel.outputs.listItem
-//            .drive(<#tableView or collectionView#>.rx.items) { [weak self] <#tableView or collectionView#>, row, element in
-//                switch element {
-//                case .<#enum Item1#>:
-//                    guard let cell = <#tableView or collectionView#>.dequeueReusableCell(withIdentifier: "<#Identifier#>", for: [0, row]) as? <#TableView or CollectionView#> else {
-//                        return UITableViewCell()
-//                    }
-//                    return cell
-//                case .<#enum Item2#>(let <#property#>):
-//                    guard let cell = <#tableView or collectionView#>.dequeueReusableCell(withIdentifier: "<#Identifier#>", for: [0, row]) as? <#TableView or CollectionView#> else {
-//                        return UITableViewCell()
-//                    }
-//                    cell.delegate = self
-//                    cell.configure(with: element)
-//                    return cell
-//                case .<#enum Item3#>:
-//                    guard let cell = <#tableView or collectionView#>.dequeueReusableCell(withIdentifier: "<#Identifier#>", for: [0, row]) as? <#TableView or CollectionView#> else {
-//                        return UITableViewCell()
-//                    }
-//                    return cell
-//                }
-//            }
-//            .disposed(by: disposeBag)
+extension HomeViewController {
+    private func setupInfiniteScrolling() {
+        guard !images.isEmpty else { return }
+
+        // Create an extended array for infinite scrolling
+        infiniteImages = images + images + images // Repeat the array three times
+
+        // Set the initial scroll position to the middle section
+        collectionView.scrollToItem(at: IndexPath(item: images.count, section: 0), at: .centeredHorizontally, animated: false)
+    }
+
+    private func adjustScrollPositionIfNeeded() {
+        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        if let visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint) {
+            if visibleIndexPath.item < images.count {
+                // Scroll to the middle section if at the beginning
+                collectionView.scrollToItem(at: IndexPath(item: images.count + visibleIndexPath.item, section: 0), at: .centeredHorizontally, animated: false)
+            } else if visibleIndexPath.item >= images.count * 2 {
+                // Scroll to the middle section if at the end
+                collectionView.scrollToItem(at: IndexPath(item: visibleIndexPath.item - images.count, section: 0), at: .centeredHorizontally, animated: false)
+            }
+        }
+    }
+
+    private func startAutoScroll() {
+        scrollTimer?.invalidate() // Ensure no duplicate timers
+        scrollTimer = Timer.scheduledTimer(
+            timeInterval: 0.02,
+            target: self,
+            selector: #selector(scrollCollectionView),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+
+    @objc private func scrollCollectionView() {
+        let currentOffset = collectionView.contentOffset.x
+        let newOffset = currentOffset + 1 // Adjust this value for speed
+
+        // When reaching the end, reset to the first item seamlessly
+        let maxOffset = collectionView.contentSize.width - collectionView.bounds.width
+        if newOffset >= maxOffset {
+            collectionView.contentOffset.x = 0
+        } else {
+            collectionView.setContentOffset(CGPoint(x: newOffset, y: 0), animated: false)
+        }
+    }
+
+    func stopAutoScroll() {
+        scrollTimer?.invalidate()
+        scrollTimer = nil
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        infiniteImages.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(HomeCollectionViewCell.self, for: indexPath)
+        let images = infiniteImages[indexPath.item]
+        cell.configure(with: images)
+        return cell
+    }
+
+}
+
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let example = infiniteImages[indexPath.item % images.count]
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        adjustScrollPositionIfNeeded()
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        adjustScrollPositionIfNeeded()
+    }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        adjustScrollPositionIfNeeded()
     }
 }
 
