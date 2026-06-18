@@ -1,25 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Xib_Playground" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="UIKit_Playground" customModuleProvider="target">
             <connections>
+                <outlet property="progressView" destination="sl9-fR-KqM" id="rW7-Sm-7i4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="nW2-Gv-l1e" id="rhp-dE-Orc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nW2-Gv-l1e">
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sl9-fR-KqM">
+                    <rect key="frame" x="0.0" y="59" width="393" height="8"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="8" id="nec-iJ-xwm"/>
+                    </constraints>
+                </progressView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <constraints>
+                <constraint firstItem="nW2-Gv-l1e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ABm-k7-KNT"/>
+                <constraint firstItem="nW2-Gv-l1e" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BKc-AW-znZ"/>
+                <constraint firstItem="nW2-Gv-l1e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NT4-KW-aBC"/>
+                <constraint firstItem="sl9-fR-KqM" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Nze-Y0-3m4"/>
+                <constraint firstItem="sl9-fR-KqM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="avk-O3-fEz"/>
+                <constraint firstAttribute="bottom" secondItem="nW2-Gv-l1e" secondAttribute="bottom" id="iBz-nt-IBV"/>
+                <constraint firstItem="sl9-fR-KqM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nl5-sH-r6o"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
 </document>
