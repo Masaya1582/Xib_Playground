@@ -26,6 +26,21 @@ final class HomeViewController: UIViewController {
 //        }
 //    }
     private lazy var viewModel: HomeViewModelType = { fatalError("Use (dependency: ) at initialize controller") }()
+    private var data = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
+    private lazy var refreshControl: UIRefreshControl = {
+        let view = UIRefreshControl()
+        view.tintColor = UIColor.gray // Replace with your color if needed (e.g., `Asset.Colors.gray2.color`)
+        view.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        return view
+    }()
     private let disposeBag = DisposeBag()
 
     // MARK: - Initialize
@@ -42,7 +57,35 @@ final class HomeViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        title = "UIRefreshControl Demo"
+
+        // Add TableView to the View
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+
+        // Attach refresh control to the TableView
+        tableView.refreshControl = refreshControl
         bind(to: viewModel)
+    }
+
+    @objc private func handleRefresh() {
+        print("Refreshing data...")
+
+        // Simulate data reload (e.g., fetching new data from an API)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            // Stop the refresh animation
+            self?.refreshControl.endRefreshing()
+
+            // Update data (for demonstration purposes, shuffle data)
+            self?.data.shuffle()
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -99,6 +142,24 @@ private extension HomeViewController {
 //            }
 //            .disposed(by: disposeBag)
     }
+}
+
+// MARK: - UITableViewDataSource
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = data[indexPath.row]
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension HomeViewController: UITableViewDelegate {
+    // Add delegate methods if needed
 }
 
 // MARK: - ViewControllerInjectable
