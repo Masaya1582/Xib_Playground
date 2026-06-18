@@ -15,6 +15,9 @@ protocol HomeTableViewCellDelegate: AnyObject {
 
 final class HomeTableViewCell: UITableViewCell {
     // MARK: - Properties
+    @IBOutlet private weak var foodNameLabel: UILabel!
+    @IBOutlet private weak var foodImageView: UIImageView!
+
     weak var delegate: HomeTableViewCellDelegate?
     private var disposeBag = DisposeBag()
 
@@ -25,8 +28,9 @@ final class HomeTableViewCell: UITableViewCell {
     }
 
     // MARK: - Setup
-    func configure() {
-        bind()
+    func configure(with food: Food) {
+        foodNameLabel.text = food.name
+        foodImageView.image = food.image
     }
 }
 
