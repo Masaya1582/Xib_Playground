@@ -9,10 +9,15 @@ import Action
 import RxCocoa
 import RxSwift
 
+struct Pokemon {
+    var name: String
+    var level: Int
+}
+
 protocol HomeViewModelInputs: AnyObject {}
 
 protocol HomeViewModelOutputs: AnyObject {
-    // var items: Driver<[HomeViewModel.ListItem]> { get }
+    var tableViewItems: Driver<[Pokemon]> { get }
 }
 
 protocol HomeViewModelType: AnyObject {
@@ -27,14 +32,20 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
 
     // MARK: - Input Sources
     // MARK: - Output Sources
-    // let items: Driver<[ListItem]>
-
+    let tableViewItems: Driver<[Pokemon]>
     // MARK: - Properties
-    // private let loadAction: Action<Void, DefaultModel>
+    private let _tableViewItems: BehaviorRelay<[Pokemon]>
     private let disposeBag = DisposeBag()
 
     // MARK: - Initialize
-    init() {}
+    init() {
+        let pokemon = [Pokemon(name: "Bulbasaur", level: 1),
+                       Pokemon(name: "Charmander", level: 2),
+                       Pokemon(name: "Bulbasaur", level: 1), Pokemon(name: "Charmander", level: 2)
+        ]
+        _tableViewItems = BehaviorRelay(value: pokemon)
+        tableViewItems = _tableViewItems.asDriver()
+    }
 }
 
 // MARK: - Item
